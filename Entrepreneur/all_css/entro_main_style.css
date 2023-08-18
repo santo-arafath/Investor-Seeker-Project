@@ -332,7 +332,7 @@ margin-top: 10px;
 
  .user:hover + .dropdown_menu-profile{
   display: block;
-  height: 600px;
+  height: 515px;
   transition: 5s;
 } 
 
@@ -340,6 +340,7 @@ margin-top: 10px;
     background: var(--white);
     padding: 20px;
     margin: 10px;
+    border-radius: 10px;
     
    }
 
@@ -378,7 +379,7 @@ margin-top: 10px;
 
     
     text-decoration: none;
-    margin:15px;
+    margin:12px;
     padding: 0;
     gap:10px;
  
@@ -410,7 +411,7 @@ margin-top: 10px;
    } */
     .onhoise{
      display: block;
-     height: 600px;
+     height: 515px;
      transition: 0.5s;
    } 
 .topbar .ic{
