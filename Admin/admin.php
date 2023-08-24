@@ -118,7 +118,7 @@ require "includes/top-bar.php";?>
             <div class="details">
                 <div class="record">
                     <div class="cardHeader">
-                          <h2>Recent Request</h2>
+                          <h2>Recent Activity</h2>
                           <a href="#" class="btn">view all</a>
                     </div>
 
@@ -127,133 +127,200 @@ require "includes/top-bar.php";?>
                             <tr>
                                 <td>Name</td>
                                 <td>Campany</td>
-                                <td>valuation</td>
-                                <td>Status</td>
+                                <td>Request Amount</td>
+                                <td>Verification Status</td>
+                                <td>Invest Status</td>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>star rank</td>
-                                <td>1200M</td>
-                                <td>paid</td>
-                                <td><span class="status delivered">Delevered</span></td>
-                                
-                            </tr>
 
-                            <tr>
-                                <td>star </td>
-                                <td>1000$</td>
-                                <td>paid</td>
-                                <td><span class="status delivered">Delevered</span></td>
-                                
-                            </tr>
+<?php
+                        require "includes/configure.php";
+    
+     if(!$connnection){
+         die("not connected".mysqli_error());
+     }else{
 
-                            <tr>
-                                <td>Amin</td>
-                                <td>200$</td>
-                                <td>paid</td>
-                                <td><span class="status pending">Pending</span></td>
-                                
-                            </tr>
 
-                            <tr>
-                                <td>Amibn</td>
-                                <td>200$</td>
-                                <td>paid</td>
-                                <td><span class="status pending">Pending</span></td>
-                                
-                            </tr>
 
-                            <tr>
-                                <td>Amin</td>
-                                <td>200$</td>
-                                <td>paid</td>
-                                <td><span class="status pending">Pending</span></td>
-                                
-                            </tr>
+        if(isset($_REQUEST['show-button'])){
+            $sr="";
+    
+             }
+           
+    
+            
+            $query="SELECT * FROM `card_information_all`";
+    
+            $result=mysqli_query($connnection,$query);
+    
+    
+    
+            $count=mysqli_num_rows($result);
+    
+            if($count>0){
+            
+               
+                 
+                 $serial=0;
+        while($row=mysqli_fetch_assoc($result)){
+        //     echo "<pre>";
+        //    print_r($row);
+        //    echo "</pre>";
+        
+             $username=$row['username'];
+             $id=$row['id'];
+             $profile_pic=$row['card-photo'];
+             $Comapany_name=$row['company-name'];
+             $request_amount=$row['investment-amount'];
+             
 
-                            <tr>
-                                <td>Amin</td>
-                                <td>200$</td>
-                                <td>paid</td>
-                                <td><span class="status pending">not Delevered</span></td>
-                                
-                            </tr>
+             
 
-                            <tr>
-                                <td>Amin</td>
-                                <td>200$</td>
-                                <td>paid</td>
-                                <td><span class="status pending">Pending</span></td>
-                                
-                            </tr>
 
-                            <tr>
-                                <td>kabab</td>
-                                <td>700$</td>
-                                <td>not paid</td>
-                                <td><span class="status pending">not Delevered</span></td>
-                                
-                            </tr>
+
+             $status=$row['status-of-post'];
+             $status_2=$row['status-of-request'];
+             
+             $serial++;
+
+
+           
+           ?>
+
+
+                   <tr>
+                        
+                        <td><?php echo "$username"; ?></td>
+                        
+                        <td><?php echo "$Comapany_name"; ?></td>
+                        <td><?php echo "$request_amount"; ?></td>
+
+                    <?php    if($status=="pending")
+                                {?>
+                        <td style="padding: 2px 4px;
+     background-color: #e0532c;
+    width:10px;
+    height:10px;
+    align:center;
+    color: var(--white);
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: 500;"><?php echo "$status"; ?></td>
+                               <?php }else{
+
+                                            ?>
+<td style="padding: 2px 4px;
+background-color: #8de02c;
+width:10px;
+height:10px;
+align:center;
+border-radius: 4px;
+font-size: 16px;
+font-weight: 500;"><?php echo "$status"; ?></td>
+
+
+
+
+                           <?php    }
+                                ?>
+
+
+
+<?php    if($status_2=="not-accepted")
+                                {?>
+                        <td style="padding: 2px 21px;
+     background-color: red;
+    width:15px;
+    height:10px;
+    align:center;
+    color: var(--white);
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: 500;"><?php echo "$status_2"; ?></td>
+                               <?php }else{
+
+                                            ?>
+<td style="padding: 2px 21px;
+background-color: green;
+width:15px;
+height:10px;
+
+border-radius: 4px;
+font-size: 16px;
+font-weight: 500;"><?php echo "$status_2"; ?></td>
+
+
+
+
+                           <?php    }
+                                ?>
+                        
+                        
+                       
+
+                       
+                    </tr>
+
+<?php } ?>
+
                         </tbody>
                      </table>
 
                 </div>
 
-
+    <?php } }?>
  
 
                      <!-- user start -->
 
-            <!-- <div class="recentcustomer">
+            <div class="recentcustomer">
                 <div class="cardHeader">
                     <h2>Recent customer</h2>
                     
                 </div>
                 <table>
-                    <tr>
-                        <td width="60px">
-                            <div class="imgbox"><img src="pic.jpg"></div>
-                        </td>
-                        <td><h4>Devid<br><span>Italy</span></h4></td>
-                    </tr>
+
+                <?php
+
+$query="SELECT * FROM `card_information_all`";
+    
+$result=mysqli_query($connnection,$query);
+
+
+
+$count=mysqli_num_rows($result);
+
+if($count>0){    
+            
+               
+                 
+            $serial=0;
+   while($row=mysqli_fetch_assoc($result)){
+   
+        $username=$row['username'];
+        $id=$row['id'];
+        $profile_pic=$row['card-photo'];
+        $Comapany_name=$row['company-name'];
+        $request_amount=$row['investment-amount'];
+        
+        $serial++;
+
+
+      
+      ?>
+
 
                     <tr>
                         <td width="60px">
                             <div class="imgbox"><img src="pic.jpg"></div>
                         </td>
-                        <td><h4>Devid<br><span>Italy</span></h4></td>
+                        <td><h4><?php echo "$username"; ?><br><span><?php echo "$Comapany_name"; ?></span></h4></td>
                     </tr>
 
-                    <tr>
-                        <td width="60px">
-                            <div class="imgbox"><img src="pic.jpg"></div>
-                        </td>
-                        <td><h4>Devid<br><span>Italy</span></h4></td>
-                    </tr>
-
-                    <tr>
-                        <td width="60px">
-                            <div class="imgbox"><img src="pic.jpg"></div>
-                        </td>
-                        <td><h4>Devid<br><span>Italy</span></h4></td>
-                    </tr>
-
-                    <tr>
-                        <td width="60px">
-                            <div class="imgbox"><img src="pic.jpg"></div>
-                        </td>
-                        <td><h4>Devid<br><span>Italy</span></h4></td>
-                    </tr>
-
-                    <tr>
-                        <td width="60px">
-                            <div class="imgbox"><img src="pic.jpg"></div>
-                        </td>
-                        <td><h4>Devid<br><span>Italy</span></h4></td>
-                    </tr>
-                </table> -->
-            <!-- </div> -->
+   <?php }}?>
+                </table>
+            </div>
             <!-- user end -->
 
 

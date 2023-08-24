@@ -64,7 +64,7 @@
                     </li>
 
                     <li>
-                        <a href="#">
+                        <a href="admin-request-entro.php">
                         <span class="icon"><ion-icon name="open-outline"></ion-icon></span>
                         <span class="tittle">Request</span>
                         </a>
