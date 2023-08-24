@@ -1,3 +1,6 @@
+<?php
+session_start();?>
+
 <!DOCTYPE html>
 <html>
 
@@ -6,6 +9,9 @@
             <!-- <link rel="stylesheet" href="all_css/get_investment1.css"> -->
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
             <link rel="stylesheet" href="all_css/business_details_Style.css">
+            <link rel="stylesheet" href="all_css/entro_main_style.css">
+            <link rel="stylesheet" href="all_css/cardStyle.css">
+            
            <style>
               
 
@@ -14,7 +20,7 @@
     </head>
 
     <body>
-
+    <?php require "include/Header_entro_home.php";?>
 <!-- <header>
             <div class="logo-container">
               <h1>Investor<span>Seeker</span></h1>
@@ -27,10 +33,15 @@
 
 <?php
 
+$session_name=$_SESSION['usrName'];
+$profile_photo=$_SESSION['photo_show_entro'];
+
+
+
 
 $connnection = mysqli_connect('localhost','root','','project_investor_seeker_db');
 
-$result = mysqli_query($connnection, "SELECT * FROM card_information_all");
+$result = mysqli_query($connnection, "SELECT * FROM `card_information_all` WHERE username='$session_name'");
 
 $cardHtml = '';
 
@@ -39,19 +50,20 @@ while($row = mysqli_fetch_assoc($result)){
 
        $cardHtml .= 
 
-       '<div class="container-main">
+       '<h1>Your Busines details</h1>
+       <div class="container-main">
                        <div class="fullpage">
         
                                <div class="investment-page">
                                     <div class="ideaimg">
 
 
-                                           <img src="idea.png">
+                                           <img src="all_pictures/card-photo/' . $row['card-photo'] . '">
                                    </div>
       
                               <div class="entrepreneur-section">
                                  <div class="entrepreneur-photo">
-                                      <img src="pic.jpeg" alt="Entrepreneur Photo">
+                                      <img src="../Home/entroProfile/'.$profile_photo.'" alt="Entrepreneur Photo">
                                  </div>
                                       <div class="entrepreneur-bio">
                                            <h2>' . $row['name'] . '</h2>
@@ -94,8 +106,45 @@ while($row = mysqli_fetch_assoc($result)){
         <button class="Not-inteerested invest-button">' . $row['status-of-request'] . '</button>
       </div>
     </div>
-</div>
-<br><br>';
+
+
+
+<br><br>
+
+
+<h1>Your card :</h1>
+
+<div class="container">
+                <div class="slidecontainer">
+                    <div class="card">
+                        <img src="../Home/entroProfile/'.$profile_photo.'" alt="Image 1">
+                        <div class="bottom">
+                            <h2>' . $row['company-name'] . '</h2>
+                            <p class="par">' . $row['investment-purpose'] . '</p>
+                            <div class="rating">
+                                <span class="star">&#9733;</span>
+                                <span class="star">&#9733;</span>
+                                <span class="star">&#9733;</span>
+                                <span class="star">&#9733;</span>
+                                <span class="star">&#9733;</span>
+                            </div>
+                            <p>Rated: 4.9 out of 5 stars</p>
+                            <button class="learn-more-button">Learn More</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>';
+
+
+
+
+
+
+
+
+
+
     
 
              
@@ -107,7 +156,8 @@ while($row = mysqli_fetch_assoc($result)){
 
                 '</div>'
 ?>
-
+ 
     <?php echo $cardHtml; ?>
+    <?php require "footer.php";?> 
 </body>
 </html>

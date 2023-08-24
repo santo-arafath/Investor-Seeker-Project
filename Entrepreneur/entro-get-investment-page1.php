@@ -7,6 +7,8 @@ if(!isset($_SESSION['usrName']))
 {
   header("location:../Home/loginForm.php");
 }
+
+$userName=$_SESSION['usrName'];
 ?>
 
 
@@ -273,8 +275,8 @@ if(isset($_REQUEST['submit'])){
         
          die("not connected".mysqli_error());
     }else{
-
-    $sqlin= "INSERT INTO `card_information_all` (`card-photo`, `name`, `entrepreneur-post`, `education`, `email`, `phone`, `business-type`, `company-name`, `location`, `product-description`, `product-usecase-1`, `product-usecase-2`, `product-usecase-3`, `product-usecase-4`, `revenue`, `last-month-sell`, `last-year-sell`, `total-sell`, `investment-amount`, `equity-offer`, `investment-purpose`, `goal`, `status-of-post`, `status-of-request`, `date-of-post`) VALUES ('$name_changer', '$entrepreneurName', '$entrepreneurPost', '$entrepreneurEducation', '$idea_email', '$idea_phone', '$idea_Business_type', '$idea_companyName', '$idea_location', '$idea_descrioption', '$idea_Product_usecase_1', '$idea_Product_usecase_2', '$idea_Product_usecase_3', '$idea_Product_usecase_4', '$idea_revenue', '$idea_lastMSell', '$idea_lastYSell', '$idea_totalSell', '$idea_amountofInvestmentRequired', '$idea_Equity_offer', '$idea_Investment_purpose', '$idea_Goal', 'pending', 'not-accepted', '$currentDate')";
+      
+    $sqlin= "INSERT INTO `card_information_all` (`username`, `card-photo`, `name`, `entrepreneur-post`, `education`, `email`, `phone`, `business-type`, `company-name`, `location`, `product-description`, `product-usecase-1`, `product-usecase-2`, `product-usecase-3`, `product-usecase-4`, `revenue`, `last-month-sell`, `last-year-sell`, `total-sell`, `investment-amount`, `equity-offer`, `investment-purpose`, `goal`, `status-of-post`, `status-of-request`, `date-of-post`) VALUES ('$userName', '$name_changer', '$entrepreneurName', '$entrepreneurPost', '$entrepreneurEducation', '$idea_email', '$idea_phone', '$idea_Business_type', '$idea_companyName', '$idea_location', '$idea_descrioption', '$idea_Product_usecase_1', '$idea_Product_usecase_2', '$idea_Product_usecase_3', '$idea_Product_usecase_4', '$idea_revenue', '$idea_lastMSell', '$idea_lastYSell', '$idea_totalSell', '$idea_amountofInvestmentRequired', '$idea_Equity_offer', '$idea_Investment_purpose', '$idea_Goal', 'pending', 'not-accepted', '$currentDate')";
     
     $result=mysqli_query($connnection,$sqlin);
 

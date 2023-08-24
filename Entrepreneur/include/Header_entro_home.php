@@ -1,5 +1,10 @@
+<?php 
+     
+     $profile_pic=$_SESSION['photo_show_entro'];
 
+?>
                    <!-- navbar strat -->
+
              
                    <div class="home-loged">
 
