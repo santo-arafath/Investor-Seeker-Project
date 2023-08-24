@@ -15,6 +15,7 @@ if(!isset($_SESSION['usrName']))
     <head>
         <head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
             <link rel="stylesheet" href="all_css/get_investment1.css">
+            <link rel="stylesheet" href="all_css/entro_main_style.css">
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
             <style>
               
@@ -25,14 +26,16 @@ if(!isset($_SESSION['usrName']))
 
     <body>
 
-        <header>
+        <!-- <header>
             <div class="logo-container">
               <h1>Investor<span>Seeker</span></h1>
             </div>
             <div class="exit-container">
               <a href="investor_showProfile_first_Get_start.php">Exit</a>
             </div>
-          </header>
+          </header> -->
+
+          <?php require "include/Header_entro_home.php";?>
 
           <div id="progress-container">
             <div id="progress-bar"></div>
@@ -67,26 +70,61 @@ function move(a) {
             <div class="container">
               <h2>Get Investment Today</h2>
               <h3>Join with Some Talented Investors</h3>
-              <form id="investment-form" method="post" enctype="multipart/form-data">
+              <form action="" id="investment-form" method="post" enctype="multipart/form-data">
                 <div class="step step-one">
-                  <h4>Step 1: Basic Information</h4>
+                  <h4>Step 1: Personal Information</h4>
                   <label for="name">Entrepreneur Name</label>
                   <input type="text" id="name" name="name" required>
-                  <label for="company-name">Company Name</label>
-                  <input type="text" id="company-name" name="company-name" required>
+
+                  <label for="Entrepreneur-post">Entrepreneur description</label>
+                  <input type="text" id="Entrepreneur-post" name="Entrepreneur-post" required>
+
+                  <label for="Education">Education</label>
+                  <input type="text" id="education" name="education" required>
+
                   <label for="email">Email</label>
                   <input type="email" id="email" name="email" required>
                   <label for="phone">Phone</label>
+
                   <input type="tel" id="phone" name="phone" required>
                   <button onclick="move(5)" type="button" class="next-button">Next</button>
 
                 </div>
                 <div class="step step-two">
                   <h4>Step 2: Business Details</h4>
-                  <label for="industry">Industry</label>
-                  <input type="text" id="industry" name="industry" required>
-                  <label for="location">Location</label>
+
+                  <label for="Business-type">Business type</label>
+                  <input type="text" id="Business-type" name="Business-type" required>
+
+                  <label for="company-name">Company Name</label>
+                  <input type="text" id="company-name" name="company-name" required>
+
+                  <label for="location">Comany Location</label>
                   <input type="text" id="location" name="location" required>
+
+
+                  <!-- --------------- -->
+
+                  <label for="product-description">What you are launching</label>
+                  <input type="text" id="product-description" name="product-description" required>
+
+                  <label for="product-usecase-1">Product use case-1</label>
+                  <input type="text" id="product-usecase-1" name="product-usecase-1" required>
+
+                  <label for="product-usecase-2">Product use case-1</label>
+                  <input type="text" id="product-usecase-2" name="product-usecase-2" required>
+
+                  <label for="product-usecase-3">Product use case-3</label>
+                  <input type="text" id="product-usecase-3" name="product-usecase-3" required>
+
+                  <label for="product-usecase-4">Product use case-4</label>
+                  <input type="text" id="product-usecase-4" name="product-usecase-4" required>
+
+                  <!-- --------------- -->
+
+
+
+
                   <label for="revenue">Revenue</label>
                   <input type="text" id="revenue" name="revenue" required>
 
@@ -108,22 +146,23 @@ function move(a) {
                 </div>
                 <div class="step step-three">
                   <h4>Step 3: Investment Requirements</h4>
-                  <label for="investment-amount">Amount of Investment Required</label>
+                  <label for="investment-amount">Amount of Investment Required in tk</label>
                   <input type="text" id="investment-amount" name="investment-amount" required>
 
-                  <label for="investment-amount">Equity Offer</label>
+                  <label for="euity-offer">Equity Offer in %</label>
                   <input type="text" id="Eoffer" name="Eoffer" required>
-
-
-                  <label for="investment-amount">Amount of Investment Required</label>
-                  <input type="text" id="investment-amount" name="investment-amount" required>
-
 
                   <label for="investment-purpose">Purpose of Investment</label>
                   <input type="text" id="investment-purpose" name="investment-purpose" required>
+
+                  <label for="goal">What is the goal of this comapny </label>
+                  <input type="text" id="goal" name="goal" required>
+
                   <div class="file">
-                  <label for="pitch-deck">Pitch Deck</label>
-                  <input type="file" id="pitch-deck" name="pitch-deck">
+
+                  <label for="pitch-deck">Add card photo</label>
+                  <input type="file" id="pitch-deck" name="picture-card">
+
                   </div>
                   <button onclick="move(2)" type="button" class="prev-button">Previous</button>
                   <button type="submit" name="submit" class="submit-butn">Submit</button>
@@ -158,35 +197,101 @@ function move(a) {
           <?php
           $connnection = mysqli_connect('localhost','root','','project_investor_seeker_db');
 
-// Check connection
+
 if (!$connnection) {
     die("Connection failed: " . mysqli_connect_error());
 }
 
-// Process form data
+
 if(isset($_REQUEST['submit'])){
-    $idea_companyName = mysqli_real_escape_string($connnection,$_REQUEST["company-name"]);
+
+
+    $entrepreneurName = mysqli_real_escape_string($connnection,$_REQUEST["name"]);
+    $entrepreneurPost = mysqli_real_escape_string($connnection,$_REQUEST["Entrepreneur-post"]);
+    $entrepreneurEducation = mysqli_real_escape_string($connnection,$_REQUEST["education"]);
     $idea_email = mysqli_real_escape_string($connnection,$_REQUEST["email"]);
+    $idea_phone = mysqli_real_escape_string($connnection,$_REQUEST["phone"]);
+    $idea_Business_type = mysqli_real_escape_string($connnection,$_REQUEST["Business-type"]);
+    $idea_companyName = mysqli_real_escape_string($connnection,$_REQUEST["company-name"]);
     $idea_location = mysqli_real_escape_string($connnection,$_REQUEST["location"]);
+    $idea_descrioption = mysqli_real_escape_string($connnection,$_REQUEST["product-description"]);
+    $idea_Product_usecase_1 = mysqli_real_escape_string($connnection,$_REQUEST["product-usecase-1"]);
+    $idea_Product_usecase_2 = mysqli_real_escape_string($connnection,$_REQUEST["product-usecase-2"]);
+    $idea_Product_usecase_3 = mysqli_real_escape_string($connnection,$_REQUEST["product-usecase-3"]);
+    $idea_Product_usecase_4 = mysqli_real_escape_string($connnection,$_REQUEST["product-usecase-4"]);
     $idea_revenue = mysqli_real_escape_string($connnection,$_REQUEST["revenue"]);
     $idea_lastMSell = mysqli_real_escape_string($connnection,$_REQUEST["lmonthsell"]);
     $idea_lastYSell = mysqli_real_escape_string($connnection,$_REQUEST["lyearsell"]);
     $idea_totalSell = mysqli_real_escape_string($connnection,$_REQUEST["totalsell"]);
     $idea_amountofInvestmentRequired = mysqli_real_escape_string($connnection,$_REQUEST["investment-amount"]);
-    $entrepreneurName = mysqli_real_escape_string($connnection,$_REQUEST["name"]);
-    
-    // Insert data into the database
-    $sql = "INSERT INTO `entcardinfo`(`companyName`, `email`, `location`, `revenue`, `lastMSell`, `lastYSell`, `totalSell`, `amountofInvestmentRequired`, `name`) 
-    VALUES ('$idea_companyName','$idea_email','$idea_location','$idea_revenue','$idea_lastMSell','$idea_lastYSell','$idea_totalSell','$idea_amountofInvestmentRequired','$entrepreneurName')";
-   $result=mysqli_query($connnection,$sql);
-   if ($result){
-    //header("location:entCard.php?inserted");
- }else{
-     echo "not inserted";
- }
-}
+    $idea_Equity_offer = mysqli_real_escape_string($connnection,$_REQUEST["Eoffer"]);
+    $idea_Investment_purpose = mysqli_real_escape_string($connnection,$_REQUEST["investment-purpose"]);
+    $idea_Goal = mysqli_real_escape_string($connnection,$_REQUEST["goal"]);
 
-// Close the database connection
+    $currentDate = date('Y-m-d'); 
+    
+    $picture=$_FILES['picture-card'];
+   $pname=$picture['name'];
+   $tmp_name=$picture['tmp_name'];
+   
+
+     $name_changer=uniqid().".png";
+
+
+     $queryy="SELECT email FROM `card_information_all` WHERE email='$idea_email'";
+     $res=mysqli_query($connnection,$queryy) or die("Query failed.");
+
+     $cnt=mysqli_num_rows($res);
+
+     if($cnt>0){
+      echo "This Email already used";
+     }else{
+
+     
+   
+   if(!empty($pname)){
+   
+       $locat='all_pictures/card-photo/';
+   
+       if(move_uploaded_file($tmp_name,$locat.$name_changer)){
+   
+   
+       }else{
+           echo 'upload failed';
+           die("wait");
+       }
+       
+     }else{
+       echo 'file not found';
+        }
+
+
+     
+
+        require "../Admin/includes/configure.php";
+            if(!$connnection){
+        
+         die("not connected".mysqli_error());
+    }else{
+
+    $sqlin= "INSERT INTO `card_information_all` (`card-photo`, `name`, `entrepreneur-post`, `education`, `email`, `phone`, `business-type`, `company-name`, `location`, `product-description`, `product-usecase-1`, `product-usecase-2`, `product-usecase-3`, `product-usecase-4`, `revenue`, `last-month-sell`, `last-year-sell`, `total-sell`, `investment-amount`, `equity-offer`, `investment-purpose`, `goal`, `status-of-post`, `status-of-request`, `date-of-post`) VALUES ('$name_changer', '$entrepreneurName', '$entrepreneurPost', '$entrepreneurEducation', '$idea_email', '$idea_phone', '$idea_Business_type', '$idea_companyName', '$idea_location', '$idea_descrioption', '$idea_Product_usecase_1', '$idea_Product_usecase_2', '$idea_Product_usecase_3', '$idea_Product_usecase_4', '$idea_revenue', '$idea_lastMSell', '$idea_lastYSell', '$idea_totalSell', '$idea_amountofInvestmentRequired', '$idea_Equity_offer', '$idea_Investment_purpose', '$idea_Goal', 'pending', 'not-accepted', '$currentDate')";
+    
+    $result=mysqli_query($connnection,$sqlin);
+
+   
+    if($result){
+      //  header("location:admin-show.php?inserted");
+    }else{
+        echo "not inserted";
+    }
+    
+   }
+
+     }
+
+    }
+
+
 mysqli_close($connnection);
 ?>
 
@@ -251,10 +356,7 @@ prevButtons.forEach(button => {
 
           </script>
           
-          <script>
-           
-            </script>
-
+          
 
 
 

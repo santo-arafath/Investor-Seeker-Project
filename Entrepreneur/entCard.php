@@ -1,101 +1,113 @@
-<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-            <link rel="stylesheet" href="all_css/get_investment1.css">
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+            <!-- <link rel="stylesheet" href="all_css/get_investment1.css"> -->
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-            <style>
+            <link rel="stylesheet" href="all_css/business_details_Style.css">
+           <style>
               
 
               </style>
 
     </head>
 
-<header>
+    <body>
+
+<!-- <header>
             <div class="logo-container">
               <h1>Investor<span>Seeker</span></h1>
             </div>
             <div class="exit-container">
-              <a href="investor_showProfile_first_Get_start.php">Exit</a>
+              <a href="entro_showProfile_first_Get_start.php">Exit</a>
             </div>
-          </header>
+ </header> -->
 
 
 <?php
 
 
-// Include database configuration file
 $connnection = mysqli_connect('localhost','root','','project_investor_seeker_db');
 
-// Fetch all rows from the entcardinfo table
-$result = mysqli_query($connnection, "SELECT * FROM entcardinfo");
+$result = mysqli_query($connnection, "SELECT * FROM card_information_all");
 
-// Initialize an empty variable to store card HTML
 $cardHtml = '';
 
-// Loop through each row in the result set and generate card HTML
 while($row = mysqli_fetch_assoc($result)){
-    $cardHtml .= '<div class="card">
-                    <h3>' . $row['companyName'] . '</h3>
-                 
-                    <ul>
-                        <li>Email: ' . $row['email'] . '</li>
-                        <li>Location: ' . $row['location'] . '</li>
-                        <li>Revenue: ' . $row['revenue'] . '</li>
-                        <li>Last Month Sell: ' . $row['lastMSell'] . '</li>
-                        <li>Last Year Sell: ' . $row['lastYSell'] . '</li>
-                        <li>Total Sell: ' . $row['totalSell'] . '</li>
-                        <li>Amount of Investment Required: ' . $row['amountofInvestmentRequired'] . '</li>
-                        <li>Name: ' . $row['name'] . '</li>
-                    </ul>
-                  </div>';
-}
+
+
+       $cardHtml .= 
+
+       '<div class="container-main">
+                       <div class="fullpage">
+        
+                               <div class="investment-page">
+                                    <div class="ideaimg">
+
+
+                                           <img src="idea.png">
+                                   </div>
+      
+                              <div class="entrepreneur-section">
+                                 <div class="entrepreneur-photo">
+                                      <img src="pic.jpeg" alt="Entrepreneur Photo">
+                                 </div>
+                                      <div class="entrepreneur-bio">
+                                           <h2>' . $row['name'] . '</h2>
+                                            <h3>' . $row['education'] . '</h3>
+                                             <h3>' . $row['email'] . '</h3>
+                                             <h3>' . $row['phone'] . '</h3>
+
+                 <p>' . $row['entrepreneur-post'] . '.</p>
+           </div>
+        <div class="company-logo">
+            <img src="logo.jpg" alt="Company Logo">
+          </div>
+      </div>
+
+                                 <div class="business-details">
+                                 <h2>Business Details</h2>
+                                         <h3>BusinessType: ' . $row['business-type'] . '</h3>
+                                         <h3>Company name : ' . $row['company-name'] . '</h3>
+                                          <h3>Location : ' . $row['location'] . '</h3>
+
+
+                 <p>' . $row['product-description'] . ':</p>
+        <ul>
+          <li>' . $row['product-usecase-1'] . '.</li>
+          <li>' . $row['product-usecase-2'] . '.</li>
+          <li>' . $row['product-usecase-3'] . '.</li>
+          <li>' . $row['product-usecase-4'] . '.</li>
+        </ul>
+        <p>' . $row['investment-purpose'] . '.</p>
+        <p>Revenue: ' . $row['revenue'] . ' Tk</p>
+        <p>Last month sell: ' . $row['last-month-sell'] . ' Tk</p>
+        <p>Last year sell: ' . $row['last-year-sell'] . ' Tk</p>
+        <p>Last year sell: ' . $row['total-sell'] . ' Tk</p>
+        <p>Total sell: ' . $row['total-sell'] . ' Tk</p>
+        <p>Amount of Investment Required: ' . $row['investment-amount'] . ' Tk</p>
+        <p>Equrty offer: ' . $row['equity-offer'] . ' Tk</p>
+        <p>Comapny Goal: ' . $row['goal'] . '</p>
+        <p>Request date: ' . $row['date-of-post'] . '</p>
+        <button class="invest-button">' . $row['status-of-post'] . '</button>
+        <button class="Not-inteerested invest-button">' . $row['status-of-request'] . '</button>
+      </div>
+    </div>
+</div>
+<br><br>';
+    
+
+             
+
+
+              
+               
+                }//last
+
+                '</div>'
 ?>
 
-<!-- HTML and CSS for displaying the cards -->
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Dynamic Card Example</title>
-    <style>
-    .card {
-        background-color: cyan;
-        border: 1px solid #ccc;
-        border-radius: 5px;
-        margin: 10px;
-        padding: 20px;
-        box-shadow: 2px 2px 5px #ccc;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        align-items: flex-start;
-    }
-    h3 {
-        margin: 0;
-        font-size: 24px;
-        font-weight: bold;
-        text-align: center;
-        margin-bottom: 20px;
-    }
-    ul {
-        list-style: none;
-        margin: 0;
-        padding: 0;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: flex-start;
-    }
-    li {
-        margin: 10px 0;
-        font-size: 18px;
-    }
-    p {
-        font-style: italic;
-        font-size: 16px;
-        margin: 10px 0;
-    }
-</style>
-</head>
-<body>
-    <h1>Dynamic Cards Example</h1>
     <?php echo $cardHtml; ?>
 </body>
 </html>

@@ -1,9 +1,20 @@
 .back{
-    height: 1000px;
+    height: 100%;
+    width: 100%;
     background-image: linear-gradient(to right,#287BFF,#755BBA,#287BFF);
     background-repeat: no-repeat;
     background-size: cover;
 }
+
+body, html {   
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;   
+}
+
+
+
 @media only screen and (max-width: 700px) {
     .form{
         
@@ -15,7 +26,7 @@
     
         
     }
-}
+} 
 
 
 
@@ -35,18 +46,21 @@
 .back:hover{
     background-image: linear-gradient(to right,#755BBA,#287BFF,#755BBA); 
 }
+
 .form{
     height: 400px;
     width: 340px;
     background-color: rgb(255, 255,255);
-    position: absolute;
-    left: 750px;
-    top: 250px;
+    position: relative;
+    /* left: 750px; */
+    top: 150px; 
     border-radius: 2%;
     padding: 30px;
-    
-
-    
+    margin:auto;
+    display: grid;
+    place-items: center;
+   
+  
 }
 h1{
     font-weight: 100;
