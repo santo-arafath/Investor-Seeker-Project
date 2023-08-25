@@ -6,7 +6,6 @@ session_start();?>
 
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-            <!-- <link rel="stylesheet" href="all_css/get_investment1.css"> -->
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
             <link rel="stylesheet" href="all_css/business_details_Style.css">
             <link rel="stylesheet" href="all_css/entro_main_style.css">
@@ -21,14 +20,7 @@ session_start();?>
 
     <body>
     <?php require "include/Header_entro_home.php";?>
-<!-- <header>
-            <div class="logo-container">
-              <h1>Investor<span>Seeker</span></h1>
-            </div>
-            <div class="exit-container">
-              <a href="entro_showProfile_first_Get_start.php">Exit</a>
-            </div>
- </header> -->
+
 
 
 <?php
