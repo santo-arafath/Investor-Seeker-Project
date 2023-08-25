@@ -1,3 +1,12 @@
+<style>
+
+.logo h2:hover{
+scale:1.08;
+color:white;
+}
+</style>
+
+
 <?php 
      
      $profile_pic=$_SESSION['photo_show_entro'];
@@ -38,7 +47,10 @@
                      </div>
           
                       <div class="logo">
-                      <h2>Investor<span>Seeker</span><h2>
+                      <h2><a style="list-style:none;
+                      text-decoration:none;
+                      color:black;
+                      " href="entro_showProfile_first_Get_start.php">Investor<span>Seeker</span></a><h2>
                       </div>
                      
           

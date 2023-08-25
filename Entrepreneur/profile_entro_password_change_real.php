@@ -1,4 +1,12 @@
-<?php require "include/profile_sidebar.php";?>
+<?php 
+
+session_start();
+
+if(!isset($_SESSION['usrName']))
+{
+  header("location:../Home/loginForm.php");
+}
+require "include/profile_sidebar.php";?>
 
 <div class="settingside-allform">
                     <div class="headingprofile">

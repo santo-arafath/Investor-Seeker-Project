@@ -8,6 +8,40 @@
     </head>
     <body>
 
+
+    <?php         require "../Admin/includes/configure.php";
+    
+    if(!$connnection){
+         die("not connected".mysqli_error());
+       }else{
+
+         $usnm=$_SESSION['usrName'];
+
+         $query="SELECT * FROM `entrepreneur-reg-table1` WHERE username = '$usnm'";
+
+$result=mysqli_query($connnection,$query);
+
+
+
+   $count=mysqli_num_rows($result);
+
+       if($count>0){
+
+         $row=mysqli_fetch_assoc($result);
+           
+                 $id=$row['id'];
+                 $profile_pic=$row['profile_photo'];
+                 $fname=$row['first-name'];
+                 $lname=$row['last-name'];
+                 $email=$row['email'];
+                 $fullname=$fname." ".$lname;
+
+
+
+
+
+                 ?>
+
 <div class="mainpage">
              
     <div class="container">
@@ -15,17 +49,19 @@
 
           <div class="sidebarfor">
               <div class="profilebigone">
-                   <img src="all_pictures/santo.jpg">
+                   <img src="../Home/entroProfile/<?php echo $profile_pic;?>">
                    
                    
 
               </div>
 
+    
+
               <div class="name">
-                   <h1>Arafath Hossen Santo</h1>
-                   <h4>arafath.hossen97@gmail.com</h4>
+                   <h1><?php echo $fullname;?></h1>
+                   <h4><?php echo $email;?></h4>
+                   <input type="file" value="Change-photo">
                    <input type="button" value="Change-photo">
-                   <input type="button" value="update">
               </div>
 
               
@@ -41,7 +77,9 @@
      
 
 
-
+       <?php }
+    
+             }  ?>
 
 
 

@@ -1,4 +1,15 @@
-<?php require "include/profile_sidebar.php";?>
+<?php 
+
+
+session_start();
+
+if(!isset($_SESSION['usrName']))
+{
+  header("location:../Home/loginForm.php");
+}
+
+
+require "include/profile_sidebar.php";?>
 
               
 
@@ -15,34 +26,73 @@
                         </div>
                            <hr>
                            
-                          
+        <?php  
+
+                            require "../Admin/includes/configure.php";
+    
+                      if(!$connnection){
+                           die("not connected".mysqli_error());
+                         }else{
+
+                           $usnm=$_SESSION['usrName'];
+
+                           $query="SELECT * FROM `entrepreneur-reg-table1` WHERE username = '$usnm'";
+
+                  $result=mysqli_query($connnection,$query);
+
+
+
+                     $count=mysqli_num_rows($result);
+
+                         if($count>0){
+
+                           $row=mysqli_fetch_assoc($result);
+                             
+                                   $id=$row['id'];
+                                   $profile_pic=$row['profile_photo'];
+                                   $fname=$row['first-name'];
+                                   $lname=$row['last-name'];
+                                   $usnm=$row['username'];
+                                   $password=$row['password'];
+                                   $nid=$row['nid'];
+                                   $email=$row['email'];
+                                   $phone=$row['phone'];
+                                   $date=$row['date_sign'];
+                                   $fullname=$fname." ".$lname;
+                                   $address="Dhaka 24/4 link road";
+                                   $age="22";
+        
+           ?>
+
+
+                 
                            
 
                           <div class="item">
                            <lebel>Name :</lebel>
-                           <p>Arafath Hossen Santo</p>
+                           <p><?php echo "$fullname"; ?></p>
                         </div>
                         <div class="item">
                            <lebel>Mobile :</lebel>
-                           <p>01759621258</p>
+                           <p><?php echo "$phone"; ?></p>
                         </div>
                         <div class="item">
                            <lebel>Email :</lebel>
-                           <p>santo@gmail.com</p>
+                           <p><?php echo "$email"; ?></p>
                            
                         </div>
                         <div class="item"> 
                            <lebel>Registered Date :</lebel>
-                           <p>25/5/2022</p>
+                           <p><?php echo "$date"; ?></p>
                         </div>
                         <div class="item">
                            <lebel>Address :</lebel>
-                           <p>24/2 link-Roal dhaka</p>
+                           <p><?php echo "$address"; ?></p>
                         </div>
                         <div class="item">
                           
                            <lebel>Age :</lebel>
-                           <p>30</p>
+                           <p><?php echo "$fullname"; ?></p>
                            
                         </div>
                         <div class="item2"> 
@@ -51,7 +101,7 @@
                         </div>
                         
                      </form>
-                    
+                    <?php }} ?>
           </div>
           
         </div>  <!-- conatainer end -->
