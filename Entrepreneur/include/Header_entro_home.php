@@ -106,7 +106,6 @@ color:white;
                            
                           <div class="user">
                                
-                              <!-- <img  src="all_pictures/santo.jpg"> -->
                               <img width="50px"; src="../Home/entroProfile/<?php echo $profile_pic;?>">
 
           
