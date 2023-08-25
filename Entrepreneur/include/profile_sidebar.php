@@ -60,8 +60,15 @@ $result=mysqli_query($connnection,$query);
               <div class="name">
                    <h1><?php echo $fullname;?></h1>
                    <h4><?php echo $email;?></h4>
-                   <input type="file" value="Change-photo">
-                   <input type="button" value="Change-photo">
+                   <form method="post" action="profile_change_chk.php" enctype="multipart/form-data">
+                   <input type="file" value="Change-photo" name="pic">
+
+                 
+                   <input type="submit" value="Change-photo" name="submitt">
+                 </form>
+
+                 
+
               </div>
 
               

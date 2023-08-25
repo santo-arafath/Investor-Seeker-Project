@@ -13,9 +13,9 @@ require "include/profile_sidebar.php";?>
                         
                     </div>
                      
-                     <form action="" class="details">
+                     <form action="password_change_chk.php" class="details" mathod="post">
                            <h2>Profile Setting</h2>
-                           <h3>Profile Setting</h3>
+                           <h3>Password Change:</h3>
                            <lebel>Old Password</lebel>
                            <input type="password" name="oldpassword">
                            <lebel>New Password</lebel>
@@ -24,22 +24,20 @@ require "include/profile_sidebar.php";?>
                            <input type="password" name="confirmNewPassword"><br>
                            
                            
-                           <input type="button" value="update"><br>
+                           <input type="submit" value="Confirm" name="change"><br>
                         
                      </form>
                     
           </div>
           
         </div>  <!-- conatainer end -->
-     
-           
-
-                
-
 
     </div>  <!-- main end-->
 
 
+
+
+    
 
     </body>
 </html>

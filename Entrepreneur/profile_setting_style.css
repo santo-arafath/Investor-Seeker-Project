@@ -121,17 +121,30 @@ body {
     margin-bottom: 10px; 
 }
 
-input[type="button"] {
+input[type="submit"]
+ {
     margin-top: 10px;
     width: 120px;
     padding: 0px 15px;
     background-color: #2d9dda;
-    color: #fff;
+    color: #ece7e7;
     border: none;
     height: 30px;
     border-radius: 5px;
     margin-right: 5px; 
     cursor: pointer;
+}
+input[type="file"]{
+    margin-top: 10px;
+    width: 110px;
+    padding: 0px 15px;
+    background-color: #0a3d23;
+    color: #171616;
+    border: none;
+    height: 30px;
+    border-radius: 5px;
+    margin-right: 5px; 
+    cursor: pointer; 
 }
 
 input[type="button"]:hover {
@@ -188,7 +201,7 @@ input[type="button"]:hover {
     box-shadow: 0 0 8px rgba(45, 157, 218, 0.6); 
 }
 
-.details input[type="button"] {
+.details input[type="submit"] {
     width: auto; 
     background-color: #2d9dda;
     color: #fff;
@@ -200,7 +213,7 @@ input[type="button"]:hover {
     transition: background-color 0.3s; 
 }
 
-.details input[type="button"]:hover {
+.details input[type="submit"]:hover {
     background-color: #2494c1; 
     box-shadow: 0 0 8px rgba(17, 17, 18, 0.6); 
     scale: 1.1;
@@ -209,7 +222,8 @@ input[type="button"]:hover {
 @media (max-width: 1197px) {
 
 
-    input[type="button"] {
+    input[type="submit"],
+    input[type="file"] {
 
         width: 90px;
         font-size: 10px;
@@ -229,7 +243,8 @@ input[type="button"]:hover {
         margin: 10px;
     }
 
-    input[type="button"] {
+    input[type="submit"], 
+    input[type="file"]{
 
         width:120px;
         font-size: 15px;

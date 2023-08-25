@@ -40,10 +40,10 @@ color:white;
       
                             </form>
                         <li><a href="#"><ion-icon class="ic" name="notifications-outline"></ion-icon>Notification</a></li>
-                        <li><a href="entCard.php"><ion-icon class="ic" name="logo-bitbucket"></ion-icon>Cards</a></li>
-                        <li><a href="#"><ion-icon class="ic" name="server-outline"> </ion-icon>My posts</a></li>
+                        <li><a href="entro_showProfile_first_Get_start.php"><ion-icon class="ic" name="logo-bitbucket"></ion-icon>Make Post</a></li>
+                        <li><a href="entCard.php"><ion-icon class="ic" name="server-outline"> </ion-icon>My posts</a></li>
                         
-                        <li><button class="sign-out-button button">Sign out</button></li>
+                        <li><button class="sign-out-button button"><a href="signout_entro.php">Sign out<a></button></li>
                      </div>
           
                       <div class="logo">
@@ -91,8 +91,8 @@ color:white;
           <ul class="list">
 
                         <li><a href="#"><ion-icon class="ic" name="notifications-outline"></ion-icon>Notification</a></li>
-                        <li><a href="entCard.php"><ion-icon class="ic" name="logo-bitbucket"></ion-icon>Cards</a></li>
-                        <li><a href="#"><ion-icon class="ic" name="server-outline"> </ion-icon>My posts</a></li>
+                        <li><a href="entro_showProfile_first_Get_start.php"><ion-icon class="ic" name="logo-bitbucket"></ion-icon>Make post</a></li>
+                        <li><a href="entCard.php"><ion-icon class="ic" name="server-outline"> </ion-icon>My posts</a></li>
             
         
            </ul>
@@ -100,13 +100,39 @@ color:white;
             </div>
           
           
-                         
+            <?php         require "../Admin/includes/configure.php";
+    
+    if(!$connnection){
+         die("not connected".mysqli_error());
+       }else{
+
+         $usnm=$_SESSION['usrName'];
+
+         $query="SELECT * FROM `entrepreneur-reg-table1` WHERE username = '$usnm'";
+
+$result=mysqli_query($connnection,$query);
+
+
+
+   $count=mysqli_num_rows($result);
+
+       if($count>0){
+
+         $row=mysqli_fetch_assoc($result);
+           
+                 $id=$row['id'];
+                 $profile_picture=$row['profile_photo'];
+                 
+                 
+                 
+                 
+                 }}?>
 
                            
                            
                           <div class="user">
                                
-                              <img width="50px"; src="../Home/entroProfile/<?php echo $profile_pic;?>">
+                              <img width="50px"; src="../Home/entroProfile/<?php echo $profile_picture;?>">
 
           
                           </div>
@@ -118,7 +144,7 @@ color:white;
 
                         <div class="user-info">
                                
-                        <img width="50px"; src="../Home/entroProfile/<?php echo $profile_pic;?>">
+                        <img width="50px"; src="../Home/entroProfile/<?php echo $profile_picture;?>">
 
                             <h2><a href="profile_entro_details.php">Arafath Hossen Santo</a></h2>
         

@@ -100,7 +100,7 @@ require "include/profile_sidebar.php";?>
                         </div>
                         <div class="item2"> 
                            <form method="post" action=""> 
-                        <button type="submit" class="btn btn-primary" name="submit">Edit</button><br>
+                        <input type="submit" value="--/-- Edit --/--" name="submit"><br>
                          
                         </div>
                         

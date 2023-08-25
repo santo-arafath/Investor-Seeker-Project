@@ -48,7 +48,7 @@ require "include/profile_sidebar.php";?>
 
                      
                      <form action="test.php" class="details" method="post">
-                           <h2>Profile Setting</h2>
+                           <h2>Profile Setting - Edit</h2>
                            <lebel>First Name</lebel>
                            <input type="text" name="fname" value="<?php echo $row['first-name'];?>">
                            <lebel>Last Name</lebel>
@@ -65,7 +65,7 @@ require "include/profile_sidebar.php";?>
                            <lebel>Role</lebel>
                            <input type="text" name="role" value="<?php echo $row['role'];?>"><br>
                            
-                           <button type="submit" class="btn btn-primary" name="submit">Update</button><br>
+                           <input type="submit" value="Confirm Update" name="submit"><br>
                         
                      </form>
                     
