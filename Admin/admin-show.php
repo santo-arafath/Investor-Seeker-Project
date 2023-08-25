@@ -143,9 +143,7 @@ if(!isset($_SESSION['usrName']))
 
        $serial=0;
         while($row=mysqli_fetch_assoc($result)){
-        //     echo "<pre>";
-        //    print_r($row);
-        //    echo "</pre>";
+        
              $id=$row['id'];
              $profile_pic=$row['photo'];
              $name=$row['name'];
@@ -154,9 +152,7 @@ if(!isset($_SESSION['usrName']))
              $password=$row['password'];
              $serial++;
 
-          // echo "{$row['id']}";
-        //    echo "$id"." "."$name"." "."$email"." "."$password"." ";
-        //    echo "<br>";
+          
            
            ?>
 

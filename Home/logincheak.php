@@ -39,7 +39,7 @@ session_start();
                 while($row = $resultt->fetch_assoc()) {
                     // echo "<br> id: ". $row["id"]. " - Name: ". $row["name"]. " " . $row["profile_photo"] . "<br>";
 
-                    $_ses_Username=$row['id'];
+                    $_ses_Userid=$row['id'];
                     $_ses_photo=$row['profile_photo'];
                     $_ses_name=$row['name'];
                     $_ses_password=$row['password'];
@@ -51,6 +51,7 @@ session_start();
             
             $connnection->close();
             
+            $_SESSION['id']=$_ses_Userid;
             $_SESSION['usrName']=$usname;
             $_SESSION['photo_show_entro']=$_ses_photo;
             $_SESSION['ses_Name']=$_ses_name;

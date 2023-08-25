@@ -33,7 +33,7 @@
 
                                           if(keyCode == 13)
                                                           {
-                                                            //your function call here
+                                                            
                                                              document.test.submit();
                                                           }
                                                                       }
@@ -47,8 +47,38 @@
 
 <!-- i--------------- -->
 <?php
+
+require "includes/configure.php";
+    
+    if(!$connnection){
+         die("not connected".mysqli_error());
+    }else{
+       $us=$_SESSION['usrName'];
+        $query="SELECT * FROM `admin-table1` WHERE username='$us'";
+
+        $result=mysqli_query($connnection,$query);
+
+
+
+        $count=mysqli_num_rows($result);
+
+        if($count>0){
+
+            $row=mysqli_fetch_assoc($result);
+                
+                     $profile_p=$row['photo'];
+
+            }
+        }
+        
+           
+
+
+
        
        $profile_pic=$_SESSION['photo_show_admin'];
+
+       
 
 ?>
 <!-- i--------------- kaj baki ase onek session ar akhane  -->
@@ -69,7 +99,7 @@
 
                  
                 <div class="user">
-                    <img width="50px"; src="admin-photo/<?php echo $profile_pic;?>">
+                    <img width="50px"; src="admin-photo/<?php echo $profile_p;?>">
                     <!-- <img src="pic.jpg"> -->
 
                 </div>

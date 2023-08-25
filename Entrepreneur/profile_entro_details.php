@@ -1,3 +1,6 @@
+<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"> -->
+
+
 <?php 
 
 
@@ -96,12 +99,20 @@ require "include/profile_sidebar.php";?>
                            
                         </div>
                         <div class="item2"> 
-                           
-                           <input type="button" value="update"><br>
+                           <form method="post" action=""> 
+                        <button type="submit" class="btn btn-primary" name="submit">Edit</button><br>
+                         
                         </div>
                         
                      </form>
-                    <?php }} ?>
+                    <?php }} 
+                    
+                    if(isset($_REQUEST['submit']))
+                    {
+                     header("location:profile_entro_update_real.php?yes");
+                    }
+                    
+                    ?>
           </div>
           
         </div>  <!-- conatainer end -->

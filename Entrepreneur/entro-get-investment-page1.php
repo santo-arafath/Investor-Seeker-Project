@@ -173,26 +173,7 @@ function move(a) {
             </div>
           </section>
           <!-- <?php
-//   if (isset($_POST['submit'])) {
-//     // Check for empty fields
-//     if (empty($_POST['name']) || empty($_POST['company-name']) || empty($_POST['email']) || empty($_POST['phone']) || empty($_POST['industry']) || empty($_POST['location']) || empty($_POST['revenue']) || empty($_POST['lmonthsell']) || empty($_POST['lyearsell']) || empty($_POST['totalsell']) || empty($_POST['investment-amount']) || empty($_POST['Eoffer']) || empty($_POST['investment-purpose'])) {
-//       echo "Please fill all the required fields!";
-//     } else {
-//       // Check if the email is valid
-//       if (!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
-//         echo "Invalid email format!";
-//       } else {
-//         // Check if the phone number is valid
-//         if (!preg_match("/^[0-9]{10}$/", $_POST['phone'])) {
-//           echo "Invalid phone number format!";
-//         } else {
-//           // You can add additional validations here as per your requirements
-//           // If all the fields are valid, do further processing here
-//           // For example, you can send an email or store the form data in a database
-//         }
-//       }
-//     }
-//   }
+
 // ?> -->
 
 
@@ -282,7 +263,7 @@ if(isset($_REQUEST['submit'])){
 
    
     if($result){
-      //  header("location:admin-show.php?inserted");
+        header("location:entCard.php?inserted");
     }else{
         echo "not inserted";
     }
