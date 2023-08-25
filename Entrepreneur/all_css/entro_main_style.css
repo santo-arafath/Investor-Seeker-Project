@@ -354,12 +354,25 @@ margin-top: 10px;
 
    .user-info h2{
     font-weight: 500;
+    margin-left:80px;
+    align-content: center;
    }
 
    .user-info img{
-      width: 70px;
-      border-radius: 50%;
+      
+      
       margin-right: 15px;
+     /* position: relative;  */
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    overflow: hidden;
+    cursor: pointer;
+    position: absolute;
+  
+   
+   object-fit: cover;
+   
    }
 
    .submenu hr{
