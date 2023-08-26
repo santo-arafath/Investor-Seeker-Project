@@ -308,8 +308,6 @@ margin-top: 10px;
 
  .dropdown_menu-profile{
       
-
-
     display: none;
     position: fixed;
     right: 2rem;
@@ -335,96 +333,96 @@ margin-top: 10px;
   transition: 5s;
 } 
 
-   .submenu{
-    background: var(--white);
-    padding: 20px;
-    margin: 10px;
-    
-   }
+.submenu{
+  background: var(--white);
+  padding: 20px;
+  margin: 10px;
+  
+ }
 
-   .user-info{
-    display: flex;
-    align-items: center;
+ .user-info{
+  display: flex;
+  align-items: center;
 
-   }
+ }
 
-   .user-info h2{
-    font-weight: 500;
-   }
+ .user-info h2{
+  font-weight: 500;
+ }
 
-   .user-info img{
-      width: 70px;
-      border-radius: 50%;
-      margin-right: 15px;
-   }
+ .user-info img{
+    width: 70px;
+    border-radius: 50%;
+    margin-right: 15px;
+ }
 
-   .submenu hr{
-    border: 0;
-    height: 2px;
-    width: 100%;
-    background: #ccc;
-    margin: 15px 0 10px;
-   }
+ .submenu hr{
+  border: 0;
+  height: 2px;
+  width: 100%;
+  background: #ccc;
+  margin: 15px 0 10px;
+ }
 
-   .submenu li{
+ .submenu li{
 
-   list-style: none;
-   text-decoration: none;
+ list-style: none;
+ text-decoration: none;
 
-   }
+ }
 
-   .submenu a{
+ .submenu a{
 
-    
-    text-decoration: none;
-    margin:20px;
-    padding: 0;
-    gap:10px;
- 
-    }
+  
+  text-decoration: none;
+  margin:20px;
+  padding: 0;
+  gap:10px;
 
-    .sobclass{
+  }
 
-        padding: 10px;
-    }
+  .sobclass{
 
-   .topbar a{
-           text-decoration: none;
-           list-style: none;
-          
-           display: flex;
-           align-items: center;
-           justify-content: center;
-           margin-bottom: 0px;
-           margin-left: 5px;
-           color: black;
-   }
+      padding: 10px;
+  }
 
-   /*.dropdown_menu-profile .user{
-    margin: 40px 95px;
-    width: 100px;
-    height: 100px;
-   } */
-    .onhoise{
-     display: block;
-     height: 600px;
-     transition: 0.5s;
-   } 
+ .topbar a{
+         text-decoration: none;
+         list-style: none;
+        
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         margin-bottom: 0px;
+         margin-left: 5px;
+         color: black;
+ }
+
+ /*.dropdown_menu-profile .user{
+  margin: 40px 95px;
+  width: 100px;
+  height: 100px;
+ } */
+  .onhoise{
+   display: block;
+   height: 600px;
+   transition: 0.5s;
+ } 
 .topbar .ic{
-    font-size: 30px;
-    color: black;
+  font-size: 30px;
+  color: black;
 }
 
 .topbar .ic:hover{
-    scale: 1.2;
-    color: orange;
+  scale: 1.2;
+  color: orange;
 }
 
 .topbar  a:hover{
-    scale: 1.2;
-    color: orange;
+  scale: 1.2;
+  color: orange;
 }
-  /* drop profile */
+/* drop profile */
 
 /* media */
 

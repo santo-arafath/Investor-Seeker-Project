@@ -36,6 +36,25 @@ function test_input($data) {
 }
 ?>
 
+<?php
+
+$username = "";
+$email    = "";
+$errors = array();
+
+?>
+
+
+<?php 
+
+if($_REQUEST){
+  
+ $msg= $_REQUEST['errorrr'];
+
+array_push($errors, "Username or password incorrect");
+//    echo $msg;
+}?>
+
 
 <!DOCTYPE html>
 <html>
@@ -64,13 +83,24 @@ function test_input($data) {
 
 
         <!-- action="../Entrepreneur/investor_showProfile_first_Get_start.php" -->
-        <form name="loginForm" action="logincheak.php" method="get" enctype="multipart/form-data" onsubmit="return validateloginForm()">
+        <form name="loginForm" action="logincheak.php" method="get" enctype="multipart/form-data" onsubmit="return validateForm();">
 				<img src="img/avatar.svg">
 				<h2 class="title">Welcome</h2>
            		    <div class="input-div one">
                         <div class="i">
                              <i class="fas fa-user"></i>
                        </div>
+
+
+                       <?php  if (count($errors) > 0) : ?>
+                       <div class="errorrr">
+                               <?php foreach ($errors as $error) : ?>
+                                           <p><?php echo $error ?></p>
+                                           <?php endforeach ?>
+                                </div>
+               <?php  endif ?>
+
+
                     <div class="div">
 
                             <h5>Username</h5>
@@ -106,6 +136,86 @@ function test_input($data) {
 
     <script type="text/javascript" src="js/main.js"></script>
 
+    <script>
+        function validateForm() {
+            var form = document.querySelector('.form');
+            var username = form.querySelector('.username');
+            var password = form.querySelector('.password');
+            var isValid = true;
+
+            
+            username.nextElementSibling.textContent = "";
+            password.nextElementSibling.textContent = "";
+
+            
+            if (username.value === "") {
+                username.nextElementSibling.textContent = "*";
+                isValid = false;
+            }
+            if (password.value === "") {
+                password.nextElementSibling.textContent = "*";
+                isValid = false;
+            }
+
+            
+            if (username.value.length < 4) {
+                username.nextElementSibling.textContent = "* Username must be at least 4 characters";
+                isValid = false;
+            }
+
+            
+            if (password.value.length < 8) {
+                password.nextElementSibling.textContent = "* Password must be at least 8 characters";
+                isValid = false;
+            }
+
+           
+
+            return isValid;
+        }
+    </script>
+
+
 
 </body>
 </html>
+
+<script>
+        function validateForm() {
+            var form = document.querySelector('.form');
+            var username = form.querySelector('.username');
+            var password = form.querySelector('.password');
+            var isValid = true;
+
+            
+            username.nextElementSibling.textContent = "";
+            password.nextElementSibling.textContent = "";
+
+            
+            if (username.value === "") {
+                username.nextElementSibling.textContent = "*";
+                isValid = false;
+            }
+            if (password.value === "") {
+                password.nextElementSibling.textContent = "*";
+                isValid = false;
+            }
+
+            
+            if (username.value.length < 4) {
+                username.nextElementSibling.textContent = "* Username must be at least 4 characters";
+                isValid = false;
+            }
+
+            
+            if (password.value.length < 8) {
+                password.nextElementSibling.textContent = "* Password must be at least 8 characters";
+                isValid = false;
+            }
+
+           
+
+            return isValid;
+        }
+    </script>
+

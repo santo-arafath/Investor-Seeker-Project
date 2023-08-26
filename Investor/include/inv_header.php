@@ -1,3 +1,33 @@
+<?php
+
+require "../Admin/includes/configure.php";
+    
+    if(!$connnection){
+         die("not connected".mysqli_error());
+       }else{
+
+         $usnm=$_SESSION['useRname'];
+
+         $query="SELECT * FROM `investor_reg_table1` WHERE username = '$usnm'";
+
+          $result=mysqli_query($connnection,$query);
+
+
+
+   $count=mysqli_num_rows($result);
+
+       if($count>0){
+
+         $row=mysqli_fetch_assoc($result);
+           
+                 $id=$row['id'];
+                 $profile_picture=$row['investor_profile'];
+                 
+                 }
+                 }?>
+
+
+
 <div class="home-loged">
 
 <div class="main">
@@ -23,8 +53,8 @@
 
                       </form>
 <li><a href="#"><ion-icon class="ic" name="notifications-outline"></ion-icon>Notification</a></li>
-<li><a href="entCard.php"><ion-icon class="ic" name="logo-bitbucket"></ion-icon>Cards</a></li>
-<li><a href="#"><ion-icon class="ic" name="server-outline"> </ion-icon>My posts</a></li>
+<li><a href="entCard.php"><ion-icon class="ic" name="logo-bitbucket"></ion-icon>All Post</a></li>
+<li><a href="#"><ion-icon class="ic" name="server-outline"> </ion-icon>My Invest History</a></li>
 <li><button class="sign-out-button button">Sign out</button></li>
 
 
@@ -65,8 +95,8 @@
 <ul class="list">
 
 <li><a href="#"><ion-icon class="ic" name="notifications-outline"></ion-icon>Notification</a></li>
-<li><a href="entCard.php"><ion-icon class="ic" name="logo-bitbucket"></ion-icon>Cards</a></li>
-<li><a href="#"><ion-icon class="ic" name="server-outline"> </ion-icon>My posts</a></li>
+<li><a href="entCard.php"><ion-icon class="ic" name="logo-bitbucket"></ion-icon>All Post</a></li>
+<li><a href="#"><ion-icon class="ic" name="server-outline"> </ion-icon>My Invest History</a></li>
 
 
 </ul>
@@ -81,7 +111,8 @@
 <div class="user">
      
     <!-- <img  src="all_pictures/santo.jpg"> -->
-    <img width="50px"; src="../Home/entroProfile/<?php echo $profile_pic;?>">
+
+    <img width="50px"; src="../Home/entroProfile/<?php echo $profile_picture;?>">
 
 
 </div>
@@ -93,9 +124,9 @@
 
 <div class="user-info">
      
-<img width="50px"; src="../Home/entroProfile/<?php echo $profile_pic;?>">
+<img width="50px"; src="../Home/entroProfile/<?php echo $profile_picture;?>">
 
-  <h2><a href="profile_entro_details.php">Arafath Hossen Santo</a></h2>
+  <h2><a href="profile_investor_details.php">Arafath Hossen Santo</a></h2>
 
 </div>
 
@@ -152,8 +183,8 @@
 <hr>
 
 <div class="userdetails-in-profile sobclass">
-<a href="signout_entro.php"><ion-icon name="log-out-outline"></ion-icon></a>
-<a href="signout_entro.php">Sign Out</a>
+<a href="../Entrepreneur/signout_entro.php"><ion-icon name="log-out-outline"></ion-icon></a>
+<a href="../Entrepreneur/signout_entro.php">Sign Out</a>
 </div>
 </div>
 

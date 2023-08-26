@@ -8,6 +8,13 @@ color:white;
 
 
 <?php 
+
+
+
+if(!isset($_SESSION['usrName']))
+{
+  header("location:../Home/loginForm.php");
+}
      
      $profile_pic=$_SESSION['photo_show_entro'];
 

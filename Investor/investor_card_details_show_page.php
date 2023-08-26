@@ -1,3 +1,11 @@
+<?php
+session_start();
+if(!isset($_SESSION['usrName']))
+{
+  header("location:../Home/loginForm.php");
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>

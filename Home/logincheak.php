@@ -1,10 +1,9 @@
 
 <?php
-session_start();
+
 
      require "../Admin/includes/configure.php";
 
-    // $connnection = mysqli_connect('localhost','root','','project_investor_seeker_db');
 
    if(!$connnection){
         die("not connected".mysqli_error($connnection));
@@ -24,10 +23,13 @@ session_start();
         $row_count=mysqli_num_rows($pass);
 
         if($row_count){
+            session_start();
             echo "Login success";
-            $_SESSION['useRname']=$usname;
+            $_SESSION['usrName']=$usname;
             $_SESSION['current-time']=time();
+             
 
+            
             
 
             //    --------------------------------------------
@@ -37,7 +39,6 @@ session_start();
             if ($resultt->num_rows > 0) {
                 
                 while($row = $resultt->fetch_assoc()) {
-                    // echo "<br> id: ". $row["id"]. " - Name: ". $row["name"]. " " . $row["profile_photo"] . "<br>";
 
                     $_ses_Userid=$row['id'];
                     $_ses_photo=$row['profile_photo'];
@@ -49,7 +50,7 @@ session_start();
                 echo "0 results";
             }
             
-            $connnection->close();
+            // $connnection->close();
             
             $_SESSION['id']=$_ses_Userid;
             $_SESSION['usrName']=$usname;
@@ -79,11 +80,15 @@ session_start();
 
                 $pass=mysqli_query($connnection,$query);
                 $row_count=mysqli_num_rows($pass);
+
+                   
+
         
                 if($row_count){
-
+                    session_start();
                     echo "Login success";
                     $_SESSION['useRname']=$usname;
+                    // $_SESSION['idd']=$id;
                     $_SESSION['current-time']=time();
         
                     
@@ -94,7 +99,7 @@ session_start();
         
                 }else{
                     header("location:loginForm.php");
-                    echo "not loged in";
+                    echo "not loged in2";
                 }
                 // investor
         }
