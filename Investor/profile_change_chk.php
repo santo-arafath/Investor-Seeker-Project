@@ -43,7 +43,7 @@ require "../Admin/includes/configure.php";
        }
 
 
-    $sql= "UPDATE `entrepreneur-reg-table1` SET `profile_photo` = '$name_changer'  WHERE `entrepreneur-reg-table1`.`id` = $rcv";
+    $sql= "UPDATE `investor_reg_table1` SET `profile_photo` = '$name_changer'  WHERE `investor_reg_table1`.`id` = $rcv";
 
     $resultt=mysqli_query($connnection,$sql);
 
@@ -51,7 +51,7 @@ if($resultt){
 
       unlink("../Home/entroProfile/$delete_photo");
 echo "deleted";
-    header("location:profile_entro_details.php?Updated");
+    header("location:profile_investor_details.php?Updated");
     // header("location:prc.php?Updated");
                        
 

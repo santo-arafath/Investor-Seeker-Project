@@ -2,7 +2,7 @@
 
 session_start();
 
-if(!isset($_SESSION['usrName']))
+if(!isset($_SESSION['useRname']))
 {
   header("location:../Home/loginForm.php");
 }

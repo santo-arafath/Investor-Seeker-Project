@@ -11,33 +11,40 @@ if(!isset($_SESSION['useRname']))
 
 
 require "include/profile_sidebar.php";?>
+
 <div class="settingside-allform">
+
+<?php  ?>
                     <div class="headingprofile">
                         
                     </div>
 
-<?php
+                    <?php
 
-      require "../Admin/includes/configure.php";
-    
-    if(!$connnection){
-         die("not connected".mysqli_error());
-    }else{
-           
+require "../Admin/includes/configure.php";
 
-          if(isset($_SESSION['id']))
-          {
-            $rcv=$_SESSION['id'];
+if(!$connnection){
+   die("not connected".mysqli_error());
+}else{
+  
 
-            $getinfo="SELECT * FROM `entrepreneur-reg-table1` WHERE id = $rcv";
+    if(isset($_SESSION['id']))
+    {
+     
 
-            $select_info=mysqli_query($connnection,$getinfo);
+      $rcv=$_SESSION['id'];
 
-            while($row=mysqli_fetch_assoc($select_info)){
+      
 
-            
-                   
-            ?>
+      $getinfo="SELECT * FROM `investor_reg_table1` WHERE id = $rcv";
+
+      $select_info=mysqli_query($connnection,$getinfo);
+
+      while($row=mysqli_fetch_assoc($select_info)){
+
+      
+             
+      ?>
 
 
 

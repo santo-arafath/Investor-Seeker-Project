@@ -11,6 +11,12 @@ if(!isset($_SESSION['useRname']))
   header("location:../Home/loginForm.php");
 }
 
+if($_REQUEST['msg']=="Updated")
+{
+                    echo '<script language="javascript">';
+                    echo 'alert("password successfully changed")';
+                    echo '</script>';
+}
 
 require "include/profile_sidebar.php";?>
 
@@ -53,8 +59,8 @@ require "include/profile_sidebar.php";?>
                              
                                    $id=$row['id'];
                                    $profile_pic=$row['investor_profile'];
-                                   $fname=$row['name'];
-                                   $lname=$row['name'];
+                                   $fname=$row['first-name'];
+                                   $lname=$row['last-name'];
                                    $usnm=$row['username'];
                                    $password=$row['password'];
                                    $nid=$row['nid'];

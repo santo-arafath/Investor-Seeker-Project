@@ -19,7 +19,7 @@
       
                $rcv=$_SESSION['id'];
       
-               $query="SELECT * FROM `entrepreneur-reg-table1` WHERE id = '$rcv'";
+               $query="SELECT * FROM `investor_reg_table1` WHERE id = '$rcv'";
       
                $result=mysqli_query($connnection,$query);
       
@@ -32,7 +32,7 @@
                       $row=mysqli_fetch_assoc($result);
                  
                        $id=$row['id'];
-                       $profile_picture=$row['profile_photo'];
+                       $profile_picture=$row['investor_profile'];
                        $olddpassword=$row['password'];
                        
                        }
@@ -44,7 +44,7 @@
                        
                     if($new_password==$confirm_new_password){
 
-                      $sql= "UPDATE `entrepreneur-reg-table1` SET `password` = '$new_password'  WHERE `entrepreneur-reg-table1`.`id` = $rcv";
+                      $sql= "UPDATE `investor_reg_table1` SET `password` = '$new_password'  WHERE `investor_reg_table1`.`id` = $rcv";
 
                       $resultt=mysqli_query($connnection,$sql);
                   
@@ -54,7 +54,7 @@
                     echo 'alert("password successfully changed")';
                     echo '</script>';
                       
-                      header("location:profile_entro_details.php?Updated");
+                      header("location:profile_investor_details.php?msg=Updated");
                                          
                   
                             }else{

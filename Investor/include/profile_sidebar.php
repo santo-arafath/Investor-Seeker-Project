@@ -73,11 +73,11 @@ $result=mysqli_query($connnection,$query);
 
               
               <ul class="list">
-                <li><a href="profile_entro_details.php"><i class="fas fa-user"></i> Account</a></li>
-                <li><a href="profile_entro_update_real.php"><i class="fas fa-shield-alt"></i> Update</a></li>
-                <li><a href="profile_entro_password_change_real.php"><i class="fas fa-lock"></i> Password</a></li>
+                <li><a href="profile_investor_details.php"><i class="fas fa-user"></i> Account</a></li>
+                <li><a href="profile_investor_update_real.php"><i class="fas fa-shield-alt"></i> Update</a></li>
+                <li><a href="profile_investor_password_change_real.php"><i class="fas fa-lock"></i> Password</a></li>
                 <li><a href="#"><i class="fas fa-bell"></i> Notification</a></li>
-                <li><a href="entro_showProfile_first_Get_start.php"><i class="fas fa-arrow-left"></i> Back</a></li>
+                <li><a href="investor_home.php"><i class="fas fa-arrow-left"></i> Back</a></li>
             </ul>
               
           </div> <!--sidebarfor end-->

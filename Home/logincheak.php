@@ -91,7 +91,25 @@
                     // $_SESSION['idd']=$id;
                     $_SESSION['current-time']=time();
         
+                    $resultt = $connnection->query($query);
+            
+                    if ($resultt->num_rows > 0) {
+                        
+                        while($row = $resultt->fetch_assoc()) {
+        
+                            $_ses_Userid=$row['id'];
+                            $_ses_photo=$row['investor_profile'];
+                            
+                            
+                        }
+                    } else {
+                        echo "0 results";
+                    }
                     
+                    // $connnection->close();
+                    
+                    $_SESSION['id']=$_ses_Userid;
+                    $_SESSION['usrName']=$usname;
         
         
                     if($_REQUEST)
