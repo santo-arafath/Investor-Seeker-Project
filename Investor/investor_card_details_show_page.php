@@ -1,6 +1,6 @@
 <?php
 session_start();
-if(!isset($_SESSION['usrName']))
+if(!isset($_SESSION['useRname']))
 {
   header("location:../Home/loginForm.php");
 }
@@ -18,7 +18,126 @@ if(!isset($_SESSION['usrName']))
   <title>Investment Opportunity</title>
 </head>
 <body>
-<?php require "include/inv_header.php";?>
+<?php //require "include/inv_header.php";
+
+require "../Admin/includes/configure.php";
+    
+    if(!$connnection){
+         die("not connected".mysqli_error());
+    }else{
+           
+
+          if(isset($_REQUEST['id'])){
+            $rcv_id=$_REQUEST['id'];
+            $query = "SELECT * FROM `card_information_all` WHERE `id` = '$rcv_id'";
+
+        $result=mysqli_query($connnection,$query);
+
+
+
+        $count=mysqli_num_rows($result);
+
+        if($count>0){
+
+           
+                   
+                   $row=mysqli_fetch_assoc($result);
+                  
+                        $id=$row['id'];
+                        $card_photoo=$row['card-photo'];
+                        $company_name=$row['company-name'];
+                        $investment_purpose=$row['investment-purpose'];
+
+
+
+
+    // $entrepreneurName = $row["name"];
+    // $entrepreneurPost = $row["Entrepreneur-post"]);
+    // $entrepreneurEducation =$row["education"]);
+    // $idea_email = $row["email"]);
+    // $idea_phone = $row["phone"]);
+    // $idea_Business_type = $row["Business-type"]);
+    // $idea_companyName = $row["company-name"]);
+    // $idea_location = mysqli_real_escape_string($connnection,$_REQUEST["location"]);
+    // $idea_descrioption = mysqli_real_escape_string($connnection,$_REQUEST["product-description"]);
+    // $idea_Product_usecase_1 = mysqli_real_escape_string($connnection,$_REQUEST["product-usecase-1"]);
+    // $idea_Product_usecase_2 = mysqli_real_escape_string($connnection,$_REQUEST["product-usecase-2"]);
+    // $idea_Product_usecase_3 = mysqli_real_escape_string($connnection,$_REQUEST["product-usecase-3"]);
+    // $idea_Product_usecase_4 = mysqli_real_escape_string($connnection,$_REQUEST["product-usecase-4"]);
+    // $idea_revenue = mysqli_real_escape_string($connnection,$_REQUEST["revenue"]);
+    // $idea_lastMSell = mysqli_real_escape_string($connnection,$_REQUEST["lmonthsell"]);
+    // $idea_lastYSell = mysqli_real_escape_string($connnection,$_REQUEST["lyearsell"]);
+    // $idea_totalSell = mysqli_real_escape_string($connnection,$_REQUEST["totalsell"]);
+    // $idea_amountofInvestmentRequired = mysqli_real_escape_string($connnection,$_REQUEST["investment-amount"]);
+    // $idea_Equity_offer = mysqli_real_escape_string($connnection,$_REQUEST["Eoffer"]);
+    // $idea_Investment_purpose = mysqli_real_escape_string($connnection,$_REQUEST["investment-purpose"]);
+    // $idea_Goal = mysqli_real_escape_string($connnection,$_REQUEST["goal"]);
+
+    $cardHtml = 
+
+       '<h1>Your Busines details</h1>
+       <div class="container-main">
+                       <div class="fullpage">
+        
+                               <div class="investment-page">
+                                    <div class="ideaimg">
+
+
+                                           <img src="all_pictures/card-photo/' . $row['card-photo'] . '">
+                                   </div>
+      
+                              <div class="entrepreneur-section">
+                                 <div class="entrepreneur-photo">
+                                      <img src="../Home/entroProfile/'.$profile_photo.'" alt="Entrepreneur Photo">
+                                 </div>
+                                      <div class="entrepreneur-bio">
+                                           <h2>' . $row['name'] . '</h2>
+                                            <h3>' . $row['education'] . '</h3>
+                                             <h3>' . $row['email'] . '</h3>
+                                             <h3>' . $row['phone'] . '</h3>
+
+                 <p>' . $row['entrepreneur-post'] . '.</p>
+           </div>
+        <div class="company-logo">
+            <img src="logo.jpg" alt="Company Logo">
+          </div>
+      </div>
+
+                                 <div class="business-details">
+                                 <h2>Business Details</h2>
+                                         <h3>BusinessType: ' . $row['business-type'] . '</h3>
+                                         <h3>Company name : ' . $row['company-name'] . '</h3>
+                                          <h3>Location : ' . $row['location'] . '</h3>
+
+
+                 <p>' . $row['product-description'] . ':</p>
+        <ul>
+          <li>' . $row['product-usecase-1'] . '.</li>
+          <li>' . $row['product-usecase-2'] . '.</li>
+          <li>' . $row['product-usecase-3'] . '.</li>
+          <li>' . $row['product-usecase-4'] . '.</li>
+        </ul>
+        <p>' . $row['investment-purpose'] . '.</p>
+        <p>Revenue: ' . $row['revenue'] . ' Tk</p>
+        <p>Last month sell: ' . $row['last-month-sell'] . ' Tk</p>
+        <p>Last year sell: ' . $row['last-year-sell'] . ' Tk</p>
+        <p>Last year sell: ' . $row['total-sell'] . ' Tk</p>
+        <p>Total sell: ' . $row['total-sell'] . ' Tk</p>
+        <p>Amount of Investment Required: ' . $row['investment-amount'] . ' Tk</p>
+        <p>Equrty offer: ' . $row['equity-offer'] . ' Tk</p>
+        <p>Comapny Goal: ' . $row['goal'] . '</p>
+        <p>Request date: ' . $row['date-of-post'] . '</p>
+        <button class="invest-button">' . $row['status-of-post'] . '</button>
+        <button class="Not-inteerested invest-button">' . $row['status-of-request'] . '</button>
+      </div>
+    </div>';
+                        
+                   }}} 
+     echo $cardHtml;             ?>
+         
+            
+            
+
 
     <div class="fullpage">
         

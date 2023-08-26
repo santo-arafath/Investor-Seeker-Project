@@ -77,6 +77,31 @@ if(!isset($_SESSION['useRname']))
 
 
                 <!-- --------------------------------------------------------------------------------------- -->
+                <!-- --------------------------------------------------------------------------------------- -->
+
+         <?php       require "../Admin/includes/configure.php";
+    
+    if(!$connnection){
+         die("not connected".mysqli_error());
+    }else{
+        $verified="verified";
+        $query = "SELECT * FROM `card_information_all` WHERE `status-of-post` = '$verified'";
+
+        $result=mysqli_query($connnection,$query);
+
+
+
+        $count=mysqli_num_rows($result);
+
+        if($count>0){
+        
+           ?>
+
+
+
+
+                <!-- --------------------------------------------------------------------------------------- -->
+                <!-- --------------------------------------------------------------------------------------- -->
 
                        <!-- 1st page 1 start -->
 
@@ -89,13 +114,30 @@ if(!isset($_SESSION['useRname']))
         
         <div class="swiper-container container">
             <div class="swiper-wrapper">
-                
+
+        <!-- --------------------------------------------------------------------------------------- -->
+                   <?php  
+                   
+                   while($row=mysqli_fetch_assoc($result)){
+                  
+                        $id=$row['id'];
+                        $card_photoo=$row['card-photo'];
+                        $company_name=$row['company-name'];
+                        $investment_purpose=$row['investment-purpose'];
+                        
+                       
+                   ?>
+
+
+        <!-- --------------------------------------------------------------------------------------- -->
+
+                 
                 <div class="swiper-slide">
                     <div class="card">
-                        <img src="photo/bus4.jpg" alt="Image 1">
+                        <img src="../Entrepreneur/all_pictures/card-photo/<?php echo $card_photoo;?>" alt="Image 1">
                         <div class="bottom">
-                            <h2>Daraz</h2>
-                            <p class="par">We Are looking for the best deal for our startup</p>
+                            <h2><?php echo $company_name;?></h2>
+                            <p class="par"><?php echo $investment_purpose;?></p>
                             <div class="rating">
                                 <span class="star">&#9733;</span>
                                 <span class="star">&#9733;</span>
@@ -104,106 +146,13 @@ if(!isset($_SESSION['useRname']))
                                 <span class="star">&#9733;</span>
                             </div>
                             <p>Rated: 4.9 out of 5 stars</p>
-                            <button class="learn-more-button">Learn More</button>
+                            <a class="learn-more-button" href="investor_card_details_show_page.php?id=<?php echo $id?>">See more<ion-icon name="ellipsis-horizontal"></ion-icon></a>
                         </div>
                     </div>
                 </div>
                 <!-- Repeat this swiper-slide for each card -->
-                <div class="swiper-slide">
-                  <div class="card">
-                      <img src="photo/bus4.jpg" alt="Image 1">
-                      <div class="bottom">
-                          <h2>Daraz</h2>
-                          <p class="par">We Are looking for the best deal for our startup</p>
-                          <div class="rating">
-                              <span class="star">&#9733;</span>
-                              <span class="star">&#9733;</span>
-                              <span class="star">&#9733;</span>
-                              <span class="star">&#9733;</span>
-                              <span class="star">&#9733;</span>
-                          </div>
-                          <p>Rated: 4.9 out of 5 stars</p>
-                          <button class="learn-more-button">Learn More</button>
-                      </div>
-                  </div>
-              </div>
                 
-                <!-- Repeat this swiper-slide for each card -->
-                <div class="swiper-slide">
-                  <div class="card">
-                      <img src="photo/bus4.jpg" alt="Image 1">
-                      <div class="bottom">
-                          <h2>Daraz</h2>
-                          <p class="par">We Are looking for the best deal for our startup</p>
-                          <div class="rating">
-                              <span class="star">&#9733;</span>
-                              <span class="star">&#9733;</span>
-                              <span class="star">&#9733;</span>
-                              <span class="star">&#9733;</span>
-                              <span class="star">&#9733;</span>
-                          </div>
-                          <p>Rated: 4.9 out of 5 stars</p>
-                          <button class="learn-more-button">Learn More</button>
-                      </div>
-                  </div>
-              </div>
-                <!-- Repeat this swiper-slide for each card -->
-                <div class="swiper-slide">
-                  <div class="card">
-                      <img src="photo/bus4.jpg" alt="Image 1">
-                      <div class="bottom">
-                          <h2>Daraz</h2>
-                          <p class="par">We Are looking for the best deal for our startup</p>
-                          <div class="rating">
-                              <span class="star">&#9733;</span>
-                              <span class="star">&#9733;</span>
-                              <span class="star">&#9733;</span>
-                              <span class="star">&#9733;</span>
-                              <span class="star">&#9733;</span>
-                          </div>
-                          <p>Rated: 4.9 out of 5 stars</p>
-                          <button class="learn-more-button">Learn More</button>
-                      </div>
-                  </div>
-              </div>
-                <!-- Repeat this swiper-slide for each card -->
-                <div class="swiper-slide">
-                  <div class="card">
-                      <img src="photo/bus4.jpg" alt="Image 1">
-                      <div class="bottom">
-                          <h2>Daraz</h2>
-                          <p class="par">We Are looking for the best deal for our startup</p>
-                          <div class="rating">
-                              <span class="star">&#9733;</span>
-                              <span class="star">&#9733;</span>
-                              <span class="star">&#9733;</span>
-                              <span class="star">&#9733;</span>
-                              <span class="star">&#9733;</span>
-                          </div>
-                          <p>Rated: 4.9 out of 5 stars</p>
-                          <button class="learn-more-button">Learn More</button>
-                      </div>
-                  </div>
-              </div>
-                <!-- Repeat this swiper-slide for each card -->
-                <div class="swiper-slide">
-                  <div class="card">
-                      <img src="photo/bus4.jpg" alt="Image 1">
-                      <div class="bottom">
-                          <h2>Daraz</h2>
-                          <p class="par">We Are looking for the best deal for our startup</p>
-                          <div class="rating">
-                              <span class="star">&#9733;</span>
-                              <span class="star">&#9733;</span>
-                              <span class="star">&#9733;</span>
-                              <span class="star">&#9733;</span>
-                              <span class="star">&#9733;</span>
-                          </div>
-                          <p>Rated: 4.9 out of 5 stars</p>
-                          <button class="learn-more-button">Learn More</button>
-                      </div>
-                  </div>
-              </div>
+                 <?php  } } }?>
                 <!-- Repeat this swiper-slide for each card -->
             </div>
             <div class="swiper-pagination"></div>
@@ -265,6 +214,7 @@ if(!isset($_SESSION['useRname']))
     </div>
 <!-- 2nd page  end -->
     <!-- --------------------------------------------------------------------------------------- -->
+   
     <!-- --------------------------------------------------------------------------------------- -->
            <!-- 3rd vies page start  -->
  <div class="third_3rd_page_new">
@@ -274,13 +224,41 @@ if(!isset($_SESSION['useRname']))
 
       <div class="swiper-container container">
         <div class="swiper-wrapper">
-            
+
+
+        <?php  
+
+        if(!$connnection){
+            die("not connected".mysqli_error());
+       }else{
+           $verified="verified";
+           $query = "SELECT * FROM `card_information_all` WHERE `status-of-post` = '$verified'";
+   
+           $result=mysqli_query($connnection,$query);
+   
+   
+   
+           $count=mysqli_num_rows($result);
+   
+           if($count>0){
+           
+              
+                   
+                   while($row=mysqli_fetch_assoc($result)){
+                  
+                        $id=$row['id'];
+                        $card_photoo=$row['card-photo'];
+                        $company_name=$row['company-name'];
+                        $investment_purpose=$row['investment-purpose'];
+                        
+                        // echo $investment_purpose;  
+                   ?>
             <div class="swiper-slide">
                 <div class="card">
-                    <img src="photo/bus4.jpg" alt="Image 1">
+                    <img src="../Entrepreneur/all_pictures/card-photo/<?php echo $card_photoo;?>" alt="Image 1">
                     <div class="bottom">
-                        <h2>Daraz</h2>
-                        <p class="par">We Are looking for the best deal for our startup</p>
+                        <h2><?php echo $company_name;?></h2>
+                        <p class="par"><?php echo $investment_purpose;?></p>
                         <div class="rating">
                             <span class="star">&#9733;</span>
                             <span class="star">&#9733;</span>
@@ -289,106 +267,18 @@ if(!isset($_SESSION['useRname']))
                             <span class="star">&#9733;</span>
                         </div>
                         <p>Rated: 4.9 out of 5 stars</p>
-                        <button class="learn-more-button">Learn More</button>
+                        
+                        
+                        <a class="learn-more-button" href="investor_card_details_show_page.php?id=<?php echo $id?>">See more<ion-icon name="ellipsis-horizontal"></ion-icon></a>
+                        
                     </div>
                 </div>
             </div>
+
+        <?php  } }} ?>
             <!-- Repeat this swiper-slide for each card -->
-            <div class="swiper-slide">
-              <div class="card">
-                  <img src="photo/bus4.jpg" alt="Image 1">
-                  <div class="bottom">
-                      <h2>Daraz</h2>
-                      <p class="par">We Are looking for the best deal for our startup</p>
-                      <div class="rating">
-                          <span class="star">&#9733;</span>
-                          <span class="star">&#9733;</span>
-                          <span class="star">&#9733;</span>
-                          <span class="star">&#9733;</span>
-                          <span class="star">&#9733;</span>
-                      </div>
-                      <p>Rated: 4.9 out of 5 stars</p>
-                      <button class="learn-more-button">Learn More</button>
-                  </div>
-              </div>
-          </div>
             
-            <!-- Repeat this swiper-slide for each card -->
-            <div class="swiper-slide">
-              <div class="card">
-                  <img src="photo/bus4.jpg" alt="Image 1">
-                  <div class="bottom">
-                      <h2>Daraz</h2>
-                      <p class="par">We Are looking for the best deal for our startup</p>
-                      <div class="rating">
-                          <span class="star">&#9733;</span>
-                          <span class="star">&#9733;</span>
-                          <span class="star">&#9733;</span>
-                          <span class="star">&#9733;</span>
-                          <span class="star">&#9733;</span>
-                      </div>
-                      <p>Rated: 4.9 out of 5 stars</p>
-                      <button class="learn-more-button">Learn More</button>
-                  </div>
-              </div>
-          </div>
-            <!-- Repeat this swiper-slide for each card -->
-            <div class="swiper-slide">
-              <div class="card">
-                  <img src="photo/bus4.jpg" alt="Image 1">
-                  <div class="bottom">
-                      <h2>Daraz</h2>
-                      <p class="par">We Are looking for the best deal for our startup</p>
-                      <div class="rating">
-                          <span class="star">&#9733;</span>
-                          <span class="star">&#9733;</span>
-                          <span class="star">&#9733;</span>
-                          <span class="star">&#9733;</span>
-                          <span class="star">&#9733;</span>
-                      </div>
-                      <p>Rated: 4.9 out of 5 stars</p>
-                      <button class="learn-more-button">Learn More</button>
-                  </div>
-              </div>
-          </div>
-            <!-- Repeat this swiper-slide for each card -->
-            <div class="swiper-slide">
-              <div class="card">
-                  <img src="photo/bus4.jpg" alt="Image 1">
-                  <div class="bottom">
-                      <h2>Daraz</h2>
-                      <p class="par">We Are looking for the best deal for our startup</p>
-                      <div class="rating">
-                          <span class="star">&#9733;</span>
-                          <span class="star">&#9733;</span>
-                          <span class="star">&#9733;</span>
-                          <span class="star">&#9733;</span>
-                          <span class="star">&#9733;</span>
-                      </div>
-                      <p>Rated: 4.9 out of 5 stars</p>
-                      <button class="learn-more-button">Learn More</button>
-                  </div>
-              </div>
-          </div>
-            <!-- Repeat this swiper-slide for each card -->
-            <div class="swiper-slide">
-              <div class="card">
-                  <img src="photo/bus4.jpg" alt="Image 1">
-                  <div class="bottom">
-                      <h2>Daraz</h2>
-                      <p class="par">We Are looking for the best deal for our startup</p>
-                      <div class="rating">
-                          <span class="star">&#9733;</span>
-                          <span class="star">&#9733;</span>
-                          <span class="star">&#9733;</span>
-                          <span class="star">&#9733;</span>
-                          <span class="star">&#9733;</span>
-                      </div>
-                      <p>Rated: 4.9 out of 5 stars</p>
-                      <button class="learn-more-button">Learn More</button>
-                  </div>
-              </div>
-          </div>
+            
 
 
            
@@ -401,6 +291,7 @@ if(!isset($_SESSION['useRname']))
 
 
 </div>
+
 </div>
 <!-- 3rd vies page end  -->
     <!-- --------------------------------------------------------------------------------------- -->
