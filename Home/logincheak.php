@@ -110,6 +110,7 @@
                     
                     $_SESSION['id']=$_ses_Userid;
                     $_SESSION['usrName']=$usname;
+                    $_SESSION['profile_investor']=$_ses_photo;
         
         
                     if($_REQUEST)

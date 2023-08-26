@@ -6,7 +6,7 @@ session_start();
 echo "santo";
 
 $rcv=$_SESSION['id'];
-$delete_photo=$_SESSION['photo_show_entro'];
+$delete_photo=$_SESSION['profile_investor'];
 
 
 
@@ -28,7 +28,7 @@ require "../Admin/includes/configure.php";
 
      if(!empty($pname)){
    
-      $locat='../Home/entroProfile/';
+      $locat='investor_profile/';
   
       if(move_uploaded_file($tmp_name,$locat.$name_changer)){
           echo "uploaded";
@@ -43,13 +43,14 @@ require "../Admin/includes/configure.php";
        }
 
 
-    $sql= "UPDATE `investor_reg_table1` SET `profile_photo` = '$name_changer'  WHERE `investor_reg_table1`.`id` = $rcv";
+    $sql= "UPDATE `investor_reg_table1` SET `investor_profile` = '$name_changer'  WHERE `investor_reg_table1`.`id` = $rcv";
 
     $resultt=mysqli_query($connnection,$sql);
 
 if($resultt){
 
-      unlink("../Home/entroProfile/$delete_photo");
+      unlink("investor_profile/$delete_photo");
+
 echo "deleted";
     header("location:profile_investor_details.php?Updated");
     // header("location:prc.php?Updated");

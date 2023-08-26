@@ -49,7 +49,7 @@ $result=mysqli_query($connnection,$query);
 
           <div class="sidebarfor">
               <div class="profilebigone">
-                   <img src="../Home/entroProfile/<?php echo $profile_pic;?>">
+                   <img src="investor_profile/<?php echo $profile_pic;?>">
                    
                    
 

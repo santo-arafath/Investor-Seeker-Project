@@ -11,12 +11,14 @@ if(!isset($_SESSION['useRname']))
   header("location:../Home/loginForm.php");
 }
 
-if($_REQUEST['msg']=="Updated")
-{
-                    echo '<script language="javascript">';
-                    echo 'alert("password successfully changed")';
-                    echo '</script>';
-}
+
+
+// if($_REQUEST['msg']=="Updated")
+// {
+//                     echo '<script language="javascript">';
+//                     echo 'alert("password successfully changed")';
+//                     echo '</script>';
+// }
 
 require "include/profile_sidebar.php";?>
 

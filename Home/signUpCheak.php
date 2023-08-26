@@ -152,7 +152,7 @@ echo "Username already exist";
 
 if(!empty($name)){
 
-$locat='en_profile/';
+$locat='../Investor/investor_profile/';
 
 if(move_uploaded_file($tmp_name,$locat.$name_changer)){
 

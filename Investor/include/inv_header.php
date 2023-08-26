@@ -22,6 +22,7 @@ require "../Admin/includes/configure.php";
            
                  $id=$row['id'];
                  $profile_picture=$row['investor_profile'];
+                 $profile_name=$row['name'];
                  
                  }
                  }?>
@@ -112,7 +113,7 @@ require "../Admin/includes/configure.php";
      
     <!-- <img  src="all_pictures/santo.jpg"> -->
 
-    <img width="50px"; src="../Home/entroProfile/<?php echo $profile_picture;?>">
+    <img width="50px"; src="investor_profile/<?php echo $profile_picture;?>">
 
 
 </div>
@@ -124,9 +125,9 @@ require "../Admin/includes/configure.php";
 
 <div class="user-info">
      
-<img width="50px"; src="../Home/entroProfile/<?php echo $profile_picture;?>">
+<img width="50px"; src="investor_profile/<?php echo $profile_picture;?>">
 
-  <h2><a href="profile_investor_details.php">Arafath Hossen Santo</a></h2>
+  <h2><a href="profile_investor_details.php"><?php echo $profile_name;?></a></h2>
 
 </div>
 
