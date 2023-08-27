@@ -226,7 +226,7 @@ if(isset($_REQUEST['submit'])){
 
     // -------------------------------------------------------------------------
 
-    $arr = $arr_history = array('cover1', 'cover2', 'cover3', 'cover4','cover5','cover6','cover7');
+    $arr = $arr_history = array('cover1.jpeg', 'cover2.jpg', 'cover3.jpg', 'cover4.jpg','cover5.jpg','cover6.jpg','cover7.jpg');
     $arr_history = $arr;
     $key = array_rand($arr_history, 1);
     $selected = $arr_history[$key];

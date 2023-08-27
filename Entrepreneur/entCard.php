@@ -36,13 +36,14 @@ $connnection = mysqli_connect('localhost','root','','project_investor_seeker_db'
 $result = mysqli_query($connnection, "SELECT * FROM `card_information_all` WHERE username='$session_name'");
 
 $cardHtml = '';
-
+$count=0;
 while($row = mysqli_fetch_assoc($result)){
-
+      $count++;
 
        $cardHtml .= 
+       
 
-       '<h1>Your Busines details</h1>
+       '<h1>My Busines details : '.$count.'</h1>
        <div class="container-main">
                        <div class="fullpage">
         
@@ -50,12 +51,12 @@ while($row = mysqli_fetch_assoc($result)){
                                     <div class="ideaimg">
 
 
-                                           <img src="all_pictures/card-photo/' . $row['card-photo'] . '">
+                                           <img src="all_pictures/card-cover-photo/' . $row['cover-photo'] . '">
                                    </div>
       
                               <div class="entrepreneur-section">
                                  <div class="entrepreneur-photo">
-                                      <img src="../Home/entroProfile/'.$profile_photo.'" alt="Entrepreneur Photo">
+                                      <img src="../Home/entroProfile/'. $row['entro-photo'] .'" alt="Entrepreneur Photo">
                                  </div>
                                       <div class="entrepreneur-bio">
                                            <h2>' . $row['name'] . '</h2>
@@ -66,7 +67,7 @@ while($row = mysqli_fetch_assoc($result)){
                  <p>' . $row['entrepreneur-post'] . '.</p>
            </div>
         <div class="company-logo">
-            <img src="logo.jpg" alt="Company Logo">
+            <img src="all_pictures/company_logo/'.$row['company-logo'].'" alt="Company Logo">
           </div>
       </div>
 
@@ -104,12 +105,12 @@ while($row = mysqli_fetch_assoc($result)){
 <br><br>
 
 
-<h1>Your card :</h1>
+<h1>Your card  : '.$count.'</h1>
 
 <div class="container">
                 <div class="slidecontainer">
                     <div class="card">
-                        <img src="../Home/entroProfile/'.$profile_photo.'" alt="Image 1">
+                        <img src="all_pictures/card-photo/'. $row['card-photo'] .'" alt="Image 1">
                         <div class="bottom">
                             <h2>' . $row['company-name'] . '</h2>
                             <p class="par">' . $row['investment-purpose'] . '</p>
