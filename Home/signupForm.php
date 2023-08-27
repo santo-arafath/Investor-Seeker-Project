@@ -92,13 +92,23 @@
 
 
 
-        <div class="input-div">
+           <div class="input-div">
                <div class="i">
                     <i class="fas fa-envelope"></i>
                </div>
                <div class="div">
                     <h5>Email</h5>
                     <input type="email" class="input" name="email" value="">
+               </div>
+            </div>
+
+            <div class="input-div">
+               <div class="i">
+                    <i class="fas fa-phone"></i>
+               </div>
+               <div class="div">
+                    <h5>Phone</h5>
+                    <input type="text" class="input" name="phone" value="">
                </div>
             </div>
             

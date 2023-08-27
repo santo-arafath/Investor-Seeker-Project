@@ -4,9 +4,6 @@
 <?php 
 
 
-
-        // $connnection = mysqli_connect('localhost','root','','investor-seeker-db');
-
         require "../Admin/includes/configure.php";
 
         if(isset($_REQUEST['submit'])){ 
@@ -15,7 +12,7 @@
         $usnm=mysqli_real_escape_string($connnection,$_REQUEST['username']);
         $nid=mysqli_real_escape_string($connnection,$_REQUEST['nid']);
         $eml=mysqli_real_escape_string($connnection,$_REQUEST['email']);
-        // $password=mysqli_real_escape_string($connnection,md5($_REQUEST['password']));
+        $phone=mysqli_real_escape_string($connnection,$_REQUEST['phone']);
         $password=mysqli_real_escape_string($connnection,$_REQUEST['password']);
         
 
@@ -68,13 +65,12 @@
 
         require "../Admin/includes/configure.php";
 
-        // $connnection = mysqli_connect('localhost','root','','project_investor_seeker_db');
             if(!$connnection){
         
          die("not connected".mysqli_error());
     }else{
 
-    $sqlin= "INSERT INTO `entrepreneur-reg-table1` (`profile_photo`, `name`, `username`, `nid`, `email`, `password`, `date_sign`) VALUES ('$name_changer', '$fullname', '$usnm', '$nid', '$eml', '$password', '$today')";
+    $sqlin= "INSERT INTO `entrepreneur-reg-table1` (`profile_photo`, `name`,`first-name`,`last-name`,`phone`, `username`, `nid`, `email`, `password`, `date_sign`) VALUES ('$name_changer', '$fullname', '$fname', '$lname', '$phone', '$usnm', '$nid', '$eml', '$password', '$today')";
     
     $result=mysqli_query($connnection,$sqlin);
 
@@ -108,7 +104,6 @@
 
 
 
-// $connnection = mysqli_connect('localhost','root','','investor-seeker-db');
 
 require "../Admin/includes/configure.php";
 
@@ -118,14 +113,13 @@ $lname=mysqli_real_escape_string($connnection,$_REQUEST['lastname']);
 $usnm=mysqli_real_escape_string($connnection,$_REQUEST['username']);
 $nid=mysqli_real_escape_string($connnection,$_REQUEST['nid']);
 $eml=mysqli_real_escape_string($connnection,$_REQUEST['email']);
-// $password=mysqli_real_escape_string($connnection,md5($_REQUEST['password']));
 $password=mysqli_real_escape_string($connnection,$_REQUEST['password']);
 
 
 $today = date('y:m:d');
 
 
-$fullname=$fname.$lname;
+$fullname=$fname." ".$lname;
 
 
 
@@ -170,13 +164,12 @@ echo 'file not found';
 
 require "../Admin/includes/configure.php";
 
-// $connnection = mysqli_connect('localhost','root','','project_investor_seeker_db');
     if(!$connnection){
 
  die("not connected".mysqli_error());
 }else{
 
-$sqlin= "INSERT INTO `investor_reg_table1` (`investor_profile`, `name`, `username`, `nid`, `email`, `password`, `date_sign`) VALUES ('$name_changer', '$fullname', '$usnm', '$nid', '$eml', '$password', '$today')";
+$sqlin= "INSERT INTO `investor_reg_table1` (`investor_profile`, `name`, `first-name`,`last-name`,`phone`, `username`, `nid`, `email`, `password`, `date_sign`) VALUES ('$name_changer', '$fullname', '$fname', '$lname', '$phone', '$usnm', '$nid', '$eml', '$password', '$today')";
 
 $result=mysqli_query($connnection,$sqlin);
 

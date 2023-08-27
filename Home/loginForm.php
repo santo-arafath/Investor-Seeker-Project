@@ -47,7 +47,7 @@ $errors = array();
 
 <?php 
 
-if($_REQUEST){
+if(isset($_REQUEST['submit'])){
   
  $msg= $_REQUEST['errorrr'];
 

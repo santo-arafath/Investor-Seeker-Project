@@ -191,7 +191,7 @@ if(!isset($_SESSION['usrName']))
                   <div class="container">
                     <h2>Get Investment Today</h2>
                     <h3>Join with Some Talented Investors</h3>
-                    <a href="#" class="button">Get Started</a>
+                    <a href="entro-get-investment-page1.php" class="button">Get Start</a>
                   </div>
                 </section>
                 
