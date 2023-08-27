@@ -165,6 +165,9 @@ function move(a) {
                   <label for="pitch-deck">Add card photo</label>
                   <input type="file" id="pitch-deck" name="picture-card">
 
+                  <label for="pitch-deck">Add company logo</label>
+                  <input type="file" id="pitch-deck" name="company_logo">
+
                   </div>
                   <button onclick="move(2)" type="button" class="prev-button">Previous</button>
                   <button type="submit" name="submit" class="submit-butn">Submit</button>
@@ -210,13 +213,34 @@ if(isset($_REQUEST['submit'])){
     $idea_Investment_purpose = mysqli_real_escape_string($connnection,$_REQUEST["investment-purpose"]);
     $idea_Goal = mysqli_real_escape_string($connnection,$_REQUEST["goal"]);
 
-    $currentDate = date('Y-m-d'); 
-    
-    $picture=$_FILES['picture-card'];
-   $pname=$picture['name'];
-   $tmp_name=$picture['tmp_name'];
-   
 
+
+    // $company_logo = mysqli_real_escape_string($connnection,$_REQUEST["company_logo"]);
+     $logo_picture=$_FILES['company_logo'];
+     $logo_pic_name=$logo_picture['name'];
+     $logo_pic_tmp_name=$logo_picture['tmp_name'];
+
+     $name_changerrr=uniqid().".png";
+
+
+
+    // -------------------------------------------------------------------------
+
+    $arr = $arr_history = array('cover1', 'cover2', 'cover3', 'cover4','cover5','cover6','cover7');
+    $arr_history = $arr;
+    $key = array_rand($arr_history, 1);
+    $selected = $arr_history[$key];
+    $selected_cover = $selected . PHP_EOL;
+  
+    // -------------------------------------------------------------------------
+    // -------------------------------------------------------------------------
+    // -------------------------------------------------------------------------
+
+     $currentDate = date('Y-m-d'); 
+
+     $picture=$_FILES['picture-card'];
+     $pname=$picture['name'];
+     $tmp_name=$picture['tmp_name'];
      $name_changer=uniqid().".png";
 
 
@@ -230,6 +254,23 @@ if(isset($_REQUEST['submit'])){
      }else{
 
      
+      // --------------------------------------------------------
+      if(!empty($logo_pic_name)){
+   
+        $location='all_pictures/company_logo/';
+    
+        if(move_uploaded_file($logo_pic_tmp_name,$location.$name_changerrr)){
+    
+    
+        }else{
+            echo 'upload failed';
+            die("wait");
+        }
+        
+      }else{
+        echo 'file not found';
+         }
+      // ----------------------------------------------------------
    
    if(!empty($pname)){
    
@@ -255,14 +296,16 @@ if(isset($_REQUEST['submit'])){
         
          die("not connected".mysqli_error());
     }else{
+
+      $entro_profile_for_card=$_SESSION['photo_show_entro'];
       
-    $sqlin= "INSERT INTO `card_information_all` (`username`, `card-photo`, `name`, `entrepreneur-post`, `education`, `email`, `phone`, `business-type`, `company-name`, `location`, `product-description`, `product-usecase-1`, `product-usecase-2`, `product-usecase-3`, `product-usecase-4`, `revenue`, `last-month-sell`, `last-year-sell`, `total-sell`, `investment-amount`, `equity-offer`, `investment-purpose`, `goal`, `status-of-post`, `status-of-request`, `date-of-post`) VALUES ('$userName', '$name_changer', '$entrepreneurName', '$entrepreneurPost', '$entrepreneurEducation', '$idea_email', '$idea_phone', '$idea_Business_type', '$idea_companyName', '$idea_location', '$idea_descrioption', '$idea_Product_usecase_1', '$idea_Product_usecase_2', '$idea_Product_usecase_3', '$idea_Product_usecase_4', '$idea_revenue', '$idea_lastMSell', '$idea_lastYSell', '$idea_totalSell', '$idea_amountofInvestmentRequired', '$idea_Equity_offer', '$idea_Investment_purpose', '$idea_Goal', 'pending', 'not-accepted', '$currentDate')";
+    $sqlin= "INSERT INTO `card_information_all` (`username`, `entro-photo`, `card-photo`, `cover-photo`, `company-logo`, `name`, `entrepreneur-post`, `education`, `email`, `phone`, `business-type`, `company-name`, `location`, `product-description`, `product-usecase-1`, `product-usecase-2`, `product-usecase-3`, `product-usecase-4`, `revenue`, `last-month-sell`, `last-year-sell`, `total-sell`, `investment-amount`, `equity-offer`, `investment-purpose`, `goal`, `status-of-post`, `status-of-request`, `date-of-post`) VALUES ('$userName', '$entro_profile_for_card', '$name_changer', '$selected_cover', '$name_changerrr', '$entrepreneurName', '$entrepreneurPost', '$entrepreneurEducation', '$idea_email', '$idea_phone', '$idea_Business_type', '$idea_companyName', '$idea_location', '$idea_descrioption', '$idea_Product_usecase_1', '$idea_Product_usecase_2', '$idea_Product_usecase_3', '$idea_Product_usecase_4', '$idea_revenue', '$idea_lastMSell', '$idea_lastYSell', '$idea_totalSell', '$idea_amountofInvestmentRequired', '$idea_Equity_offer', '$idea_Investment_purpose', '$idea_Goal', 'pending', 'not-accepted', '$currentDate')";
     
     $result=mysqli_query($connnection,$sqlin);
 
    
     if($result){
-        header("location:entCard.php?inserted");
+        // header("location:entCard.php?inserted");
     }else{
         echo "not inserted";
     }
@@ -276,9 +319,6 @@ if(isset($_REQUEST['submit'])){
 
 mysqli_close($connnection);
 ?>
-
-
-
 
           <script>
             const form = document.querySelector('#investment-form');
