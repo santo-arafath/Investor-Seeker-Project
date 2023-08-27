@@ -188,7 +188,6 @@ if (!$connnection) {
 
 if(isset($_REQUEST['submit'])){
 
-
     $entrepreneurName = mysqli_real_escape_string($connnection,$_REQUEST["name"]);
     $entrepreneurPost = mysqli_real_escape_string($connnection,$_REQUEST["Entrepreneur-post"]);
     $entrepreneurEducation = mysqli_real_escape_string($connnection,$_REQUEST["education"]);
