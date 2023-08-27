@@ -305,7 +305,7 @@ if(isset($_REQUEST['submit'])){
 
    
     if($result){
-        // header("location:entCard.php?inserted");
+        header("location:entCard.php?inserted");
     }else{
         echo "not inserted";
     }

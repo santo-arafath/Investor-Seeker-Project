@@ -112,6 +112,7 @@ $fname=mysqli_real_escape_string($connnection,$_REQUEST['firstname']);
 $lname=mysqli_real_escape_string($connnection,$_REQUEST['lastname']);
 $usnm=mysqli_real_escape_string($connnection,$_REQUEST['username']);
 $nid=mysqli_real_escape_string($connnection,$_REQUEST['nid']);
+$phone=mysqli_real_escape_string($connnection,$_REQUEST['phone']);
 $eml=mysqli_real_escape_string($connnection,$_REQUEST['email']);
 $password=mysqli_real_escape_string($connnection,$_REQUEST['password']);
 
@@ -125,9 +126,9 @@ $fullname=$fname." ".$lname;
 
 
 
-$picture=$_FILES['profile_picture'];
-$pname=$picture['name'];
-$tmp_name=$picture['tmp_name'];
+$picture2=$_FILES['profile-pic'];
+$pname2=$picture2['name'];
+$temp_name=$picture2['tmp_name'];
 
 
 $name_changer=uniqid().".png";
@@ -144,11 +145,11 @@ echo "Username already exist";
 
 
 
-if(!empty($name)){
+if(!empty($pname2)){
 
 $locat='../Investor/investor_profile/';
 
-if(move_uploaded_file($tmp_name,$locat.$name_changer)){
+if(move_uploaded_file($temp_name,$locat.$name_changer)){
 
 
 }else{
@@ -175,6 +176,7 @@ $result=mysqli_query($connnection,$sqlin);
 
 
 if($result){
+
 header("location:loginForm.php?inserted");
 
 

@@ -47,7 +47,7 @@ if(!isset($_SESSION['usrName']))
       
                             </form>
                         <li><a href="#"><ion-icon class="ic" name="notifications-outline"></ion-icon>Notification</a></li>
-                        <li><a href="entro_showProfile_first_Get_start.php"><ion-icon class="ic" name="logo-bitbucket"></ion-icon>Make Post</a></li>
+                        <li><a href="entro-get-investment-page1.php"><ion-icon class="ic" name="logo-bitbucket"></ion-icon>Make Post</a></li>
                         <li><a href="entCard.php"><ion-icon class="ic" name="server-outline"> </ion-icon>My posts</a></li>
                         
                         <li><button class="sign-out-button button"><a href="signout_entro.php">Sign out<a></button></li>
@@ -154,7 +154,8 @@ $result=mysqli_query($connnection,$query);
                                
                         <img width="50px"; src="../Home/entroProfile/<?php echo $profile_picture;?>">
 
-                            <h2><a href="profile_entro_details.php"><?php echo $Entre_full_name;?></a></h2>
+                            <h2><a href="profile_entro_details.php">Ent <?php echo " ".$Entre_full_name;?></a></h2>
+                            
         
                         </div>
 
