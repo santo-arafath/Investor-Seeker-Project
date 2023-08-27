@@ -18,7 +18,7 @@ if(!isset($_SESSION['useRname']))
   <title>Investment Opportunity</title>
 </head>
 <body>
-<?php //require "include/inv_header.php";
+<?php require "include/inv_header.php";
 
 require "../Admin/includes/configure.php";
     
@@ -83,12 +83,12 @@ require "../Admin/includes/configure.php";
                                     <div class="ideaimg">
 
 
-                                           <img src="all_pictures/card-photo/' . $row['card-photo'] . '">
+                                           <img src="../Entrepreneur/all_pictures/card-cover-photo/' . $row['cover-photo'] . '">
                                    </div>
       
                               <div class="entrepreneur-section">
                                  <div class="entrepreneur-photo">
-                                      <img src="../Home/entroProfile/'.$profile_photo.'" alt="Entrepreneur Photo">
+                                      <img src="../Home/entroProfile/'. $row['entro-photo'] .'" alt="Entrepreneur Photo">
                                  </div>
                                       <div class="entrepreneur-bio">
                                            <h2>' . $row['name'] . '</h2>
@@ -99,7 +99,7 @@ require "../Admin/includes/configure.php";
                  <p>' . $row['entrepreneur-post'] . '.</p>
            </div>
         <div class="company-logo">
-            <img src="logo.jpg" alt="Company Logo">
+            <img src="../Entrepreneur/all_pictures/company_logo/'.$row['company-logo'].'" alt="Company Logo">
           </div>
       </div>
 
