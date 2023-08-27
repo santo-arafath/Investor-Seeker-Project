@@ -1,3 +1,11 @@
+<style>
+
+.logo h2:hover{
+scale:1.08;
+color:white;
+}
+</style>
+
 <?php
 
 require "../Admin/includes/configure.php";
@@ -54,7 +62,7 @@ require "../Admin/includes/configure.php";
 
                       </form>
 <li><a href="#"><ion-icon class="ic" name="notifications-outline"></ion-icon>Notification</a></li>
-<li><a href="entCard.php"><ion-icon class="ic" name="logo-bitbucket"></ion-icon>All Post</a></li>
+<li><a href="#"><ion-icon class="ic" name="logo-bitbucket"></ion-icon>All Post</a></li>
 <li><a href="#"><ion-icon class="ic" name="server-outline"> </ion-icon>My Invest History</a></li>
 <li><button class="sign-out-button button">Sign out</button></li>
 
@@ -62,7 +70,10 @@ require "../Admin/includes/configure.php";
             </div>
 
                         <div class="logo">
-                             <h2>Investor<span>Seeker</span><h2>
+                             <h2><a style="list-style:none;
+                      text-decoration:none;
+                      color:black;
+                      " href="investor_home.php">Investor<span>Seeker</span></a><h2>
                          </div>
 
 
@@ -96,7 +107,7 @@ require "../Admin/includes/configure.php";
 <ul class="list">
 
 <li><a href="#"><ion-icon class="ic" name="notifications-outline"></ion-icon>Notification</a></li>
-<li><a href="entCard.php"><ion-icon class="ic" name="logo-bitbucket"></ion-icon>All Post</a></li>
+<li><a href="#"><ion-icon class="ic" name="logo-bitbucket"></ion-icon>All Post</a></li>
 <li><a href="#"><ion-icon class="ic" name="server-outline"> </ion-icon>My Invest History</a></li>
 
 

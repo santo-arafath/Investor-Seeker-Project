@@ -39,7 +39,7 @@ if(!isset($_SESSION['useRname']))
                           
                             <div class="get-starts">
                                 <h1>Apply to Get Investment</h1>
-                                <input onclick="location.href='entro-get-investment-page1.php'" type="submit" class="get-starts-button" value="Get Start">
+                                <input onclick="location.href='#'" type="submit" class="get-starts-button" value="Get Start">
 
                             </div>
                        </div>

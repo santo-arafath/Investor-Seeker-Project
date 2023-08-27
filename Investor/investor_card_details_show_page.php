@@ -105,9 +105,9 @@ require "../Admin/includes/configure.php";
 
                                  <div class="business-details">
                                  <h2>Business Details</h2>
-                                         <h3>BusinessType: ' . $row['business-type'] . '</h3>
-                                         <h3>Company name : ' . $row['company-name'] . '</h3>
-                                          <h3>Location : ' . $row['location'] . '</h3>
+                                         <h4>BusinessType: ' . $row['business-type'] . '</h4>
+                                         <h4>Company name : ' . $row['company-name'] . '</h4>
+                                          <h4>Location : ' . $row['location'] . '</h4>
 
 
                  <p>' . $row['product-description'] . ':</p>
