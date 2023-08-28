@@ -46,33 +46,33 @@ if(!isset($_SESSION['useRname']))
                   </div>
 
                 <div class="secondpage1">
-                    <div class="pagelayoutBox">
-                        <div class="heading">
-                              <h1>So many reason To start Investment</h1>
-                        </div>
+                       <div class="pagelayoutBox">
+                               <div class="heading">
+                                        <h1>Compelling Reasons to Start Investing</h1>
+                               </div>
 
                         <div class="box">
-                            <div class="box1">
-                                <ion-icon name="bulb-outline"></ion-icon>
-                                <h3>Share your idea</h3>
-                                    <a>Get huge investments with amazing ideas</a>
-                            </div>
+                                 <div class="box1">
+                                         <ion-icon name="flask-outline"></ion-icon>
+                                         <h3>Explore Exciting Opportunities</h3>
+                                         <a>Discover incredible investment prospects with innovative concepts</a>
+                                 </div>
 
-                            <div class="box1">
-                                <ion-icon name="logo-usd"></ion-icon>
-                                <h3>Get the Money </h3>
-                                    <a>we have thousend of investor those who invested over 500 startup</a>
-                            </div>
+                                <div class="box1">
+                                         <ion-icon name="cash-outline"></ion-icon>
+                                         <h3>Unlock Financial Potential</h3>
+                                         <a>Join our network of over 500 successful startups and investors</a>
+                                </div>
 
-                            <div class="box1">
-                                <ion-icon name="trophy-outline"></ion-icon>
-                                <h3>Get Rewards 
-                                    </h3>
-                                    <a>Get stunning rewards by visiting out website </a>
-                            </div>
+                                <div class="box1">
+                                        <ion-icon name="medal-outline"></ion-icon>
+                                        <h3>Reap Exceptional Rewards</h3>
+                                        <a>Experience remarkable rewards by engaging with our platform</a>
+                               </div>
                         </div>
-                    </div>
-                </div>
+                 </div>
+
+             </div>
                 <!-- second page end -->     
 
 
@@ -105,15 +105,15 @@ if(!isset($_SESSION['useRname']))
 
                        <!-- 1st page 1 start -->
 
- <div class="First_page_investor_mian">
-    <h2>Unlock Investment Opportunities</h2>
-    <p>Discover a diverse range of investment opportunities on our platform. Explore startups, businesses, and ventures seeking investment partners.</p>
-    <div class="boxmian">
-        <h3>Grow Your Portfolio with Promising Ventures</h3>
-        <p>Explore a variety of investment options and diversify your portfolio with startups and ventures across different industries. Invest in innovative projects that have the potential for substantial returns.</p>
+                <div class="First_page_investor_mian">
+                     <h2>Unlock Investment Opportunities</h2>
+                     <p>Discover a diverse range of investment opportunities on our platform. Explore startups, businesses, and ventures seeking investment partners.</p>
+                         <div class="boxmian">
+                                   <h3>Expand Your Portfolio with Promising Ventures</h3>
+                                   <p>Explore a variety of investment options and diversify your portfolio with startups and ventures across different industries. Invest in innovative projects that offer the potential for substantial returns.</p>
         
-        <div class="swiper-container container">
-            <div class="swiper-wrapper">
+             <div class="swiper-container container">
+                 <div class="swiper-wrapper">
 
         <!-- --------------------------------------------------------------------------------------- -->
                    <?php  
@@ -146,7 +146,7 @@ if(!isset($_SESSION['useRname']))
                                 <span class="star">&#9733;</span>
                             </div>
                             <p>Rated: 4.9 out of 5 stars</p>
-                            <a class="learn-more-button" href="investor_card_details_show_page.php?id=<?php echo $id?>">See more<ion-icon name="ellipsis-horizontal"></ion-icon></a>
+                            <a class="learn-more-button" href="investor_card_details_show_page.php?id=<?php echo $id?>">See more</a>
                         </div>
                     </div>
                 </div>
@@ -170,46 +170,38 @@ if(!isset($_SESSION['useRname']))
 
 <div class="anotherSecondpage">
 
-    <h2>How learners like you are achieving their goals</h2>
-         <div class="boxes">
-          <div class="box1">
-            <h3>"@"</h3>
-             <p>
-              I am proud to say that after a few months of taking this course...I
-               passed my exam and am now an AWS Certified Cloud Practitioner! This 
-               content was exactly what the CCP exam covered.</p>
-               <p> (AF) asif fuad</p>
-               <div class="fott">
-                <a href="#">freshen up on my product manager skills and land a job at</a>
-               </div>
-          </div>
-
-          <div class="box1">
-            <h3>"@"</h3>
-             <p>
-              I am proud to say that after a few months of taking this course...I
-               passed my exam and am now an AWS Certified Cloud Practitioner! This 
-               content was exactly what the CCP exam covered.</p>
-               <p> (AF) asif fuad</p>
-               <div class="fott">
-                <a href="#">freshen up on my product manager skills and land a job at</a>
-               </div>
-          </div>
-
-          <div class="box1">
-            <h3>"@"</h3>
-             <p>
-              I am proud to say that after a few months of taking this course...I
-               passed my exam and am now an AWS Certified Cloud Practitioner! This 
-               content was exactly what the CCP exam covered.</p>
-               <p> (AF) asif fuad</p>
-               <div class="fott">
-                <a href="#">freshen up on my product manager skills and land a job at</a>
-               </div>
-          </div>
+<h2>How Investors Like You are Achieving Their Goals</h2>
+<div class="boxes">
+    <div class="box1">
+        <h3>Success Story 1</h3>
+        <p>
+            I'm excited to share that through strategic investments, I've been able to achieve remarkable financial growth. The guidance provided by this platform has been invaluable in making informed decisions.</p>
+        <p> - John Anderson</p>
+        <div class="fott">
+            <a href="#">Explore Opportunities for Investment</a>
         </div>
+    </div>
 
-      
+    <div class="box1">
+        <h3>Success Story 2</h3>
+        <p>
+            My journey in the world of investments has been truly rewarding. Thanks to the platform's diverse offerings, I've witnessed exponential returns on investments across various industries.</p>
+        <p> - Emily Roberts</p>
+        <div class="fott">
+            <a href="#">Discover Your Next Investment</a>
+        </div>
+    </div>
+
+    <div class="box1">
+        <h3>Success Story 3</h3>
+        <p>
+            The path to financial prosperity was illuminated by joining this investment platform. My portfolio has flourished through strategic collaborations, providing me with the means to secure a bright future.</p>
+        <p> - Michael Lee</p>
+        <div class="fott">
+            <a href="#">Start Your Investment Journey</a>
+        </div>
+    </div>
+</div>
 
     </div>
 <!-- 2nd page  end -->
@@ -269,7 +261,7 @@ if(!isset($_SESSION['useRname']))
                         <p>Rated: 4.9 out of 5 stars</p>
                         
                         
-                        <a class="learn-more-button" href="investor_card_details_show_page.php?id=<?php echo $id?>">See more<ion-icon name="ellipsis-horizontal"></ion-icon></a>
+                        <a class="learn-more-button" href="investor_card_details_show_page.php?id=<?php echo $id?>">See more</a>
                         
                     </div>
                 </div>
@@ -300,26 +292,27 @@ if(!isset($_SESSION['useRname']))
     <!-- 5th vies page start   -->
 
 <div class="fifth_5th_page_new_container">
-    <div class="mianBox">
-        <div class="text_side_right">
-            <h1><span>Investor</span> Seeker</h1>
-            <h3>Upskill your team with Udemy Business</h3>
-            <h2>Unlock access to a world of investment opportunities:</h2>
-            <ul>
-                <li>Explore a diverse range of potential investments</li>
-                <li>Gain insights into emerging markets</li>
-                <li>Access expert analysis and recommendations</li>
-                <li>Stay updated on financial trends and opportunities</li>
-            </ul>
-            <div class="buttonn">
-                <input type="button" value="Get Started">
-                <input type="button" value="Learn More">
-            </div>
-        </div>
-        <div class="image_side_left">
-            <img src="photo/nus9.jpg" alt="Investor Seeker">
+<div class="mianBox">
+    <div class="text_side_right">
+        <h1><span>Empower</span> Your Investments</h1>
+        <h3>Elevate your investment strategy with our platform</h3>
+        <h2>Unlock a World of Investment Opportunities:</h2>
+        <ul>
+            <li>Discover a diverse range of potential investments</li>
+            <li>Gain insights into emerging markets and trends</li>
+            <li>Access expert analysis and tailored recommendations</li>
+            <li>Stay informed about evolving financial landscapes</li>
+        </ul>
+        <div class="buttonn">
+            <input type="button" class="but1" value="Get Started">
+            <!-- <input type="button" value="Learn More"> -->
         </div>
     </div>
+    <div class="image_side_left">
+        <img src="photo/nus9.jpg" alt="Empower Your Investments">
+    </div>
+</div>
+
 </div>
 
   <!-- 5th vies page end  -->
@@ -427,35 +420,36 @@ if(!isset($_SESSION['useRname']))
                 <!-- 4th -->
 
                 <section>
-                  <header>
-                    <h1 style="font-size: 40px;">How to Begin</h1>
-                  </header>
-                  <div class="steps-container">
-                    <div class="step">
-                      <h3>Provide Your Business Details</h3>
-                      <p>Fill out our online form with your business 
-                        information, including details about your products
-                         or services, target market, and funding needs. 
-                         This will help us understand your business and match you with the right investors.</p>
-                    </div>
-                    <div class="step">
-                      <h3>Send the Request</h3>
-                      <p>Once you've provided your business details,
-                         we'll send your request to our network of investors.
-                          We'll also provide you with a dashboard where you
-                           can track your request and manage any offers that come in.</p>
-                    </div>
-                    <div class="step">
-                      <h3>Get Investment</h3>
-                      <p>After submitting your request, you'll start 
-                        receiving offers from investors who are interested 
-                        in funding your business. You'll have the opportunity 
-                        to review each offer and communicate directly with the 
-                        investors to negotiate terms. Once you've accepted an offer, 
-                        the investor will transfer funds to your account, and you can 
-                        begin using the funds to grow your business.</p>
-                    </div>
-                  </div>
+                <header>
+                  <h1 style="font-size: 40px;">Getting Started as an Investor</h1>
+                </header>
+
+                     <div class="steps-container">
+                           <div class="step">
+                               <h3>Explore Investment Opportunities</h3>
+                               <p>Browse through our curated selection of investment 
+                                opportunities. Learn about various businesses, startups, 
+                                and ventures seeking funding. Gain insights into their 
+                                products, services, and growth potential.</p>
+                          </div>
+
+                          <div class="step">
+                               <h3>Express Interest</h3>
+                               <p>When you find an investment opportunity that aligns with 
+                                your interests and goals, you can express your interest.
+                                 This notifies the business owner of your potential 
+                                 involvement and allows for further communication.</p>
+                          </div>
+
+                          <div class="step">
+                               <h3>Engage and Invest</h3>
+                               <p>Engage in discussions with business owners to understand 
+                                their vision, plans, and investment requirements. Upon 
+                                agreement, you can make your investment, contributing to 
+                                the growth and success of the business.</p>
+                         </div>
+                   </div>
+
                 </section>
                 
                 <!-- 4th -->
@@ -466,14 +460,16 @@ if(!isset($_SESSION['useRname']))
 
                 <section class="fifthpage">
                   <div class="testimonial-container">
-                    <img src="../Entrepreneur/all_pictures/john.webp" alt="Entrepreneur photo">
+                    <img src="photo/investor1.png" alt="Entrepreneur photo">
                     <div class="testimonial-details">
-                      <h3>John Doe</h3>
-                      <p>"Investor Seeker was a game-changer for my business. With their help, I was able to connect with investors who believed in my vision and provided the funding I needed to take my company to the next level. Their platform made the process simple and straightforward, and I'm grateful for their support."</p>
-                      <p>Before using Investor Seeker, I was struggling to find the funding I needed to grow my business. I spent countless hours searching for investors and pitching my ideas, but I wasn't making any progress. That's when I discovered Investor Seeker, and everything changed.</p>
-                      <p>The platform was easy to use, and it helped me create a profile that showcased my business and my vision. I was able to provide all the information investors needed to understand my business and see its potential. Investor Seeker also provided tools to help me manage the process, including a dashboard where I could track my requests and manage offers.</p>
-                      <p>Within a few weeks of submitting my request, I started receiving offers from investors who were interested in my business. I was able to review each offer and communicate directly with the investors to negotiate terms. Thanks to Investor Seeker, I was able to secure the funding I needed to take my business to the next level."</p>
-                    </div>
+                         <h3>Emily Roberts</h3>
+                         <p>"Investor Seeker has transformed my investment journey. Through their platform, I connected with innovative businesses that aligned with my investment goals. The seamless process and reliable support allowed me to confidently invest in promising ventures."</p>
+                         <p>Prior to joining Investor Seeker, I encountered challenges in finding opportunities that matched my investment preferences. I struggled to identify businesses with potential and faced difficulties in establishing meaningful connections.</p>
+                         <p>Discovering Investor Seeker was a turning point. The platform empowered me to create a comprehensive investor profile, outlining my preferences and investment focus. The tools provided enabled me to efficiently manage my investments and monitor emerging opportunities.</p>
+                         <p>Within a short time of joining, I began receiving notifications about businesses seeking investments that aligned with my criteria. The platform facilitated direct communication with business owners, enabling thoughtful discussions and negotiations.</p>
+                         <p>Investor Seeker has streamlined my investment journey, providing access to a curated selection of ventures and simplifying the investment process. Thanks to their platform, I've been able to make informed investments that have shown promising returns."</p>
+                   </div>
+
                   </div>
                 </section>
                 
@@ -483,14 +479,14 @@ if(!isset($_SESSION['useRname']))
                 <!-- 6th -->
 
                 <section class="six">
-                  <h2>You Won't Have to Do It Again</h2>
-                  <div class="image-container">
-                    <img src="../Entrepreneur/all_pictures/right.jpg"  calt="Left Image">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sed efficitur quam, nec semper arcu. Praesent sit amet velit at nulla maximus congue quis in tellus. Donec sed nulla ligula. Ut aliquet velit vel lorem tristique lacinia
-                    Nullam vitae odio vitae magna aliquam laoreet eget vel eros. In sit amet risus et velit aliquam facilisis a sed est. Duis vitae quam vel arcu ultrices accumsan.</p>
-                    <img src="../Entrepreneur/all_pictures/right.jpg" alt="Right Image">
-                  </div>
-                  <a href="#">Learn More</a>
+                   <h2>Your Investment Journey Made Simple</h2>
+                      <div class="image-container">
+                         <img src="photo/c1-footer.jpg" alt="Left Image">
+                         <p>Discover a streamlined investment experience that frees you from complexities. Our platform provides a seamless avenue to explore, engage, and invest in promising ventures. We've crafted a tailored process to ensure your investments are efficient and effective.</p>
+                         <img src="photo/c1-footer.jpg" alt="Right Image">
+                     </div>
+                  <a href="#">Explore Opportunities</a>
+
                 </section>
                 
                 <!-- 6th -->
@@ -500,10 +496,11 @@ if(!isset($_SESSION['useRname']))
 
                 <section class="get-investment">
                   <div class="container">
-                    <h2>Get Investment Today</h2>
-                    <h3>Join with Some Talented Investors</h3>
-                    <a href="#" class="button">Get Started</a>
+                      <h2>Discover Investment Opportunities</h2>
+                      <h3>Connect with a Network of Visionary Entrepreneurs</h3>
+                        <a href="#" class="button">Explore Now</a>
                   </div>
+
                 </section>
                 
                 <!-- 7th -->

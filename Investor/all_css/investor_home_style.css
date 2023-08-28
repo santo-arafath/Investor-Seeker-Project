@@ -12,6 +12,7 @@
     --grey:#f5f5f5;
     --black1:#222;
     --black2:#999;
+    --parpel:#6F42C1;
 
 }
 
@@ -70,7 +71,7 @@ body{
     justify-content: space-between;
     align-items: center;
     padding: 5px 20px;
-    background: #287bff;
+    background: #0393f3;
     box-shadow: 5px 10px 8px #888888;
 }
 
@@ -518,7 +519,7 @@ margin-top: 10px;
     /* border: 3px solid rgb(17, 15, 15); */
     color: #0e0d0d;
     font-weight: bold;
-    background-color: var(--blue);
+    background-color: #0393f3;
     border-radius:5%;
     cursor: pointer;
     float: right;
@@ -570,7 +571,7 @@ margin-top: 10px;
     
 }
 
-.box{
+.pagelayoutBox .box{
     
     display: flex;
     flex-direction: row;
@@ -592,19 +593,27 @@ margin-top: 10px;
     padding: 10px;
     flex-direction: column;
     justify-content: space-around;
-    
     align-items: center;
     text-align: center;
-    box-shadow:  2px 2px 4px rgba(0, 0, 0, 0.1);
+    box-shadow:  2px 2px 4px rgba(0, 0, 0, 0.1);    
 
-    
 }
 
-.box1 ion-icon{
+.pagelayoutBox .box1 ion-icon{
     position: sticky;
     
     font-size: 50px;
 }
+.box1:hover{
+  scale: 1.08;
+  box-shadow: 5px 10px 8px 10px #888888;
+}
+.businesscatagories:hover{
+  scale:1.05;
+  box-shadow: 5px 10px 8px 10px #888888;
+
+}
+
 /* 3rd page end */
 
  /*340  */
@@ -613,7 +622,7 @@ margin-top: 10px;
     display: flex;
     justify-content: space-around;
     height: 200px;
-    background: #5624D0;
+    background: var(--parpel);
  }
 
  .trdbox{
@@ -1158,6 +1167,11 @@ footer {
       cursor: pointer;
       font-weight: bold;
     }
+
+    .buttonn input[type="button"]:hover{
+     scale: 1.1;
+
+    }
     
     
     .image_side_left {
@@ -1360,6 +1374,7 @@ footer {
   position: relative;
   z-index: 1;
   margin-top: 5px; 
+  padding-bottom: 8px;
 }
 
 .card:hover{
@@ -1374,7 +1389,10 @@ footer {
 
 .card img {
   width: 100%;
-  height: auto;
+  max-height: 200px;
+  min-height: 200px;
+  margin-top: 0;
+  object-fit:unset;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
 }
@@ -1412,18 +1430,20 @@ footer {
 
 
 .learn-more-button {
-  background-color: #3498db;
+  background-color: #0393f3;
   color: #fff;
   border: none;
   padding: 10px 20px;
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  list-style: none;
+  text-decoration: none;
 }
 
 .learn-more-button:hover {
-  background-color: #2980b9;
-  scale: 1.05;
+  background-color: #0a6daf;
+  scale: 1.1;
 }
 
 
@@ -1480,7 +1500,9 @@ footer {
 .anotherSecondpage .box1 .fott{
   height: 45px;
   width: 100%;
-  background-color: #5624D0;
+  background-color: var(--parpel);
+  padding: 10px;
+  border-radius: 5px;
 }
 
 .anotherSecondpage .fott a{

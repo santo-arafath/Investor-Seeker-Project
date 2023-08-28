@@ -18,7 +18,7 @@ if(!isset($_SESSION['useRname']))
   <title>Investment Opportunity</title>
 </head>
 <body>
-<?php //require "include/inv_header.php";
+<?php require "include/inv_header.php";
 // $cardHtml="";
 require "../Admin/includes/configure.php";
     
@@ -57,7 +57,13 @@ require "../Admin/includes/configure.php";
 
     $cardHtml = 
 
-       '<h1>Your Busines details</h1>
+       '<br>
+       <br>
+       <br>
+       <br>
+       <h1>Busines details</h1>
+       <br>
+       <br>
        <div class="container-main">
                        <div class="fullpage">
         
@@ -126,55 +132,18 @@ require "../Admin/includes/configure.php";
 
 
       </div>
+    </div>
+    </div>
     </div>';
                         
                    }}} 
      echo $cardHtml;             ?>
          
             
-            
+         <br><br>  <br><br>  
 
-
-    <div class="fullpage">
-        
-    <div class="investment-page">
-        <div class="ideaimg">
-
-
-        <img src="photo/idea.png">
-           </div>
-      
-      <div class="entrepreneur-section">
-        <div class="entrepreneur-photo">
-          <img src="photo/pic.jpeg" alt="Entrepreneur Photo">
-        </div>
-        <div class="entrepreneur-bio">
-          <h2>John Doe</h2>
-          <p>Serial entrepreneur with a track record of successful ventures in tech and finance.</p>
-        </div>
-        <div class="company-logo">
-            <img src="photo/logo.jpg" alt="Company Logo">
-          </div>
-      </div>
-      <div class="business-details">
-        <h2>Business Details</h2>
-        <p>We are launching an innovative AI-powered financial management platform that will revolutionize personal finance. Our platform will offer users:</p>
-        <ul>
-          <li>Smart budgeting and expense tracking using machine learning algorithms.</li>
-          <li>Personalized investment recommendations based on individual financial goals.</li>
-          <li>Real-time portfolio analysis and risk assessment.</li>
-          <li>Automated savings strategies to help users achieve their financial milestones.</li>
-        </ul>
-        <p>This platform has the potential to disrupt the traditional financial advisory industry and empower individuals to take control of their financial futures.</p>
-        <p>Amount of Investment Required: $2,000,000</p>
-        <button class="invest-button">Invest Now</button>
-        <button class="Not-inteerested invest-button">Not Intarested</button>
-      </div>
-    </div>
-</div>
-
-</div>
-</div>
+         <?php require "../Entrepreneur/footer.php";?>
+    
   </body>
   </html>
 
