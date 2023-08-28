@@ -1,11 +1,11 @@
 
 <?php
 $rcv=$_REQUEST['idtorcv'];
-echo $rcv;
+// echo $rcv;
 
 if(isset($_REQUEST['accept-offer']))
 {
-    echo "accept";
+    // echo "accept";
 
     
 
@@ -24,8 +24,9 @@ if(isset($_REQUEST['accept-offer']))
     $query="UPDATE `card_information_all` SET `status-of-request`  = '$_message' WHERE `card_information_all`.`id` = $rcv";
     $resultt=mysqli_query($connnection,$query);
     if($resultt){
-    //    '<script>window.location.href = "admin-2-request.php";</script>';exit;
-    echo "accepted";
+       
+       header("location:investor_card_details_show_page.php?id=$rcv");
+    echo "accepted4";
                            }else{
                      echo "not Updated";
                                  }

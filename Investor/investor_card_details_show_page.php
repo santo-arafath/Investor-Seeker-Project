@@ -18,8 +18,8 @@ if(!isset($_SESSION['useRname']))
   <title>Investment Opportunity</title>
 </head>
 <body>
-<?php require "include/inv_header.php";
-
+<?php //require "include/inv_header.php";
+// $cardHtml="";
 require "../Admin/includes/configure.php";
     
     if(!$connnection){
