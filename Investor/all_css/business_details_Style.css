@@ -84,7 +84,7 @@ body {
     list-style-type: disc;
   }
   
-  .business-details button.invest-button {
+  .business-details input.invest-button {
     background-color: #007BFF;
     color: #ffffff;
     border: none;
@@ -93,9 +93,28 @@ body {
     border-radius: 5px;
     transition: background-color 0.3s ease;
     font-size: 16px;
+   
   }
-  
-  .business-details button.invest-button:hover {
+
+  .business-details label.show-update{
+    background-color: #17e089;
+    color: #ffffff;
+    border: 2px solid black;
+    padding: 10px 20px;
+    
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    font-size: 16px;
+  }
+
+  .business-details label.invest-button:hover {
     background-color: #0056b3;
   }
   
+  .business-details input.invest-button:hover {
+    background-color: #0056b3;
+  }
+  .business-details form{
+    margin-top:15px;
+  }

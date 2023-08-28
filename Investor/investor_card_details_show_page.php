@@ -31,6 +31,8 @@ require "../Admin/includes/configure.php";
             $rcv_id=$_REQUEST['id'];
             $query = "SELECT * FROM `card_information_all` WHERE `id` = '$rcv_id'";
 
+
+
         $result=mysqli_query($connnection,$query);
 
 
@@ -51,27 +53,7 @@ require "../Admin/includes/configure.php";
 
 
 
-    // $entrepreneurName = $row["name"];
-    // $entrepreneurPost = $row["Entrepreneur-post"]);
-    // $entrepreneurEducation =$row["education"]);
-    // $idea_email = $row["email"]);
-    // $idea_phone = $row["phone"]);
-    // $idea_Business_type = $row["Business-type"]);
-    // $idea_companyName = $row["company-name"]);
-    // $idea_location = mysqli_real_escape_string($connnection,$_REQUEST["location"]);
-    // $idea_descrioption = mysqli_real_escape_string($connnection,$_REQUEST["product-description"]);
-    // $idea_Product_usecase_1 = mysqli_real_escape_string($connnection,$_REQUEST["product-usecase-1"]);
-    // $idea_Product_usecase_2 = mysqli_real_escape_string($connnection,$_REQUEST["product-usecase-2"]);
-    // $idea_Product_usecase_3 = mysqli_real_escape_string($connnection,$_REQUEST["product-usecase-3"]);
-    // $idea_Product_usecase_4 = mysqli_real_escape_string($connnection,$_REQUEST["product-usecase-4"]);
-    // $idea_revenue = mysqli_real_escape_string($connnection,$_REQUEST["revenue"]);
-    // $idea_lastMSell = mysqli_real_escape_string($connnection,$_REQUEST["lmonthsell"]);
-    // $idea_lastYSell = mysqli_real_escape_string($connnection,$_REQUEST["lyearsell"]);
-    // $idea_totalSell = mysqli_real_escape_string($connnection,$_REQUEST["totalsell"]);
-    // $idea_amountofInvestmentRequired = mysqli_real_escape_string($connnection,$_REQUEST["investment-amount"]);
-    // $idea_Equity_offer = mysqli_real_escape_string($connnection,$_REQUEST["Eoffer"]);
-    // $idea_Investment_purpose = mysqli_real_escape_string($connnection,$_REQUEST["investment-purpose"]);
-    // $idea_Goal = mysqli_real_escape_string($connnection,$_REQUEST["goal"]);
+    
 
     $cardHtml = 
 
@@ -127,8 +109,22 @@ require "../Admin/includes/configure.php";
         <p>Equrty offer: ' . $row['equity-offer'] . ' Tk</p>
         <p>Comapny Goal: ' . $row['goal'] . '</p>
         <p>Request date: ' . $row['date-of-post'] . '</p>
-        <button class="invest-button">' . $row['status-of-post'] . '</button>
-        <button class="Not-inteerested invest-button">' . $row['status-of-request'] . '</button>
+                
+         
+
+        <label name="not-intt" class="show-update" >' . $row['status-of-post'] . ' by the Authority</label>
+        <label name="not-intt" class="show-update" >' . $row['status-of-request'] . '</label>
+       
+
+        <form action="accept_offer_cheak.php?idtorcv='.$id.'" method="post">
+
+              <input type ="submit" name="accept-offer" class="Not-inteerested invest-button" value="Accept offer">
+              <input type ="submit" name="Like" class="Not-inteerested invest-button" value="Like the idea">
+              <input type ="submit" name="dislike" class="Not-inteerested invest-button" value="Dislike the idea">
+
+         </form>
+
+
       </div>
     </div>';
                         
