@@ -54,7 +54,7 @@ if(!$connnection){
 
 
                      
-                     <form action="test.php" class="details" method="post">
+                     <form action="profile_update_chk.php" class="details" method="post">
                            <h2>Profile Setting - Edit</h2>
                            <lebel>First Name</lebel>
                            <input type="text" name="fname" value="<?php echo $row['first-name'];?>">

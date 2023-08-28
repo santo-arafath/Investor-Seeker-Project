@@ -1,6 +1,8 @@
 
 <?php
+session_start();
 $rcv=$_REQUEST['idtorcv'];
+
 // echo $rcv;
 
 if(isset($_REQUEST['accept-offer']))
@@ -18,14 +20,15 @@ if(isset($_REQUEST['accept-offer']))
    }
    else{
     $_message="Accepted";
-
+    $accepted_investor_id=$_SESSION['id'];
     
 
-    $query="UPDATE `card_information_all` SET `status-of-request`  = '$_message' WHERE `card_information_all`.`id` = $rcv";
+    $query="UPDATE `card_information_all` SET `status-of-request`  = '$_message', `accepted_investor_id`  = '$accepted_investor_id' WHERE `card_information_all`.`id` = $rcv";
     $resultt=mysqli_query($connnection,$query);
     if($resultt){
        
        header("location:investor_card_details_show_page.php?id=$rcv");
+       
     echo "accepted4";
                            }else{
                      echo "not Updated";
@@ -86,7 +89,7 @@ if(isset($_REQUEST['Like']))
 
     
 
-    $query="UPDATE `card_information_all` SET `like-count`  = '$new_value' WHERE `card_information_all`.`id` = $rcv";
+    $query="UPDATE `card_information_all` SET `like-count`  = '$new_value',  WHERE `card_information_all`.`id` = $rcv";
     $resultt=mysqli_query($connnection,$query);
     if($resultt){
        

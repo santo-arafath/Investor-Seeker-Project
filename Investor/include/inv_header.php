@@ -62,8 +62,8 @@ require "../Admin/includes/configure.php";
 
                       </form>
 <li><a href="#"><ion-icon class="ic" name="notifications-outline"></ion-icon>Notification</a></li>
-<li><a href="#"><ion-icon class="ic" name="logo-bitbucket"></ion-icon>All Post</a></li>
-<li><a href="#"><ion-icon class="ic" name="server-outline"> </ion-icon>My Invest History</a></li>
+<li><a href="All_post_business_details.php"><ion-icon class="ic" name="logo-bitbucket"></ion-icon>All Post</a></li>
+<li><a href="my_investment_history.php"><ion-icon class="ic" name="server-outline"> </ion-icon>My Invest History</a></li>
 <li><button class="sign-out-button button">Sign out</button></li>
 
 
@@ -107,8 +107,8 @@ require "../Admin/includes/configure.php";
 <ul class="list">
 
 <li><a href="#"><ion-icon class="ic" name="notifications-outline"></ion-icon>Notification</a></li>
-<li><a href="#"><ion-icon class="ic" name="logo-bitbucket"></ion-icon>All Post</a></li>
-<li><a href="#"><ion-icon class="ic" name="server-outline"> </ion-icon>My Invest History</a></li>
+<li><a href="All_post_business_details.php"><ion-icon class="ic" name="logo-bitbucket"></ion-icon>All Post</a></li>
+<li><a href="my_investment_history.php"><ion-icon class="ic" name="server-outline"> </ion-icon>My Invest History</a></li>
 
 
 </ul>
