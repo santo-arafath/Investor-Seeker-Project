@@ -27,6 +27,10 @@
 
                 
                 <h2 class="title">Signup</h2>
+               <h3 style="color:red;"> <?php 
+                if(isset($_REQUEST['msg']))
+                {
+                echo $_REQUEST['msg'];}?></h3>
                 <div class="input-div one">
                    <div class="i">
                         <i class="fas fa-user"></i>
@@ -154,9 +158,3 @@
 
     </div>
 </div>
-<script type="text/javascript" src="js/main.js"></script>
-</body>
-</html>
-
-
-

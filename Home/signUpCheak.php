@@ -5,7 +5,21 @@
 
 
         require "../Admin/includes/configure.php";
+        if(isset($_POST['submit']) || isset($_POST['submit2'])) {
 
+          $firstname = $_POST['firstname'];
+          $lastname = $_POST['lastname'];
+          $username = $_POST['username'];
+          $nid = $_POST['nid'];
+          $email = $_POST['email'];
+          $phone = $_POST['phone'];
+          $password = $_POST['password'];
+          $confirm_password = $_POST['confirm_password'];
+      
+          if(empty($firstname) || empty($lastname) || empty($username) || empty($nid) || empty($email) || empty($phone) || empty($password) || empty($confirm_password)) {
+            header("location:signupForm.php?msg=All fields are required"); 
+            echo "All fields are required.";
+          } else {
         if(isset($_REQUEST['submit'])){ 
         $fname=mysqli_real_escape_string($connnection,$_REQUEST['firstname']);
         $lname=mysqli_real_escape_string($connnection,$_REQUEST['lastname']);
@@ -193,5 +207,6 @@ header("location:signUpCheak.php?notinserted");
 }
 
 }
+         }}
 
 ?>

@@ -18,6 +18,7 @@ inputs.forEach(input => {
 	input.addEventListener("focus", addcl);
 	input.addEventListener("blur", remcl);
 });
+
 function validateForm() {
 	const firstname = document.forms["myForm"]["firstname"].value;
 	const lastname = document.forms["myForm"]["lastname"].value;
