@@ -6,7 +6,33 @@ session_start();
 
 
 ?>
+<?php  
+        
+        require "includes/configure.php";
+        $query="SELECT * FROM `investor_reg_table1`";
+    
+         $result=mysqli_query($connnection,$query);
+         $countinvestor=mysqli_num_rows($result);
 
+         $query="SELECT * FROM `entrepreneur-reg-table1`";
+    
+         $result=mysqli_query($connnection,$query);
+         $countentro=mysqli_num_rows($result);
+
+         $query="SELECT * FROM `admin-table1`";
+         $result=mysqli_query($connnection,$query);
+         $adminCount=mysqli_num_rows($result);
+
+
+         $all_user_count=$countinvestor+$countentro;
+
+         
+     
+         echo "<script>let investorcount = '$countinvestor';</script>";
+         echo "<script>let entrocount = '$countentro';</script>";
+
+              
+        ?>
 
 
 <?php
@@ -30,10 +56,10 @@ require "includes/top-bar.php";?>
                 <div class="card">
                     <div>
                         <div class="numbers">
-                            1,504
+                        <?php echo $adminCount; ?>
                         </div>
                         <div class="cardname">
-                           Daily view
+                           Total Employee
                         </div>
                     </div>
                     <div class="iconbox">
@@ -45,7 +71,8 @@ require "includes/top-bar.php";?>
                 <div class="card">
                     <div>
                         <div class="numbers">
-                            8,504
+                            <!-- 8,504 -->
+                            <?php echo $all_user_count; ?>
                         </div>
                         <div class="cardname">
                            All Users
@@ -60,7 +87,7 @@ require "includes/top-bar.php";?>
                 <div class="card">
                     <div>
                         <div class="numbers">
-                            50400
+                        <?php echo $countinvestor; ?>
                         </div>
                         <div class="cardname">
                            Investors
@@ -75,10 +102,10 @@ require "includes/top-bar.php";?>
                 <div class="card">
                     <div>
                         <div class="numbers">
-                            104
+                        <?php echo $countentro; ?>
                         </div>
                         <div class="cardname">
-                        Entrepreneur
+                          Entrepreneur
                         </div>
                     </div>
                     <div class="iconbox">
@@ -303,6 +330,7 @@ if($count>0){
         $profile_pic=$row['card-photo'];
         $Comapany_name=$row['company-name'];
         $request_amount=$row['investment-amount'];
+        $entro_photo=$row['entro-photo'];
         
         $serial++;
 
@@ -313,7 +341,7 @@ if($count>0){
 
                     <tr>
                         <td width="60px">
-                            <div class="imgbox"><img src="pic.jpg"></div>
+                            <div class="imgbox"><img src="../Home/entroProfile/<?php echo $entro_photo; ?>"></div>
                         </td>
                         <td><h4><?php echo "$username"; ?><br><span><?php echo "$Comapany_name"; ?></span></h4></td>
                     </tr>
@@ -336,28 +364,13 @@ if($count>0){
      
         </div><!-- container div -->
 
-        <?php  
         
-        require "includes/configure.php";
-        $query="SELECT * FROM `investor_reg_table1`";
-    
-         $result=mysqli_query($connnection,$query);
-         $countinvestor=mysqli_num_rows($result);
 
-         $query="SELECT * FROM `entrepreneur-reg-table1`";
-    
-         $result=mysqli_query($connnection,$query);
-         $countentro=mysqli_num_rows($result);
-
-
-              
-        ?>
-
-
-         <script> chartFunction($countinvestor,$countentro);</script>
+        
+         
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.3.0/chart.min.js" integrity="sha512-mlz/Fs1VtBou2TrUkGzX4VoGvybkD9nkeXWJm3rle0DPHssYYx4j+8kIS15T78ttGfmOjH0lLaBXGcShaVkdkg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
         <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
         <script type="text/javascript" src="my_chart.js"></script>
-                
+        <script> chartFunction(investorcount,entrocount);</script>       
 
 

@@ -1,5 +1,5 @@
 
-chartFunction(15,19);
+// chartFunction(15,19);
 
 function chartFunction( inv,entro)
 {
@@ -16,7 +16,7 @@ const visits = document.getElementById('visits');
         label: 'Ratio of Investor and Entreprenure',
         data: [inv,entro],
         backgroundColor: [
-          'rgb(243, 61, 60)',
+          'rgb(60, 228, 243)',
           'rgb(127, 242, 61)'
           ],
         borderWidth: 1
@@ -28,21 +28,16 @@ const visits = document.getElementById('visits');
   });
 
 
-  trafic(1255, 1922,456);
-  
-  rateFunction(1255, 1922,456);
-}
 
   
-  function rateFunction(a, b,c)
-  {
+  
   new Chart(investing, {
      type: 'line',
     data: {
       labels: ['January', 'Fabruary', 'March'],
       datasets: [{
         label: 'Investing Rate Per Month',
-        data: [a, b,c],
+        data: [1255, 1922,456],
         backgroundColor: [
           'rgb(243, 61, 60)',
           'rgb(127, 242, 61)',
@@ -56,10 +51,9 @@ const visits = document.getElementById('visits');
     }
   });
   
-}
+
    
-  function trafic(d,e,f)
-  {
+ 
 
   new Chart(visits, {
      type: 'bar',
@@ -67,7 +61,7 @@ const visits = document.getElementById('visits');
       labels: ['January', 'Fabruary', 'March'],
       datasets: [{
         label: 'Website Traffic Per Month',
-        data: [d,e,f],
+        data: [1255, 1922,456],
         backgroundColor: [
           'rgb(127, 242, 61)',
           'rgb(127, 242, 61)',
@@ -79,5 +73,5 @@ const visits = document.getElementById('visits');
     options: {
       responsive: true,
     }
-  });rateFunction(1255, 1922,456);
+  });
 }
