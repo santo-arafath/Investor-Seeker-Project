@@ -335,6 +335,26 @@ if($count>0){
           </div><!-- main div -->
      
         </div><!-- container div -->
+
+        <?php  
+        
+        require "includes/configure.php";
+        $query="SELECT * FROM `investor_reg_table1`";
+    
+         $result=mysqli_query($connnection,$query);
+         $countinvestor=mysqli_num_rows($result);
+
+         $query="SELECT * FROM `entrepreneur-reg-table1`";
+    
+         $result=mysqli_query($connnection,$query);
+         $countentro=mysqli_num_rows($result);
+
+
+              
+        ?>
+
+
+         <script> chartFunction($countinvestor,$countentro);</script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.3.0/chart.min.js" integrity="sha512-mlz/Fs1VtBou2TrUkGzX4VoGvybkD9nkeXWJm3rle0DPHssYYx4j+8kIS15T78ttGfmOjH0lLaBXGcShaVkdkg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
         <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
         <script type="text/javascript" src="my_chart.js"></script>

@@ -23,12 +23,13 @@ require "../Admin/includes/configure.php";
   $nrole=$_REQUEST['role'];
   $nusnm=$_REQUEST['username'];
   $phonenum=$_REQUEST['mobile'];
+  $flname=$fname." ".$lname;
   
 //   $npassword=$_REQUEST['password'];
 
   
 
-$sql= "UPDATE `investor_reg_table1` SET `first-name` = '$fname', `last-name` = '$lname', `username` = '$nusnm', `nid` = '$nnid', `email` = '$nemail', `phone` = '$phonenum' WHERE `investor_reg_table1`.`id` = $rcv";
+$sql= "UPDATE `investor_reg_table1` SET `first-name` = '$fname', `last-name` = '$lname', `name` = '$flname', `username` = '$nusnm', `nid` = '$nnid', `email` = '$nemail', `phone` = '$phonenum' WHERE `investor_reg_table1`.`id` = $rcv";
 $resultt=mysqli_query($connnection,$sql);
 
 if($resultt){

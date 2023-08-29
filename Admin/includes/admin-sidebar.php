@@ -43,12 +43,12 @@
                     </li>
 
                     <li>
-                        <a href="admin-all-user.php">
+                        <a href="admin-show.php">
                         <span class="icon"><ion-icon name="people-outline"></ion-icon></span>
-                        <span class="tittle">All User</span>
+                        <span class="tittle">All Admin</span>
                         </a>
                     </li>
-
+                    
                     <li>
                         <a href="admin-investor.php">
                         <span class="icon"><ion-icon name="logo-usd"></ion-icon></span>
@@ -64,18 +64,20 @@
                     </li>
 
                     <li>
+                        <a href="All_investment_card.php">
+                        <span class="icon"><ion-icon name="people-outline"></ion-icon></span>
+                        <span class="tittle">All Card & investment</span>
+                        </a>
+                    </li>
+
+                    <li>
                         <a href="admin-request-entro.php">
                         <span class="icon"><ion-icon name="open-outline"></ion-icon></span>
                         <span class="tittle">Request</span>
                         </a>
                     </li>
 
-                    <li>
-                        <a href="admin-show.php">
-                        <span class="icon"><ion-icon name="people-outline"></ion-icon></span>
-                        <span class="tittle">All Admin</span>
-                        </a>
-                    </li>
+                    
 
                     <li>
                         <a href="#">
