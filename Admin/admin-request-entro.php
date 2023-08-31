@@ -145,9 +145,7 @@ if(!isset($_SESSION['usrName']))
         //  $query="SELECT * FROM `card_information_all`";
        $serial=0;
         while($row=mysqli_fetch_assoc($result)){
-        //     echo "<pre>";
-        //    print_r($row);
-        //    echo "</pre>";
+        
         if($row['status-of-post']=="pending"){
              $username=$row['username'];
              $id=$row['id'];
@@ -205,7 +203,13 @@ if(!isset($_SESSION['usrName']))
 
 <?php
         } 
+
+        
     }
+    if($serial==0)
+        {
+          echo "--> No Request available at this moment";
+        }
         
     
         

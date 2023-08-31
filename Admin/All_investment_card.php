@@ -27,7 +27,7 @@ if(!isset($_SESSION['usrName']))
 
   <title>All investoment history</title>
 
-<?php $title="All Users";?>
+<?php $title="Investments";?>
 <?php require "includes/admin-sidebar.php";?>
 <?php require "includes/top-bar.php";?>
 

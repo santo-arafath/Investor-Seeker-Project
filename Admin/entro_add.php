@@ -71,11 +71,13 @@ div {
 </html>
 
 
-<form action="" method="post" enctype="multipart/form-data">
+<form action="#" method="post" enctype="multipart/form-data">
 
-    <input type="text" placeholder="name" name="name"><br>
+    <input type="text" placeholder="first name" name="fname"><br>
+    <input type="text" placeholder="last lname" name="lname"><br>
     <input type="text" placeholder="nid" name="nid"><br>
     <input type="text" placeholder="email" name="email"><br>
+    <input type="text" placeholder="phone" name="phone"><br>
     <input type="text" placeholder="username" name="username"><br>
     <input type="password" placeholder="password" name="password"><br>
 
@@ -101,13 +103,17 @@ div {
         require "includes/configure.php";
 
         if(isset($_REQUEST['submit'])){ 
-        $fname=mysqli_real_escape_string($connnection,$_REQUEST['firstname']);
-        $lname=mysqli_real_escape_string($connnection,$_REQUEST['lastname']);
+        $fname=mysqli_real_escape_string($connnection,$_REQUEST['fname']);
+        $lname=mysqli_real_escape_string($connnection,$_REQUEST['lname']);
+        //$lname=mysqli_real_escape_string($connnection,$_REQUEST['lastname']);
         $usnm=mysqli_real_escape_string($connnection,$_REQUEST['username']);
         $nid=mysqli_real_escape_string($connnection,$_REQUEST['nid']);
         $eml=mysqli_real_escape_string($connnection,$_REQUEST['email']);
+        $phone_number=mysqli_real_escape_string($connnection,$_REQUEST['phone']);
         // $password=mysqli_real_escape_string($connnection,md5($_REQUEST['password']));
         $password=mysqli_real_escape_string($connnection,$_REQUEST['password']);
+
+        $fullname=$fname." ".$lname;
         
 
         $today = date('y:m:d');
@@ -164,7 +170,7 @@ div {
          die("not connected".mysqli_error());
     }else{
 
-    $sqlin= "INSERT INTO `entrepreneur-reg-table1` (`profile_photo`, `name`, `username`, `nid`, `email`, `password`, `date_sign`) VALUES ('$name_changer', '$fullname', '$usnm', '$nid', '$eml', '$password', '$today')";
+    $sqlin= "INSERT INTO `entrepreneur-reg-table1` (`profile_photo`,`first-name`,`last-name`, `name`, `username`, `nid`, `email`,`phone`, `password`, `date_sign`) VALUES ('$name_changer', '$fname', '$lname', '$fullname', '$usnm', '$nid', '$eml', '$phone_number', '$password', '$today')";
     
     $result=mysqli_query($connnection,$sqlin);
 

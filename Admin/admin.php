@@ -146,7 +146,7 @@ require "includes/top-bar.php";?>
                 <div class="record">
                     <div class="cardHeader">
                           <h2>Recent Activity</h2>
-                          <a href="#" class="btn">view all</a>
+                          <a href="All_investment_card.php" class="btn">view all</a>
                     </div>
 
                      <table>
