@@ -67,7 +67,7 @@
             <li><a href="ContactUS.php">Contact</a></li>
             <li><a href="service.php">Services</a></li>
             <li><a href="team.php">Team</a></li>
-     <li><button class="sign-up-button button">Sign In</button></li>
+     <li><button onclick="location.href='loginForm.php'" class="sign-up-button button">Sign In</button></li>
 
   </div>
 
