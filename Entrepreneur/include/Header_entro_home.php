@@ -154,7 +154,7 @@ $result=mysqli_query($connnection,$query);
                                
                         <img width="50px"; src="../Home/entroProfile/<?php echo $profile_picture;?>">
 
-                            <h2><a href="profile_entro_details.php">Ent <?php echo " ".$Entre_full_name;?></a></h2>
+                            <h2><a href="profile_entro_details.php"><?php echo " ".$Entre_full_name;?></a></h2>
                             
         
                         </div>
@@ -259,20 +259,25 @@ $result=mysqli_query($connnection,$query);
                         
                     }
                     
-                   </script> 
+                   
    
 
-    <script>
-    const toggleBtn_pro=document.querySelector('.user');
-    
-    const dropdownMenu_pro=document.querySelector('.dropdown_menu-profile');
+   const toggleBtn_pro = document.querySelector('.user');
+const dropdownMenu_pro = document.querySelector('.dropdown_menu-profile');
 
-    toggleBtn_pro.onclick = function()
-    {
+toggleBtn_pro.onclick = function() {
+    
         dropdownMenu_pro.classList.toggle('onhoise')
-       
-    }
+   
+}
 
-    
-    
-   </script> 
+dropdownMenu_pro.addEventListener('mouseenter', function() {
+    dropdownMenu_pro.classList.add('onhoisee');
+});
+
+dropdownMenu_pro.addEventListener('mouseleave', function() {
+    dropdownMenu_pro.classList.remove('onhoisee');
+});
+
+
+</script> 

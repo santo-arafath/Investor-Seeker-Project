@@ -207,9 +207,6 @@ margin-top: 10px;
    
    }
 
-   
-
-
    .dropdown_menu{
     display: none;
     position: fixed;
@@ -322,10 +319,31 @@ margin-top: 10px;
     backdrop-filter: blur(15px);
     border-radius: 10px;
     overflow: hidden;
-    transition: height 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    /* transition: max-height 0.5s ease; */
+    /* opacity: 0; */
+    /* visibility: hidden; */
+    /* transition: opacity 0.3s ease, visibility 0.3s ease; */
+
+    /* transition: height 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275); */
    
       
  }
+
+ .onhoise{
+  display: block;
+  height: 530px;
+  transition: 0.5s;
+  /* opacity: 1; */
+ /* visibility: visible; */
+} 
+
+.onhoisee{
+ display: block;
+ height: 530px;
+ transition: 0.5s;
+ /* opacity: 1; */
+/* visibility: visible; */
+} 
 
  
  .user:hover{
@@ -334,7 +352,7 @@ margin-top: 10px;
 
  .user:hover + .dropdown_menu-profile{
   display: block;
-  height: 515px;
+  height: 530px;
   transition: 5s;
 } 
 
@@ -392,12 +410,20 @@ margin-top: 10px;
 
    .submenu a{
 
-    
     text-decoration: none;
     margin:12px;
     padding: 0;
     gap:10px;
  
+    }
+
+    .submenu h2
+    {
+      
+      margin:12px;
+      text-align: center;
+      position: relative;
+      margin-left: 70px;
     }
 
     .sobclass{
@@ -424,16 +450,8 @@ margin-top: 10px;
     color: orange;
   }
 
-   /*.dropdown_menu-profile .user{
-    margin: 40px 95px;
-    width: 100px;
-    height: 100px;
-   } */
-    .onhoise{
-     display: block;
-     height: 515px;
-     transition: 0.5s;
-   } 
+   
+    
 .topbar .ic{
     font-size: 30px;
     color: black;

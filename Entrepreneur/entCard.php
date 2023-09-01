@@ -45,6 +45,7 @@ while($row = mysqli_fetch_assoc($result)){
 
        '<h1>My Busines details : '.$count.'</h1>
        <div class="container-main">
+       
                        <div class="fullpage">
         
                                <div class="investment-page">
@@ -105,7 +106,7 @@ while($row = mysqli_fetch_assoc($result)){
 <br><br>
 
 
-<h1>Your card  : '.$count.'</h1>
+<h1>My card  : '.$count.'</h1>
 
 <div class="container">
                 <div class="slidecontainer">
