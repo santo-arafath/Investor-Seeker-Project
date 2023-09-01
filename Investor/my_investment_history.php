@@ -8,7 +8,8 @@
   <link rel="stylesheet" href="all_css/business_details_Style.css">
   <link rel="stylesheet" href="all_css/investor_home_style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
   <title>My investoment history</title>
 </head>
 <body>
@@ -157,3 +158,19 @@ echo $cardHtml;
 
 
  ?>
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+<script>
+const toggleBtn_pro=document.querySelector('.user');
+
+const dropdownMenu_pro=document.querySelector('.dropdown_menu-profile');
+
+toggleBtn_pro.onclick = function()
+{
+ dropdownMenu_pro.classList.toggle('onhoise')
+
+}
+
+
+
+</script> 
