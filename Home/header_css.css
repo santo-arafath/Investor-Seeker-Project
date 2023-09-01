@@ -264,7 +264,8 @@
 
   .dropdown_menu{
     left: 2rem; 
-    width: unset;
+    
+    width: 85%;
 
   }
 
