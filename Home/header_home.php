@@ -105,7 +105,7 @@
 
  window.addEventListener("scroll", function() {
   
-    var navigation = document.querySelector(".navigartion");
+    var navigation = document.querySelector(".navvigartion");
     if (navigation) {
         navigation.classList.toggle("sticky", window.scrollY > 0);
     }
