@@ -620,8 +620,13 @@ margin-top: 10px;
     
     align-items: center;
     text-align: center;
+    box-shadow:  2px 2px 4px rgba(0, 0, 0, 0.1);    
+
     
 }
+.box1:hover{
+scale: 1.08;
+box-shadow: 5px 10px 8px 10px #888888;}
 
 .box1 ion-icon{
     position: sticky;
