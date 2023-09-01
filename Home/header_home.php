@@ -102,11 +102,12 @@
      
  }
  
-</script>
 
-<script>
-window.addEventListener("scroll", function() {
-    var navigation = document.querySelector("navigartion"); // Use "nav" instead of "navigartion"
-    navigation.classList.toggle("sticky", window.scrollY > 0);
+ window.addEventListener("scroll", function() {
+  
+    var navigation = document.querySelector(".navigartion");
+    if (navigation) {
+        navigation.classList.toggle("sticky", window.scrollY > 0);
+    }
 });
 </script>

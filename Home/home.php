@@ -258,7 +258,9 @@ footer {
          <section class="fst">
 
                  <div class="imag">
+                
                       <img src="home_picture/top_cover4.jpg">
+                      
 
                  
                             <section id="hero">

@@ -49,7 +49,7 @@
   
    .open{
          
-         height: 290px;
+      height: 290px;
          
    }
   
@@ -125,6 +125,7 @@
 
 
    .sticky{
+    
     background: rgb(44, 37, 37);
     
   } 
