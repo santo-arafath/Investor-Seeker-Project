@@ -5,6 +5,8 @@
 
 
         require "../Admin/includes/configure.php";
+
+
         if(isset($_POST['submit']) || isset($_POST['submit2'])) {
 
           $firstname = $_POST['firstname'];
@@ -18,12 +20,8 @@
       
           if(empty($firstname) || empty($lastname) || empty($username) || empty($nid) || empty($email) || empty($phone) || empty($password) || empty($confirm_password)) {
 
-
-            
-
-
-
             header("location:signupForm.php?msg=All fields are required"); 
+
             echo "All fields are required.";
           } 
           

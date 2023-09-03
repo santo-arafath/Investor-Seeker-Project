@@ -179,14 +179,15 @@
                </div>
                <div class="div">
                     <h5>Profile Picture</h5>
-                     <input class="profil" type="file" name="profile-pic">
+                     <input class="profil" type="file" name="profile-pic" id="profile">
                </div>
                <i class="fa fa-check-circle"></i>
                 <i class="fa fa-exclamation-circle"></i>
                 <small> Error message</small>
             </div>
             
-
+             
+             <a href="loginForm.php">Already have account ? Login</a>
             <input type="submit" name="submit" class="btn" value="Signup as Entrepreneur">
             <input type="submit" name="submit2" class="btn" value="Signup as Investor">
         </form>
@@ -217,6 +218,7 @@ const email = document.getElementById('email');
 const phone = document.getElementById('phone');
 const password = document.getElementById('password');
 const confirmPassword = document.getElementById('confirm_password');
+const profile = document.getElementById('profile');
 
 
 
@@ -367,7 +369,20 @@ function validate()
     const phoneValue = phone.value.trim();
     const passwordValue = password.value.trim();
     const confirmPassworValue = confirmPassword.value.trim();
+    const profileValue = profile.value.trim();
 
+   
+
+if(profileValue === ""){
+     
+      
+      setErrormsg(profile, 'Select a profile picture ');
+  }
+  else
+
+  {
+      setSuccess(profile);
+  }
 
    
     // firstname
@@ -417,8 +432,8 @@ function validate()
       
       setErrormsg(nid, 'nid number cannot be blank');
   }
-  else if(nidValue.length <= 6){
-      setErrormsg(nid, 'nid number is not valid');
+  else if(nidValue.length <= 4){
+      setErrormsg(nid, 'nid mush be 5 digit');
   }else{
       setSuccess(nid);
   }
@@ -486,6 +501,7 @@ function validate()
   }
 
 
+  
 
 
 
@@ -521,6 +537,8 @@ function setErrormsg(input ,errorMsg)
       form_control.className= "input-div form_control success";
       
   }
+
+
 
 //   document.getElementById('form').addEventListener('submit', function (event) {
 //             event.preventDefault(); // Prevent the form from submitting by default

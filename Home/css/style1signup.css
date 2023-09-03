@@ -148,7 +148,7 @@ form{
 	bottom: -2px;
 	width: 0%;
 	height: 2px;
-	background-color: #e83f36;
+	color: #ef6b64;
 	/* background-color: #d34f38; */
 	transition: .4s;
 
@@ -178,7 +178,7 @@ form{
 }
 
 .form_control.error.focus > .i > i{
-	color: #e83f36;
+	color: #ef6b64;
 }
 
 .input-div > div > input{
@@ -322,8 +322,12 @@ a:hover{
 
 .form_control.error i.fa-exclamation-circle{
 
-color:#e83f36;
+color: #ea746d;
 visibility: visible; 
+}
+
+.small{
+	font-size: 10px;
 }
 
 .form_control small{
@@ -334,7 +338,8 @@ visibility: visible;
 }
 
 .form_control.error small{
- color:#e83f36;
- visibility: visible;
+	color: #ea746d;
+    visibility: visible;
+    font-size: 11px;
 }
 
