@@ -191,6 +191,7 @@
 
 <!-- <script src="form-js.js"></script> -->
 
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
 <script type="text/javascript">
 
@@ -281,6 +282,8 @@ function isStrong(passwordValue) {
 
   
     if (countChar > 0 && countNumber > 0 && countChar + countNumber === passwordValue.length) {
+        
+
         return true;
     } else {
         return false;
@@ -369,7 +372,8 @@ function validate()
   }
 
    if(successMessage()){
-         alert("registration successfull");
+        //  alert("registration successfull");
+         swal("Good job!", "You clicked the button!", "success");
    }
 
 }

@@ -24,7 +24,7 @@
 
 
 
-        <form action="signUpCheak.php" method="post" enctype="multipart/form-data" onsubmit="return validate()" name="form">
+        <form action="signUpCheak.php" method="post" enctype="multipart/form-data" onsubmit="return validate()" id="form">
 
                 
                 <h2 class="title">Signup</h2>
@@ -195,6 +195,8 @@
 
     </div>
 </div>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
 <script type="text/javascript" src="js/main.js"></script>
 
 
@@ -204,22 +206,28 @@
 
 <script type="text/javascript">
 
+
+
 const form = document.getElementById('form');
-const firstname = document.getElementById('firstname');
-const lastname = document.getElementById('lastname');
+const firstName = document.getElementById('firstname');
+const lastName = document.getElementById('lastname');
 const username = document.getElementById('username');
 const nid = document.getElementById('nid');
 const email = document.getElementById('email');
 const phone = document.getElementById('phone');
 const password = document.getElementById('password');
-const confirmPassword = document.getElementById('condirm_password');
+const confirmPassword = document.getElementById('confirm_password');
 
 
-form.addEventListener('submit', (event) => {
-   event.preventDefault();
-    validate();
+
+
+
+
+// form.addEventListener('submit', (event) => {
+//    event.preventDefault();
+//     validate();
    
- });
+//  });
 
 
  
@@ -229,34 +237,36 @@ form.addEventListener('submit', (event) => {
  {
    let formCount= document.getElementsByClassName('form_control');
    let count =0;
-   let countTotalForm = formCount.length;
+   let countTotalForm = formCount.length-1;
 
-   
-
-
-     
+ 
 
    for(let i=0; i<formCount.length ;i++)
    {
-      if(formCount[i].className === "form_control success"){
+      if(formCount[i].className === "input-div form_control success"){
          count++;   
       }
    }
 
    
    
-
+  
    
    if(count === countTotalForm){
       return true ;
    }else{
       return false
    }
+
  }
 
 
+// for email
+
 
  function isEmail(emailValue) {
+
+     
 
     let atSymbol = emailValue.indexOf('@');
     if (atSymbol <= 1) {
@@ -275,6 +285,10 @@ form.addEventListener('submit', (event) => {
 
     return true;
 }
+
+
+
+//for password
 
 function isStrong(passwordValue) {
     let countChar = 0;
@@ -299,18 +313,94 @@ function isStrong(passwordValue) {
     }
 }
 
+//  is name for name validation 
 
+
+function isName(firstNameVal)
+{
+
+     let len=firstNameVal.length;
+     let countChar=0;
+
+     for (let i = 0; i < firstNameVal.length; i++) {
+        const charCode = firstNameVal.charCodeAt(i);
+
+        if ((charCode >= 65 && charCode <= 90) || (charCode >= 97 && charCode <= 122)) {
+            countChar++;
+        }
+
+     }
+
+
+     if(len!=countChar)
+     {
+          return false;
+     }else{
+
+          return true;
+     }
+
+
+}
+
+
+
+
+
+//  this one  is main  validation function 
 
 function validate()
+
 {
+     
+
+     // event.preventDefault();
+
+     
  
+    const firstNameValue = firstName.value.trim();
+    const lastNameValue = lastName.value.trim();
+
     const usernameValue = username.value.trim();
+    const nidValue = nid.value.trim();
     const emailValue = email.value.trim();
     const phoneValue = phone.value.trim();
     const passwordValue = password.value.trim();
     const confirmPassworValue = confirmPassword.value.trim();
 
-    // username
+
+   
+    // firstname
+
+    
+
+    if(firstNameValue === ""){
+     
+        setErrormsg(firstName, 'Firstname cannot be blank');
+    }
+    else if(!isName(firstNameValue)){
+        setErrormsg(firstName, 'Firstname mush contain Only Alphabate');
+    }else{
+         setSuccess(firstName);
+    }
+
+    
+
+    
+    // lastname
+
+    if(lastNameValue === ""){
+        setErrormsg(lastName, 'Lastname cannot be blank');
+    }
+    else if(!isName(lastNameValue)){
+        setErrormsg(lastName, 'Lastname mush contain Only Alphabate');
+    }else{
+         setSuccess(lastName);
+    }
+
+
+
+//     // username
 
     if(usernameValue === ""){
         setErrormsg(username, 'Username cannot be blank');
@@ -321,9 +411,21 @@ function validate()
          setSuccess(username);
     }
 
+    //     //  nid 
+
+    if(nidValue === ""){
+      
+      setErrormsg(nid, 'nid number cannot be blank');
+  }
+  else if(nidValue.length <= 6){
+      setErrormsg(nid, 'nid number is not valid');
+  }else{
+      setSuccess(nid);
+  }
 
 
-   //  email 
+
+//    //  email 
 
     if(emailValue === ""){
       
@@ -335,7 +437,10 @@ function validate()
         setSuccess(email);
     }
 
-    //  phone 
+
+
+
+//     //  phone 
 
     if(phoneValue === ""){
       
@@ -349,7 +454,7 @@ function validate()
 
 
 
-  //  password 
+//   //  password 
 
   if(passwordValue === ""){
       
@@ -364,7 +469,7 @@ function validate()
   }
 
 
-  //  confirm password 
+//   //  confirm password 
 
   if(confirmPassworValue === ""){
          setErrormsg(confirmPassword, 'Confirm password cannot be blank');
@@ -380,8 +485,16 @@ function validate()
       setSuccess(confirmPassword);
   }
 
+
+
+
+
+
+// //  check
    if(successMessage()){
-         alert("registration successfull");
+         
+         swal("Account Created Successfully!", "Now press ok to Login!", "success");
+
          return true;
    }else{
      return false;
@@ -393,9 +506,9 @@ function validate()
 function setErrormsg(input ,errorMsg)
 
   {
-      const form_control = input.parentElement;
+      const form_control = input.parentElement.parentElement;
       const small = form_control.querySelector('small');
-      form_control.className= "form_control error";
+      form_control.className= "input-div form_control error";
       small.innerText = errorMsg;
 
   }
@@ -403,11 +516,20 @@ function setErrormsg(input ,errorMsg)
   function setSuccess(input)
 
   {
-      const form_control = input.parentElement;
+      const form_control = input.parentElement.parentElement;
       const small = form_control.querySelector('small');
-      form_control.className= "form_control success";
+      form_control.className= "input-div form_control success";
       
   }
+
+//   document.getElementById('form').addEventListener('submit', function (event) {
+//             event.preventDefault(); // Prevent the form from submitting by default
+//             if (validate()) {
+//                 // If the form is valid, submit it
+//                 this.submit(); // "this" refers to the form element
+//             }
+//         });
+
 </script>
 </body>
 </html>
