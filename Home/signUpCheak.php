@@ -17,9 +17,23 @@
           $confirm_password = $_POST['confirm_password'];
       
           if(empty($firstname) || empty($lastname) || empty($username) || empty($nid) || empty($email) || empty($phone) || empty($password) || empty($confirm_password)) {
+
+
+            
+
+
+
             header("location:signupForm.php?msg=All fields are required"); 
             echo "All fields are required.";
-          } else {
+          } 
+          
+          
+          
+          
+          
+          
+          // registered successfully   from there  after else 
+          else {
         if(isset($_REQUEST['submit'])){ 
         $fname=mysqli_real_escape_string($connnection,$_REQUEST['firstname']);
         $lname=mysqli_real_escape_string($connnection,$_REQUEST['lastname']);

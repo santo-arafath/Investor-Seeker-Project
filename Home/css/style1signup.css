@@ -17,8 +17,7 @@ body{
 	height: 100%;
 	z-index: -1;
 }
-
-.container{
+ .container{
     width: 100vw;
     height: 100vh;
     display: grid;
@@ -27,11 +26,20 @@ body{
     padding: 0 2rem;
 }
 
+
+
+
 .img{
 	display: flex;
 	justify-content: flex-end;
 	align-items: center;
 }
+
+.img img{
+	width: 500px;
+}
+
+
 
 .login-content{
 	display: flex;
@@ -40,18 +48,21 @@ body{
 	text-align: center;
 }
 
-.img img{
-	width: 500px;
-}
+
 
 form{
 	width: 360px;
 	
 }
 
+
+
+
 .login-content img{
     height: 100px;
-}
+} 
+
+
 
 .login-content h2{
 	margin: 15px 0;
@@ -59,6 +70,8 @@ form{
 	text-transform: uppercase;
 	font-size: 2.9rem;
 }
+
+
 
 .login-content .input-div{
 	position: relative;
@@ -69,9 +82,11 @@ form{
     border-bottom: 2px solid #d9d9d9;
 }
 
-.login-content .input-div.one{
+
+
+/* .login-content .input-div.one{
 	margin-top: 0;
-}
+} */
 
 .i{
 	color: #d9d9d9;
@@ -79,6 +94,8 @@ form{
 	justify-content: center;
 	align-items: center;
 }
+
+
 
 .i i{
 	transition: .3s;
@@ -106,10 +123,40 @@ form{
 	width: 0%;
 	height: 2px;
 	background-color: #38d39f;
+	/* background-color: #d34f38; */
 	transition: .4s;
 }
 
-.input-div:before{
+
+.form_control.success:before, .form_control.success:after{
+
+	content: '';
+	position: absolute;
+	bottom: -2px;
+	width: 0%;
+	height: 2px;
+	background-color: #38d39f;
+	/* background-color: #d34f38; */
+	transition: .4s;
+
+}
+
+.form_control.error:before, .form_control.error:after{
+
+	content: '';
+	position: absolute;
+	bottom: -2px;
+	width: 0%;
+	height: 2px;
+	background-color: #e83f36;
+	/* background-color: #d34f38; */
+	transition: .4s;
+
+}
+
+
+
+ .input-div:before{
 	right: 50%;
 }
 
@@ -128,6 +175,10 @@ form{
 
 .input-div.focus > .i > i{
 	color: #38d39f;
+}
+
+.form_control.error.focus > .i > i{
+	color: #e83f36;
 }
 
 .input-div > div > input{
@@ -184,9 +235,9 @@ a:hover{
 }
 .profil{
     margin-left: 130px;
-}
+}  
 
-@media screen and (max-width: 1050px){
+ @media screen and (max-width: 1050px){
 	.container{
 		grid-gap: 5rem;
 	}
@@ -223,4 +274,67 @@ a:hover{
 	.login-content{
 		justify-content: center;
 	}
+}  
+
+
+/* ---------------------------------------------- */
+
+
+
+
+
+.form{
+ padding:30px 40px;
 }
+.form_control{
+	  margin-bottom: 10px;
+	  padding-bottom: 20px;
+	  position: relative;
+
+}
+
+
+
+.form_control i.fa-check-circle,
+.form_control i.fa-exclamation-circle{
+ position: absolute;
+ top:32px;
+ right:10px;
+ visibility: hidden;
+}
+
+
+
+.form_control small{
+   visibility: hidden;
+   position: absolute;
+   bottom: 0;
+   left: 28px;
+}
+
+
+
+.form_control.success i.fa-check-circle{
+
+  color:#2ecc71;
+  visibility: visible; 
+}
+
+.form_control.error i.fa-exclamation-circle{
+
+color:#e83f36;
+visibility: visible; 
+}
+
+.form_control small{
+ visibility: hidden;
+ position: absolute;
+ bottom: 0;
+
+}
+
+.form_control.error small{
+ color:#e83f36;
+ visibility: visible;
+}
+

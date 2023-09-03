@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<head>
+    
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+     <style>
+
+       *{
+        box-sizing: border-box;
+
+       } 
+
+       body{
+        background-color: #8e44ad;
+        display:flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        margin: 0;
+       }
+
+       .container{
+          background-color: #ffff;
+          border-radius: 5px;
+          box-shadow: 0 2px 5px rgba(0,0,0,0,3);
+          padding: 20px 30px;
+          overflow:hidden;
+          width: 400px;
+          max-width:100%
+
+
+       }
+
+       .header{
+        background-color: #f7f7f7;
+        border-bottom:1px solid #f0f0f0
+       }
+       .header h2{
+           margin: 0;
+       }
+
+       .form{
+        padding:30px 40px;
+       }
+       .form_control{
+             margin-bottom: 10px;
+             padding-bottom: 20px;
+             position: relative;
+
+       }
+
+       .form_control label{
+
+        display: inline-block;
+        margin-bottom: 5px;
+
+       }
+
+       .form_control input{
+
+       border: 2px solid #f0f0f0;
+       border-radius: 4px;
+       display: block;
+       font-size: 14px;
+       padding: 10px;
+       width: 100%;
+
+       }
+
+       .form_control i{
+        position: absolute;
+        top:32px;
+        right:10px;
+        
+        visibility: hidden;
+       }
+
+       .form_control small{
+          visibility: hidden;
+          position: absolute;
+          bottom: 0;
+          left: 0;
+       }
+
+       .form .btn{
+        background-color: #8e44ad;
+        border: 2px solid #8e44ad;
+        border-radius: 4px;
+        color:#fff;
+        display: block;
+        font-family: inherit;
+        font-size:16px;
+        padding: 10px;
+        width: 100%;
+       }
+
+       .form_control.success input{
+        border-color: #2ecc71;
+
+       }
+
+       .form_control.error input{
+        border-color: #d53e27;
+
+       }
+
+       .form_control.success i.fa-check-circle{
+       
+         color:#2ecc71;
+         visibility: visible; 
+       }
+
+       .form_control.error i.fa-exclamation-circle{
+       
+       color:#d5362a;
+       visibility: visible; 
+     }
+
+     .form_control small{
+        visibility: hidden;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+
+     }
+
+     .form_control.error small{
+        color:#e74c3c;
+        visibility: visible;
+     }
+
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+    <div class="header">
+        <h2>create account</h2>  
+    </div>
+    <form class="form" id="form">
+         <div class="form_control">
+            <lebel>Username</lebel>
+            <input type="text" placeholder="username" id="username">
+         
+         <i class="fa fa-check-circle"></i>
+         <i class="fa fa-exclamation-circle"></i>
+         <small> Error message</small>
+        </div>
+
+         <div class="form_control">
+            <lebel>Email</lebel>
+            <input type="email" placeholder="XX@gmail.com" id="email">
+         <i class="fa fa-check-circle"></i>
+         <i class="fa fa-exclamation-circle"></i>
+         <small> Error message</small>
+        </div>
+
+
+        <div class="form_control">
+         <lebel>Phone</lebel>
+         <input type="number" placeholder="01XXXXXXXXX" id="phone">
+      <i class="fa fa-check-circle"></i>
+      <i class="fa fa-exclamation-circle"></i>
+       <small> Error message</small>
+       </div>
+
+
+         <div class="form_control">
+            <lebel>Password</lebel>
+            <input type="password" placeholder="password" id="password">
+         
+         <i class="fa fa-check-circle"></i>
+         <i class="fa fa-exclamation-circle"></i>
+         <small> Error message</small>
+        </div>
+
+
+         <div class="form_control">
+            <lebel>Confirm password</lebel>
+            <input type="password" placeholder="password cheak" id="password2">
+         <i class="fa fa-check-circle"></i>
+         <i class="fa fa-exclamation-circle"></i>
+         <small> Error message</small>
+        </div>
+
+        <input type="submit" value="Submit" class="btn" name="">
+    </form>
+</div>
+
+
+
+<!-- <script src="form-js.js"></script> -->
+
+
+<script type="text/javascript">
+
+const form = document.getElementById('form');
+const username = document.getElementById('username');
+const email = document.getElementById('email');
+const phone = document.getElementById('phone');
+const password = document.getElementById('password');
+const confirmPassword = document.getElementById('password2');
+
+
+
+form.addEventListener('submit', (event) => {
+   event.preventDefault();
+    validate();
+   
+ });
+
+
+ 
+
+
+ function successMessage()
+ {
+   let formCount= document.getElementsByClassName('form_control');
+   let count =0;
+   let countTotalForm = formCount.length;
+
+   
+
+
+     
+
+   for(let i=0; i<formCount.length ;i++)
+   {
+      if(formCount[i].className === "form_control success"){
+         count++;   
+      }
+   }
+
+   
+   
+
+   
+   if(count === countTotalForm){
+      return true ;
+   }else{
+      return false
+   }
+ }
+
+
+
+ function isEmail(emailValue) {
+
+    let atSymbol = emailValue.indexOf('@');
+    if (atSymbol <= 1) {
+        return false;
+    }
+
+    let dotPosition = emailValue.lastIndexOf('.');
+
+    if (dotPosition <= atSymbol + 3) {
+        return false;
+    }
+
+    if (dotPosition === emailValue.length - 1) {
+        return false;
+    }
+
+    return true;
+}
+
+function isStrong(passwordValue) {
+    let countChar = 0;
+    let countNumber = 0;
+
+    for (let i = 0; i < passwordValue.length; i++) {
+        const charCode = passwordValue.charCodeAt(i);
+
+        if ((charCode >= 65 && charCode <= 90) || (charCode >= 97 && charCode <= 122)) {
+            countChar++;
+        }
+        if (charCode >= 48 && charCode <= 57) {
+            countNumber++;
+        }
+    }
+
+  
+    if (countChar > 0 && countNumber > 0 && countChar + countNumber === passwordValue.length) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+
+
+function validate()
+{
+   
+    const usernameValue = username.value.trim();
+    const emailValue = email.value.trim();
+    const phoneValue = phone.value.trim();
+    const passwordValue = password.value.trim();
+    const confirmPassworValue = confirmPassword.value.trim();
+
+    // username
+
+    if(usernameValue === ""){
+        setErrormsg(username, 'Username cannot be blank');
+    }
+    else if(usernameValue.length <= 3){
+        setErrormsg(username, 'Username mush be minimum 4 charecter');
+    }else{
+         setSuccess(username);
+    }
+
+
+
+   //  email 
+
+    if(emailValue === ""){
+      
+        setErrormsg(email, 'Email cannot be blank');
+    }
+    else if(!isEmail(emailValue)){
+        setErrormsg(email, 'Email is not valid');
+    }else{
+        setSuccess(email);
+    }
+
+    //  phone 
+
+    if(phoneValue === ""){
+      
+      setErrormsg(phone, 'Phone number cannot be blank');
+  }
+  else if(phoneValue.length != 11){
+      setErrormsg(phone, 'Phone number is not valid');
+  }else{
+      setSuccess(phone);
+  }
+
+
+
+  //  password 
+
+  if(passwordValue === ""){
+      
+      setErrormsg(password, 'password cannot be blank');
+  }
+  else if(passwordValue.length <8){
+      setErrormsg(password, 'Password must be minimum of 8 charecter');
+  }else if(!isStrong(passwordValue)){
+      setErrormsg(password, 'Must Contain Number and Charecter');
+  }else{
+      setSuccess(password);
+  }
+
+
+  //  confirm password 
+
+  if(confirmPassworValue === ""){
+         setErrormsg(confirmPassword, 'Confirm password cannot be blank');
+  }
+  else if(confirmPassworValue.length <8){
+      setErrormsg(confirmPassword, '*Confirm Password and password are not same');
+  }else if(!isStrong(confirmPassworValue)){
+      setErrormsg(confirmPassword, '**Confirm Password and password are not same');
+  }
+  else if(passwordValue != confirmPassworValue){
+      setErrormsg(confirmPassword, 'Confirm Password and password are not same');
+  }else{
+      setSuccess(confirmPassword);
+  }
+
+   if(successMessage()){
+         alert("registration successfull");
+   }
+
+}
+
+
+function setErrormsg(input ,errorMsg)
+
+  {
+      const form_control = input.parentElement;
+      const small = form_control.querySelector('small');
+      form_control.className= "form_control error";
+      small.innerText = errorMsg;
+
+  }
+
+  function setSuccess(input)
+
+  {
+      const form_control = input.parentElement;
+      const small = form_control.querySelector('small');
+      form_control.className= "form_control success";
+      
+  }
+</script>
+
+</body>
+</html>
+
