@@ -239,7 +239,7 @@ const profile = document.getElementById('profile');
  {
    let formCount= document.getElementsByClassName('form_control');
    let count =0;
-   let countTotalForm = formCount.length;
+   let countTotalForm = formCount.length-1;
 
  
 
@@ -255,11 +255,9 @@ const profile = document.getElementById('profile');
   
    
    if(count === countTotalForm){
-      swal("Account Created Successfully!", "Now press ok to Login!", "success");
-      alert("Account Created Successfully!");
-      return true;
+      return true ;
    }else{
-      return false;
+      return false
    }
 
  }
@@ -338,13 +336,7 @@ function isName(firstNameVal)
 
      if(len!=countChar)
      {
-          return new Promise((resolve) => {
-        swal("Account Created Successfully!", "Now press OK to Login!", "success")
-            .then(() => {
-                resolve(true); // Resolve the Promise with a value when the user clicks OK
-            });
-    });
-          
+          return false;
      }else{
 
           return true;
@@ -517,16 +509,12 @@ if(profileValue === ""){
 // //  check
    if(successMessage()){
          
-        
-         
+         swal("Account Created Successfully!", "Now press ok to Login!", "success");
+
          return true;
-
-
    }else{
      return false;
    }
-
-   return false;
 
 }
 

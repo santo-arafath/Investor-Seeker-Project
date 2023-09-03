@@ -102,6 +102,7 @@
 
    
     if($result){
+      
        header("location:loginForm.php?inserted");
 
     
