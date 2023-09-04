@@ -18,7 +18,8 @@
     <head>
         <meta name="viewport" content="width=device-width ,initial-scale=1.0">
         <title>Admin panel</title>
-        <link rel="stylesheet" href="adminstyle.css">
+        <link rel="stylesheet" href="admin_css/adminstyle.css">
+        <link rel="stylesheet" href="admin_css/cssadmin-show-style.css">
 
     </head>
 

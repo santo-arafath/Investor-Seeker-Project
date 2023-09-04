@@ -1,3 +1,6 @@
+
+
+
 let toggle=document.querySelector('.toggle');
 let navbar=document.querySelector('.navbar');
 let main=document.querySelector('.main');
@@ -15,7 +18,7 @@ function actvelink(){
     this.classList.add('hovered');
 }
 
-list.forEach((item)=>
-item.addEventListener('mouseover',activelink));
+// list.forEach((item)=>
+// item.addEventListener('mouseover',activelink));
 
 

@@ -83,7 +83,7 @@
 
         <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
         <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-        <script src="responsive.js"></script>
+        <script src="Admin_all_js/responsive.js"></script>
         
         
 
