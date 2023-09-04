@@ -26,20 +26,17 @@ const profile = document.getElementById('pictur');
  {
    let formCount= document.getElementsByClassName('form_control');
    let count =0;
-   let countTotalForm = formCount.length-1;
+   let countTotalForm = formCount.length;
 
  
 
    for(let i=0; i<formCount.length ;i++)
    {
-      if(formCount[i].className === "input-div form_control success"){
+      if(formCount[i].className === "form_control success"){
          count++;   
       }
    }
-
-   
-   
-  
+    //  alert(count+" "+countTotalForm)
    
    if(count === countTotalForm){
       return true ;
@@ -143,7 +140,7 @@ function validate()
 {
      
 
-     event.preventDefault();
+    //  event.preventDefault();
 
      
  
@@ -296,13 +293,16 @@ if(profileValue === ""){
 // //  check
    if(successMessage()){
          
-         swal("Account Created Successfully!", "Now press ok to Login!", "success");
+        //  swal("Account Created Successfully!", "Now press ok to Login!", "success");
+         alert("Entrepreneur added successfully");
 
          return true;
    }else{
      return false;
    }
 
+
+   return false;
 }
 
 

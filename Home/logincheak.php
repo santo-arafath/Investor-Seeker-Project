@@ -117,8 +117,10 @@
                     header("location:../Investor/investor_home.php");
         
                 }else{
-                    header("location:loginForm.php");
+                    
+                    header("location:loginForm.php?error=incorrect password");
                     echo "not loged in2";
+                    
                 }
                 // investor
         }
@@ -126,3 +128,6 @@
 }
 
 ?>
+
+
+<script scr="js/loginjs.js"></script>

@@ -228,7 +228,7 @@ require "includes/top-bar.php";?>
 
 
 
-                    <?php    if($status=="pending")
+                        <?php    if($status=="pending")
                                 {?>
                         <td style="padding: 2px 4px;
      background-color: #e0532c;

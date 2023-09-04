@@ -7,8 +7,121 @@ if(!isset($_SESSION['usrName']))
   header("location:admin-login.php");
 }
 
+ $title="entro Add";
+
+
+
+        // $connnection = mysqli_connect('localhost','root','','investor-seeker-db');
+
+        require "includes/configure.php";
+
+        if(isset($_REQUEST['submit'])){ 
+        $fname=mysqli_real_escape_string($connnection,$_REQUEST['fname']);
+        $lname=mysqli_real_escape_string($connnection,$_REQUEST['lname']);
+        //$lname=mysqli_real_escape_string($connnection,$_REQUEST['lastname']);
+        $usnm=mysqli_real_escape_string($connnection,$_REQUEST['username']);
+        $nid=mysqli_real_escape_string($connnection,$_REQUEST['nid']);
+        $eml=mysqli_real_escape_string($connnection,$_REQUEST['email']);
+        $phone_number=mysqli_real_escape_string($connnection,$_REQUEST['phone']);
+        // $password=mysqli_real_escape_string($connnection,md5($_REQUEST['password']));
+        $password=mysqli_real_escape_string($connnection,$_REQUEST['password']);
+
+        $fullname=$fname." ".$lname;
+        
+
+        $today = date('y:m:d');
+
+
+        $fullname=$fname.$lname;
+       
+
+
+        
+
+   $picture=$_FILES['pictur'];
+   $pname=$picture['name'];
+   $tmp_name=$picture['tmp_name'];
+   
+
+     $name_changer=uniqid().".png";
+
+
+     $queryy="SELECT username FROM `entrepreneur-reg-table1` WHERE username='$usnm'";
+      $res=mysqli_query($connnection,$queryy) or die("Query faild.");
+
+     $cnt=mysqli_num_rows($res);
+
+     if($cnt>0){
+      echo "Username already exist";
+     }else{
+
+     
+   
+   if(!empty($pname)){
+   
+       $locat='../Home/entroProfile/';
+   
+       if(move_uploaded_file($tmp_name,$locat.$name_changer)){
+   
+   
+       }else{
+           echo 'upload failed';
+       }
+       
+     }else{
+       echo 'file not found';
+        }
+
+
+     
+
+        require "includes/configure.php";
+
+        // $connnection = mysqli_connect('localhost','root','','project_investor_seeker_db');
+            if(!$connnection){
+        
+         die("not connected".mysqli_error());
+    }else{
+
+    $sqlin= "INSERT INTO `entrepreneur-reg-table1` (`profile_photo`,`first-name`,`last-name`, `name`, `username`, `nid`, `email`,`phone`, `password`, `date_sign`) VALUES ('$name_changer', '$fname', '$lname', '$fullname', '$usnm', '$nid', '$eml', '$phone_number', '$password', '$today')";
+    
+    $result=mysqli_query($connnection,$sqlin);
+
+   
+    if($result){
+       header("location:admin-entrepreneur.php?inserted");
+
+    
+
+
+    }else{
+        echo "not inserted";
+
+        header("location:signUpCheak.php?notinserted");
+    }
+    
+   }
+
+     }
+
+    }
+
+    
+
+
+
+
+
 ?>
-<?php $title="entro Add";?>
+
+
+
+
+
+
+
+
+
 
 <!DOCTYPE html>
 <html>
@@ -30,7 +143,7 @@ if(!isset($_SESSION['usrName']))
 
 <div class="container">
 
-<form action="#" method="post" enctype="multipart/form-data" onsubmit="return validate()" name="form">
+<form action="" method="post" enctype="multipart/form-data" onsubmit="return validate()" name="form">
 
     <!-- <input type="text" placeholder="first name" name="fname"><br> -->
 
@@ -168,104 +281,4 @@ if(!isset($_SESSION['usrName']))
 
 </html>
 
-<?php 
-
-
-
-        // $connnection = mysqli_connect('localhost','root','','investor-seeker-db');
-
-        require "includes/configure.php";
-
-        if(isset($_REQUEST['submit'])){ 
-        $fname=mysqli_real_escape_string($connnection,$_REQUEST['fname']);
-        $lname=mysqli_real_escape_string($connnection,$_REQUEST['lname']);
-        //$lname=mysqli_real_escape_string($connnection,$_REQUEST['lastname']);
-        $usnm=mysqli_real_escape_string($connnection,$_REQUEST['username']);
-        $nid=mysqli_real_escape_string($connnection,$_REQUEST['nid']);
-        $eml=mysqli_real_escape_string($connnection,$_REQUEST['email']);
-        $phone_number=mysqli_real_escape_string($connnection,$_REQUEST['phone']);
-        // $password=mysqli_real_escape_string($connnection,md5($_REQUEST['password']));
-        $password=mysqli_real_escape_string($connnection,$_REQUEST['password']);
-
-        $fullname=$fname." ".$lname;
-        
-
-        $today = date('y:m:d');
-
-
-        $fullname=$fname.$lname;
-       
-
-
-        
-
-   $picture=$_FILES['pictur'];
-   $pname=$picture['name'];
-   $tmp_name=$picture['tmp_name'];
-   
-
-     $name_changer=uniqid().".png";
-
-
-     $queryy="SELECT username FROM `entrepreneur-reg-table1` WHERE username='$usnm'";
-      $res=mysqli_query($connnection,$queryy) or die("Query faild.");
-
-     $cnt=mysqli_num_rows($res);
-
-     if($cnt>0){
-      echo "Username already exist";
-     }else{
-
-     
-   
-   if(!empty($pname)){
-   
-       $locat='../Home/entroProfile/';
-   
-       if(move_uploaded_file($tmp_name,$locat.$name_changer)){
-   
-   
-       }else{
-           echo 'upload failed';
-       }
-       
-     }else{
-       echo 'file not found';
-        }
-
-
-     
-
-        require "includes/configure.php";
-
-        // $connnection = mysqli_connect('localhost','root','','project_investor_seeker_db');
-            if(!$connnection){
-        
-         die("not connected".mysqli_error());
-    }else{
-
-    $sqlin= "INSERT INTO `entrepreneur-reg-table1` (`profile_photo`,`first-name`,`last-name`, `name`, `username`, `nid`, `email`,`phone`, `password`, `date_sign`) VALUES ('$name_changer', '$fname', '$lname', '$fullname', '$usnm', '$nid', '$eml', '$phone_number', '$password', '$today')";
-    
-    $result=mysqli_query($connnection,$sqlin);
-
-   
-    if($result){
-       header("location:admin-entrepreneur.php?inserted");
-
-    
-
-
-    }else{
-        echo "not inserted";
-
-        header("location:signUpCheak.php?notinserted");
-    }
-    
-   }
-
-     }
-
-    }
-
-    ?>
 

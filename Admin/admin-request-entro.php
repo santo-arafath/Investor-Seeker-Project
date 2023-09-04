@@ -208,7 +208,7 @@ if(!isset($_SESSION['usrName']))
     }
     if($serial==0)
         {
-          echo "--> No Request available at this moment";
+          echo " No Request available at this moment";
         }
         
     
