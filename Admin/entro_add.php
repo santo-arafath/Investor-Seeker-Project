@@ -12,87 +12,161 @@ if(!isset($_SESSION['usrName']))
 
 <!DOCTYPE html>
 <html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<link rel="stylesheet" href="admin_css/add_entro_style.css">
 <style>
-    *{
-        font-size:30px;
-        
-    }
-input[type=text], select {
-  width: 95%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  display: inline-block;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
-}
-input[type=password], select {
-  width: 95%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  display: inline-block;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
-}
-input[type=email], select {
-  width: 95%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  display: inline-block;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
-}
-
-input[type=submit] {
-  width: 95%;
-  background-color: #4CAF50;
-  color: white;
-  padding: 14px 20px;
-  margin: 8px 0;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-input[type=submit]:hover {
-  background-color: #45a049;
-}
-
-div {
-  border-radius: 5px;
-  background-color: #f2f2f2;
-  padding: 20px;
-}
+    
 </style>
 
 </head>
-</html>
+<body>
 
 
-<form action="#" method="post" enctype="multipart/form-data">
 
-    <input type="text" placeholder="first name" name="fname"><br>
-    <input type="text" placeholder="last lname" name="lname"><br>
-    <input type="text" placeholder="nid" name="nid"><br>
-    <input type="text" placeholder="email" name="email"><br>
-    <input type="text" placeholder="phone" name="phone"><br>
-    <input type="text" placeholder="username" name="username"><br>
-    <input type="password" placeholder="password" name="password"><br>
+<div class="container">
+
+<form action="#" method="post" enctype="multipart/form-data" onsubmit="return validate()" name="form">
+
+    <!-- <input type="text" placeholder="first name" name="fname"><br> -->
+
+              <div class="header">
+                     <h1>Add Entrepreneur </h1>
+                     <a href="admin-entrepreneur.php">Back</a>
+               </div>
+       
+              <div class="form_control">
+                     <lebel>First Name</lebel>
+                     <input type="text" placeholder="first name" id="firstname" name="fname">
+         
+                     <i class="fa fa-check-circle"></i>
+                     <i class="fa fa-exclamation-circle"></i>
+                     <small> Error message</small>
+                </div>
+
+                <!-- <input type="text" placeholder="last lname" name="lname"><br> -->
+                <div class="form_control">
+                     <lebel>Last Name</lebel>
+                     <input type="text" placeholder="last lname" id="lastname" name="lname">
+         
+                     <i class="fa fa-check-circle"></i>
+                     <i class="fa fa-exclamation-circle"></i>
+                     <small> Error message</small>
+                </div>                
+
+            <!-- <input type="text" placeholder="nid" name="nid"><br> -->
+
+
+                <div class="form_control">
+                     <lebel>Nid</lebel>
+                     <input type="number" placeholder="nid" id="nid" name="nid">
+         
+
+                     <i class="fa fa-check-circle"></i>
+                     <i class="fa fa-exclamation-circle"></i>
+                     <small> Error message</small>
+                </div>
+
+
+
+
+                <!-- <input type="text" placeholder="email" name="email"><br> -->
+
+
+                <div class="form_control">
+                     <lebel>Email</lebel>
+                     <input type="email" placeholder="email" id="email" name="email">
+         
+                     <i class="fa fa-check-circle"></i>
+                     <i class="fa fa-exclamation-circle"></i>
+                     <small> Error message</small>
+                </div>  
+
+                
+                <!-- <input type="text" placeholder="phone" name="phone"><br> -->
+
+
+                <div class="form_control">
+                     <lebel>Phone</lebel>
+                     <input type="number" placeholder="phone" id="phone" name="phone">
+         
+                     <i class="fa fa-check-circle"></i>
+                     <i class="fa fa-exclamation-circle"></i>
+                     <small> Error message</small>
+                </div>
+
+
+                <!-- <input type="text" placeholder="username" name="username"><br> -->
+
+
+                <div class="form_control">
+                     <lebel>Username</lebel>
+                     <input type="text" placeholder="username" id="username" name="username">
+         
+                     <i class="fa fa-check-circle"></i>
+                     <i class="fa fa-exclamation-circle"></i>
+                     <small> Error message</small>
+                </div>
+
+
+                <!-- <input type="password" placeholder="password" name="password"><br> -->
+
+
+                <div class="form_control">
+                     <lebel>Password</lebel>
+                     <input type="password" placeholder="password" id="password" name="password">
+         
+                     <i class="fa fa-check-circle"></i>
+                     <i class="fa fa-exclamation-circle"></i>
+                     <small> Error message</small>
+                </div>    
+
+
+
+                <div class="form_control">
+                     <lebel>Confirm Password</lebel>
+                     <input type="password" placeholder="confirm_password" id="confirm_password" name="confirm_password">
+         
+                     <i class="fa fa-check-circle"></i>
+                     <i class="fa fa-exclamation-circle"></i>
+                     <small> Error message</small>
+                </div>
+
+
+
 
     
 
       
 
     
+                <div class="form_control">
+           <input type="file" name="pictur" id="pictur" placeholder="select"><br>
 
-    <input type="file" name="pictur"><br>
+           <i class="fa fa-check-circle"></i>
+                     <i class="fa fa-exclamation-circle"></i>
+                     <small> Error message</small>
+                </div>
+
+
+
+
+
     <input type="submit" value="Add" name="submit">
 
 </form>
 
+</div>
 
+<script src="Admin_all_js/entro_add_validation_js.js"></script>
+
+</body>
+
+</html>
 
 <?php 
 

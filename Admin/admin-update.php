@@ -93,8 +93,7 @@ div {
 
             
                    
-            ?>
-
+    ?>
 
 
 
@@ -108,7 +107,16 @@ div {
               <input type="hidden" value="<?php echo $rcv ?>" name="updating-hidden-id">
   
             </form>
+        
             
+
+
+
+
+
+
+
+
             <?php
             
 
