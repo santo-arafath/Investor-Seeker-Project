@@ -15,84 +15,94 @@ if(!isset($_SESSION['usrName']))
 
 <!DOCTYPE html>
 <html>
-<style>
-    *{
-        font-size:30px;
-        
-    }
-input[type=text], select {
-  width: 95%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  display: inline-block;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
-}
-input[type=password], select {
-  width: 95%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  display: inline-block;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
-}
-input[type=email], select {
-  width: 95%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  display: inline-block;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
-}
+  <head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-input[type=submit] {
-  width: 95%;
-  background-color: #4CAF50;
-  color: white;
-  padding: 14px 20px;
-  margin: 8px 0;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
+   <link rel="stylesheet" href="admin_css/add_admin_style.css">
 
-input[type=submit]:hover {
-  background-color: #45a049;
-}
 
-div {
-  border-radius: 5px;
-  background-color: #f2f2f2;
-  padding: 20px;
-}
-</style>
 
 </head>
-</html>
+<body>
+
+<div class="container">
+<form action="" method="post" enctype="multipart/form-data" onsubmit="return validate()" name="form">
 
 
-<form action="" method="post" enctype="multipart/form-data" onsubmit="return validateForm()" name="myForm">
+       <h1>Add Admin </h1>
+           <div class="form_control">
+               <lebel>Name</lebel>
+               <input type="text" placeholder="Name" id="username" name="name">
+         
+                  <i class="fa fa-check-circle"></i>
+                  <i class="fa fa-exclamation-circle"></i>
+                      <small> Error message</small>
+              </div>
+
+          
 
 
-    <input type="text" placeholder="name" name="name"><br>
-    <input type="text" placeholder="username" name="username"><br>
-    <input type="password" placeholder="password" name="password"><br>
+    <!-- <input type="text" placeholder="name" name="name"><br> -->
+
+    <div class="form_control">
+            <lebel>Username</lebel>
+            <input type="text" placeholder="username" id="username" name="username">
+         
+         <i class="fa fa-check-circle"></i>
+         <i class="fa fa-exclamation-circle"></i>
+         <small> Error message</small>
+        </div>
+
+    <!-- <input type="text" placeholder="username" name="username"><br> -->
+
+    <div class="form_control">
+            <lebel>Password</lebel>
+            <input type="password" placeholder="password" id="password">
+         
+         <i class="fa fa-check-circle"></i>
+         <i class="fa fa-exclamation-circle"></i>
+         <small> Error message</small>
+        </div>
+
+
+         <div class="form_control">
+            <lebel>Confirm password</lebel>
+            <input type="password" placeholder="password cheak" id="password2">
+         <i class="fa fa-check-circle"></i>
+         <i class="fa fa-exclamation-circle"></i>
+         <small> Error message</small>
+        </div>
+
+
+    <!-- <input type="password" placeholder="password" name="password"><br> -->
 
     
-
+    <div class="form_control">
     <select name="role">
       <option value="">Select admin role</option>
       <option value="admin">Admin</option>
       <option value="modarator">Modarator</option>
     </select>
+         <i class="fa fa-check-circle"></i>
+         <i class="fa fa-exclamation-circle"></i>
+         <small> Error message</small>
+    </div>
 
-    
+
+
+
+    <div class="form_control">
 
     <input type="file" name="pic"><br>
+
+    <i class="fa fa-check-circle"></i>
+    <i class="fa fa-exclamation-circle"></i>
+    <small> Error message</small>
+    </div>
     <input type="submit" value="Add" name="submit">
+
+      </div>
+
 
 
 
@@ -218,6 +228,220 @@ div {
 
 ?>
 
+
+
+
+
+
+
+<script type="text/javascript">
+
+const form = document.getElementById('form');
+const username = document.getElementById('username');
+const email = document.getElementById('email');
+const phone = document.getElementById('phone');
+const password = document.getElementById('password');
+const confirmPassword = document.getElementById('password2');
+
+
+
+form.addEventListener('submit', (event) => {
+   event.preventDefault();
+    validate();
+   
+ });
+
+
+ 
+
+
+ function successMessage()
+ {
+   let formCount= document.getElementsByClassName('form_control');
+   let count =0;
+   let countTotalForm = formCount.length;
+
+   
+
+
+     
+
+   for(let i=0; i<formCount.length ;i++)
+   {
+      if(formCount[i].className === "form_control success"){
+         count++;   
+      }
+   }
+
+   
+   
+
+   
+   if(count === countTotalForm){
+      return true ;
+   }else{
+      return false
+   }
+ }
+
+
+
+ function isEmail(emailValue) {
+
+    let atSymbol = emailValue.indexOf('@');
+    if (atSymbol <= 1) {
+        return false;
+    }
+
+    let dotPosition = emailValue.lastIndexOf('.');
+
+    if (dotPosition <= atSymbol + 3) {
+        return false;
+    }
+
+    if (dotPosition === emailValue.length - 1) {
+        return false;
+    }
+
+    return true;
+}
+
+function isStrong(passwordValue) {
+    let countChar = 0;
+    let countNumber = 0;
+
+    for (let i = 0; i < passwordValue.length; i++) {
+        const charCode = passwordValue.charCodeAt(i);
+
+        if ((charCode >= 65 && charCode <= 90) || (charCode >= 97 && charCode <= 122)) {
+            countChar++;
+        }
+        if (charCode >= 48 && charCode <= 57) {
+            countNumber++;
+        }
+    }
+
+  
+    if (countChar > 0 && countNumber > 0 && countChar + countNumber === passwordValue.length) {
+        
+
+        return true;
+    } else {
+        return false;
+    }
+}
+
+
+
+function validate()
+{
+   
+    const usernameValue = username.value.trim();
+    const emailValue = email.value.trim();
+    const phoneValue = phone.value.trim();
+    const passwordValue = password.value.trim();
+    const confirmPassworValue = confirmPassword.value.trim();
+
+    // username
+
+    if(usernameValue === ""){
+        setErrormsg(username, 'Username cannot be blank');
+    }
+    else if(usernameValue.length <= 3){
+        setErrormsg(username, 'Username mush be minimum 4 charecter');
+    }else{
+         setSuccess(username);
+    }
+
+
+
+   //  email 
+
+    if(emailValue === ""){
+      
+        setErrormsg(email, 'Email cannot be blank');
+    }
+    else if(!isEmail(emailValue)){
+        setErrormsg(email, 'Email is not valid');
+    }else{
+        setSuccess(email);
+    }
+
+    //  phone 
+
+    if(phoneValue === ""){
+      
+      setErrormsg(phone, 'Phone number cannot be blank');
+  }
+  else if(phoneValue.length != 11){
+      setErrormsg(phone, 'Phone number is not valid');
+  }else{
+      setSuccess(phone);
+  }
+
+
+
+  //  password 
+
+  if(passwordValue === ""){
+      
+      setErrormsg(password, 'password cannot be blank');
+  }
+  else if(passwordValue.length <8){
+      setErrormsg(password, 'Password must be minimum of 8 charecter');
+  }else if(!isStrong(passwordValue)){
+      setErrormsg(password, 'Must Contain Number and Charecter');
+  }else{
+      setSuccess(password);
+  }
+
+
+  //  confirm password 
+
+  if(confirmPassworValue === ""){
+         setErrormsg(confirmPassword, 'Confirm password cannot be blank');
+  }
+  else if(confirmPassworValue.length <8){
+      setErrormsg(confirmPassword, '*Confirm Password and password are not same');
+  }else if(!isStrong(confirmPassworValue)){
+      setErrormsg(confirmPassword, '**Confirm Password and password are not same');
+  }
+  else if(passwordValue != confirmPassworValue){
+      setErrormsg(confirmPassword, 'Confirm Password and password are not same');
+  }else{
+      setSuccess(confirmPassword);
+  }
+
+   if(successMessage()){
+        //  alert("registration successfull");
+         swal("Good job!", "You clicked the button!", "success");
+   }
+
+}
+
+
+function setErrormsg(input ,errorMsg)
+
+  {
+      const form_control = input.parentElement;
+      const small = form_control.querySelector('small');
+      form_control.className= "form_control error";
+      small.innerText = errorMsg;
+
+  }
+
+  function setSuccess(input)
+
+  {
+      const form_control = input.parentElement;
+      const small = form_control.querySelector('small');
+      form_control.className= "form_control success";
+      
+  }
+</script>
+
+</body>
+  </html>
 
 
 

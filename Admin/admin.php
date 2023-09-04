@@ -223,6 +223,11 @@ require "includes/top-bar.php";?>
                         <td><?php echo "$Comapany_name"; ?></td>
                         <td><?php echo "$request_amount"; ?></td>
 
+                        
+
+
+
+
                     <?php    if($status=="pending")
                                 {?>
                         <td style="padding: 2px 4px;
