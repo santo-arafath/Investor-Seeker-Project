@@ -1,13 +1,13 @@
 
     *{
-        font-size:20px;
+        /* font-size:20px; */
         box-sizing: border-box;
         font-family:Sans-serif;
         
     }
 
     body{
-        background-color: #8e44ad;
+        background-color: #6192df;
         display:flex;
         align-items: center;
         justify-content: center;
@@ -30,18 +30,20 @@
 
 input[type=text], select,
 input[type=password], select{
+  font-size:20px;
   width: 95%;
   padding: 12px 20px;
   margin: 8px 0;
   display: inline-block;
   border: 1px solid #ccc;
   border-radius: 4px;
-  box-sizing: border-box;
+  
 }
 
 
 input[type=submit] {
-  width: 95%;
+  font-size:20px;
+  width: 100%;
   background-color: #4CAF50;
   color: white;
   padding: 14px 20px;
@@ -51,6 +53,12 @@ input[type=submit] {
   cursor: pointer;
 }
 
+.form_control:nth-child(7)
+{
+    padding:20px  15px ;
+}
+
+
 
 
 input[type=submit]:hover {
@@ -58,11 +66,27 @@ input[type=submit]:hover {
 }
 
 
-div {
+.form_control {
   border-radius: 5px;
-  background-color: #f2f2f2;
+  background-color: #afc8f0;
   padding: 0px 15px;
 }
+
+.container .header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+}
+
+h1{
+    font-size:30px;
+    align-items:center;
+}
+
+
 
 
 /* --------------------------------------------------------- */
@@ -103,17 +127,20 @@ div {
 
        .form_control i{
         position: absolute;
-        top:32px;
-        right:10px;
-        
+        top:40px;
+        right:25px; 
         visibility: hidden;
+
        }
 
-       .form_control small{
-          visibility: hidden;
-          position: absolute;
-          bottom: 0;
-          left: 0;
+       .form_control:nth-child(7) i
+       {
+        top:15px;
+       }
+
+       .form_control:nth-child(6) i
+       {
+        top:22px;
        }
 
        .form .btn{
@@ -153,6 +180,7 @@ div {
      .form_control small{
         visibility: hidden;
         position: absolute;
+        margin-left: 20px;
         bottom: 0;
         left: 0;
 
@@ -167,8 +195,5 @@ div {
       font-size:20px;
      }
 
-     h1{
-           font-size:30px;
-           align-items:center;
-     }
+    
 
