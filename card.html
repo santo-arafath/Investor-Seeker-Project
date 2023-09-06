@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile Card</title>
+    <style>
+        /* Basic CSS styling */
+        .profile-card {
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            padding: 20px;
+            width: 300px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .profile-picture {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 0 auto 20px; /* Center the picture and add space below it */
+        }
+
+        .profile-name {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .profile-label {
+            font-weight: bold;
+        }
+
+        .profile-email, .profile-phone {
+            margin-top: 10px;
+        }
+
+        .contact-button, .chat-button {
+            margin-top: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+        }
+
+        .contact-button {
+            background-color: #3498db;
+            color: #fff;
+        }
+
+        .chat-button {
+            background-color: #2ecc71;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <div class="profile-card">
+        <img src="profile-picture.jpg" alt="Profile Picture" class="profile-picture">
+        <div class="profile-name">John Doe</div>
+        <div class="profile-label">Email:</div>
+        <div class="profile-email">john.doe@example.com</div>
+        <div class="profile-label">Phone:</div>
+        <div class="profile-phone">123-456-7890</div>
+        <button class="contact-button">Contact</button>
+        <button class="chat-button">Chat</button>
+    </div>
+</body>
+</html>

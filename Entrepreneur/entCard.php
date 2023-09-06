@@ -12,6 +12,58 @@ session_start();?>
             <link rel="stylesheet" href="all_css/cardStyle.css">
             
            <style>
+
+
+        
+        .profile-card {
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            padding: 20px;
+            width: 300px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .profile-picture {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 0 auto 20px; 
+        }
+
+        .profile-name {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .profile-label {
+            font-weight: bold;
+        }
+
+        .profile-email, .profile-phone {
+            margin-top: 10px;
+        }
+
+        .contact-button, .chat-button {
+            margin-top: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+        }
+
+        .contact-button {
+            background-color: #3498db;
+            color: #fff;
+        }
+
+        .chat-button {
+            background-color: #2ecc71;
+            color: #fff;
+        }
+    
               
 
               </style>
@@ -39,6 +91,28 @@ $cardHtml = '';
 $count=0;
 while($row = mysqli_fetch_assoc($result)){
       $count++;
+
+
+
+     $acceptedPersonId = $row['accepted_investor_id'];
+
+     if($acceptedPersonId !=-1)
+     {
+        
+        $sql = mysqli_query($connnection, "SELECT * FROM `investor_reg_table1` WHERE id='$acceptedPersonId'");
+
+       if($rows_of_inv= mysqli_fetch_assoc($sql))
+         {
+                 $inv_photo=$rows_of_inv['investor_profile'];
+                 $inv_name=$rows_of_inv['name'];
+                 $inv_email=$rows_of_inv['email'];
+                 $inv_phone=$rows_of_inv['phone'];
+         }
+     }
+
+    
+
+
 
        $cardHtml .= 
        
@@ -97,12 +171,23 @@ while($row = mysqli_fetch_assoc($result)){
         <p>Comapny Goal: ' . $row['goal'] . '</p>
         <p>Request date: ' . $row['date-of-post'] . '</p>
         <button class="invest-button">' . $row['status-of-post'] . '</button>
-        <button class="Not-inteerested invest-button">' . $row['status-of-request'] . '</button>
+        <button onclick="showinfo()" class="Not-inteerested invest-button">' . $row['status-of-request'] . ' -by</button>
       </div>
     </div>
 
 
 
+<br><br>
+          <div class="profile-card">
+               <img src="profile-picture.jpg" alt="Profile Picture" class="profile-picture">
+                    <div class="profile-name">John Doe</div>
+                         <div class="profile-label">Email:</div>
+                          <div class="profile-email">john.doe@example.com</div>
+                         <div class="profile-label">Phone:</div>
+                         <div class="profile-phone">123-456-7890</div>
+                         <button class="contact-button">Contact</button>
+                         <button class="chat-button">Chat</button>
+                        </div>
 <br><br>
 
 
@@ -153,5 +238,7 @@ while($row = mysqli_fetch_assoc($result)){
  
     <?php echo $cardHtml; ?>
     <?php require "footer.php";?> 
+
+    <script src="accepted_card.js"></script>
 </body>
 </html>
