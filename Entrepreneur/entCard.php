@@ -16,12 +16,19 @@ session_start();?>
 
         
         .profile-card {
+            margin-top:2vh;
             border: 1px solid #ccc;
             border-radius: 10px;
             padding: 20px;
-            width: 300px;
+            width: 100%;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             text-align: center;
+            display:none;
+        }
+
+        .show{
+
+            display:block;
         }
 
         .profile-picture {
@@ -94,7 +101,7 @@ while($row = mysqli_fetch_assoc($result)){
 
 
 
-     $acceptedPersonId = $row['accepted_investor_id'];
+      $acceptedPersonId = $row['accepted_investor_id'];
 
      if($acceptedPersonId !=-1)
      {
@@ -171,23 +178,35 @@ while($row = mysqli_fetch_assoc($result)){
         <p>Comapny Goal: ' . $row['goal'] . '</p>
         <p>Request date: ' . $row['date-of-post'] . '</p>
         <button class="invest-button">' . $row['status-of-post'] . '</button>
-        <button onclick="showinfo()" class="Not-inteerested invest-button">' . $row['status-of-request'] . ' -by</button>
+        <button onclick="showinfo('.$acceptedPersonId.')" class="Not-inteerested invest-button">' . $row['status-of-request'] . ' -by</button>
       </div>
+     
+     
+      <div class="profile-card" id="show">
+      <img src="../Investor/investor_profile/'.$inv_photo.'" alt="Profile Picture" class="profile-picture">
+           <div class="profile-name">'.$inv_name.'</div>
+                <div class="profile-label">Email:</div>
+                 <div class="profile-email">'.$inv_email.'</div>
+                <div class="profile-label">Phone:</div>
+                <div class="profile-phone">+880'.$inv_phone.'</div>
+                <button class="contact-button">Contact</button>
+                <button class="chat-button">Chat</button>
+                <button onclick="hideinfo('.$acceptedPersonId.')" class="contact-button">Show less</button>
+               </div>
+
+      
+      
+      
     </div>
 
 
 
 <br><br>
-          <div class="profile-card">
-               <img src="profile-picture.jpg" alt="Profile Picture" class="profile-picture">
-                    <div class="profile-name">John Doe</div>
-                         <div class="profile-label">Email:</div>
-                          <div class="profile-email">john.doe@example.com</div>
-                         <div class="profile-label">Phone:</div>
-                         <div class="profile-phone">123-456-7890</div>
-                         <button class="contact-button">Contact</button>
-                         <button class="chat-button">Chat</button>
-                        </div>
+
+
+          
+
+
 <br><br>
 
 

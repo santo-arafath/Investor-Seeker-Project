@@ -1,9 +1,26 @@
 
-function showinfo()
+function showinfo(val)
 {
-    let a = document.querySelector("profile-card");
-    // a.classList.add('show');
 
-    a.innerHTML="hello";
+    if(val!=-1)
+    {
+    let a = document.getElementById("show");
+    a.classList.add('show');
+
+    }
+
+    
+
+}
+
+function hideinfo(val)
+{
+
+    if(val!=-1)
+    {
+    let a = document.getElementById("show");
+    a.classList.remove('show');
+
+    } 
 
 }
