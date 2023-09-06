@@ -2,9 +2,9 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <link rel="stylesheet" href="profile_setting_style.css">
+        <link rel="stylesheet" href="all_css/profile_setting_style.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
 
@@ -76,8 +76,8 @@ $result=mysqli_query($connnection,$query);
                 <li><a href="profile_entro_details.php"><i class="fas fa-user"></i> Account</a></li>
                 <li><a href="profile_entro_update_real.php"><i class="fas fa-shield-alt"></i> Update</a></li>
                 <li><a href="profile_entro_password_change_real.php"><i class="fas fa-lock"></i> Password</a></li>
-                <li><a href="#"><i class="fas fa-bell"></i> Notification</a></li>
-                <li><a href="entro_showProfile_first_Get_start.php"><i class="fas fa-arrow-left"></i> Back</a></li>
+                <li id="working"><a href="#"><i class="fas fa-bell"></i> Notification</a></li>
+                <li><a href="entro_showProfile_first_Get_start.php"><i class="fas fa-arrow-left"></i> Back to home</a></li>
             </ul>
               
           </div> <!--sidebarfor end-->
@@ -89,6 +89,8 @@ $result=mysqli_query($connnection,$query);
              }
              
              ?>
+
+
 
 
 

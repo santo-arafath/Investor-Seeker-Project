@@ -2,8 +2,13 @@
 
 session_start();
 
+if(!isset($_SESSION['usrName']))
+{
+  header("location:../Home/loginForm.php");
+}
 
-echo "santo";
+
+
 
 $rcv=$_SESSION['id'];
 $delete_photo=$_SESSION['photo_show_entro'];

@@ -10,16 +10,28 @@ body {
   
   }
 
-  
+  html,body{
+    height: 100%;
+    width: 100%;
+  }
 
+  
+  .mainpage{
+
+    height: 100%;
+    width: 100%;
+    position: relative;
+
+  }
 
 .container {
     width: 100%;
-    min-height: 90vh; 
+    height: 100vh; 
     background-color: #083f4c;
     display: flex;
     flex-direction: row;
     margin:auto;
+    position: relative;
 }
 
 .navig{
@@ -82,8 +94,9 @@ body {
     flex-direction: column;
     margin-top: 10px;  
     border-radius: 10px;
-    height: 300px;
+    max-height: 300px;
     box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+    position: relative;
     
 }
 
