@@ -7,7 +7,6 @@ body {
     align-items: center;
     height: 100vh;
     background-image: url("../photo/chat_back1.jpg");
-    /* background-repeat: no-repeat; */
     object-fit:unset;
     
 }
@@ -38,20 +37,23 @@ body {
     max-height: 70vh;
 }
 
-.input-box {
+.input-box form{
     display: flex;
 }
 
 #messageInput {
     flex-grow: 1;
-    border: none;
+    border: 1px solid #569be5;
+    border-right: none;
     border-radius: 4px 0 0 4px;
     padding: 10px;
 }
 
-button {
+input[type=submit]{
+
+    border: 1px solid #569be5;
+    border-left: none;
     background-color: #569be5;
-    border: none;
     color: #fff;
     border-radius: 0 4px 4px 0;
     cursor: pointer;
@@ -59,6 +61,6 @@ button {
     transition: background-color 0.3s ease;
 }
 
-button:hover {
+input[type=submit]:hover {
     background-color: #0056b3;
 }

@@ -110,6 +110,7 @@ while($row = mysqli_fetch_assoc($result)){
 
      if($acceptedPersonId !=-1)
      {
+        $_SESSION['sender']=$acceptedPersonId;
         
         $sql = mysqli_query($connnection, "SELECT * FROM `investor_reg_table1` WHERE id='$acceptedPersonId'");
 
@@ -194,9 +195,13 @@ while($row = mysqli_fetch_assoc($result)){
                  <div class="profile-email">'.$inv_email.'</div>
                 <div class="profile-label">Phone:</div>
                 <div class="profile-phone">+880'.$inv_phone.'</div>
+
+                <form action="chat_box.php" method="post">
                 <button class="contact-button">Contact</button>
-                <button class="chat-button">Chat</button>
+                <input type="submit" name="chat_button" value="chat" class="chat-button">
                 <button onclick="hideinfo('.$acceptedPersonId.')" class="contact-button">Show less</button>
+
+                </form>
                </div>
 
       
@@ -260,7 +265,11 @@ while($row = mysqli_fetch_assoc($result)){
                 '</div>'
 ?>
  
-    <?php echo $cardHtml; ?>
+    <?php echo $cardHtml; 
+    
+    
+    
+    ?>
     <?php require "footer.php";?> 
 
     <script src="accepted_card.js"></script>
