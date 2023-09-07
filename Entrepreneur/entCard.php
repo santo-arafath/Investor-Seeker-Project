@@ -91,6 +91,7 @@ if(!isset($_SESSION['usrName']))
 
 $session_name=$_SESSION['usrName'];
 $profile_photo=$_SESSION['photo_show_entro'];
+$_entro_id_logged_in=$_SESSION['id'];
 
 
 
@@ -101,12 +102,19 @@ $result = mysqli_query($connnection, "SELECT * FROM `card_information_all` WHERE
 
 $cardHtml = '';
 $count=0;
+
+
+
+
+
 while($row = mysqli_fetch_assoc($result)){
       $count++;
 
 
 
       $acceptedPersonId = $row['accepted_investor_id'];
+
+    //   echo $acceptedPersonId;
 
      if($acceptedPersonId !=-1)
      {
@@ -127,7 +135,9 @@ while($row = mysqli_fetch_assoc($result)){
 
 
 
-       $cardHtml .= 
+    //    $cardHtml .= 
+
+    echo 
        
 
        '<h1>My Busines details : '.$count.'</h1>
@@ -184,8 +194,12 @@ while($row = mysqli_fetch_assoc($result)){
         <p>Comapny Goal: ' . $row['goal'] . '</p>
         <p>Request date: ' . $row['date-of-post'] . '</p>
         <button class="invest-button">' . $row['status-of-post'] . '</button>
+
+        
         <button onclick="showinfo('.$acceptedPersonId.')" class="Not-inteerested invest-button">' . $row['status-of-request'] . ' -by</button>
-      </div>
+     
+     
+        </div>
      
      
       <div class="profile-card" id="show">
@@ -196,12 +210,18 @@ while($row = mysqli_fetch_assoc($result)){
                 <div class="profile-label">Phone:</div>
                 <div class="profile-phone">+880'.$inv_phone.'</div>
 
-                <form action="chat_box.php" method="post">
+                
                 <button class="contact-button">Contact</button>
-                <input type="submit" name="chat_button" value="chat" class="chat-button">
+
+
+                <form action="chat_box.php" method="post">
+                     <input type="submit" name="chat_button" value="chat" class="chat-button">
+                </form>
+
+                
                 <button onclick="hideinfo('.$acceptedPersonId.')" class="contact-button">Show less</button>
 
-                </form>
+               
                </div>
 
       
@@ -265,7 +285,10 @@ while($row = mysqli_fetch_assoc($result)){
                 '</div>'
 ?>
  
-    <?php echo $cardHtml; 
+    <?php 
+    
+    
+    // echo $cardHtml; 
     
     
     
