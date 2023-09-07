@@ -110,7 +110,7 @@ while($row = mysqli_fetch_assoc($result)){
 
      if($acceptedPersonId !=-1)
      {
-        $_SESSION['sender']=$acceptedPersonId;
+        $_SESSION['receiver']=$acceptedPersonId;
         
         $sql = mysqli_query($connnection, "SELECT * FROM `investor_reg_table1` WHERE id='$acceptedPersonId'");
 
