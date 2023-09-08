@@ -8,7 +8,9 @@ if(!isset($_SESSION['usrName']))
 }
 
  $sender=$_SESSION['id'];
- $receiver=$_SESSION['receiver'];
+ 
+//  $receiver=$_SESSION['receiver'];'
+$connection=mysqli_connect('localhost','root','','project_investor_seeker_db');
 ?>
 
 <!DOCTYPE html>
@@ -29,55 +31,66 @@ if(!isset($_SESSION['usrName']))
 
           
         
-           $connection=mysqli_connect('localhost','root','','project_investor_seeker_db');
+          
+   if($connection){
 
-           $sql=$result = "SELECT * FROM `chat_history_and_relational_table` WHERE entrepreneur_id='$sender'";
+           $sql = "SELECT * FROM `chat_history_and_relational_table` WHERE entrepreneur_id='$sender'";
 
-           if($connection){
+          
                
-            $result=mysqli_query($connection,$sql);
+            $result=mysqli_query($connection, $sql);
 
-            while($row = mysqli_fetch_assoc($result)){
+            $count=-1;
 
-                if($rows_of_message= mysqli_fetch_assoc($result))
-                    {
-                        
-                         $_message_rcv=$rows_of_message['message'];
-                         $_sender_rcv=$rows_of_message['sender_id'];
-                         $_receiver_rcv=$rows_of_message['receiver_id'];
+            while($rows = mysqli_fetch_assoc($result)){
+                  
+                   $count++;
+                         $_message_rcv=$rows['message'];
+                         $_sender_rcv=$rows['sender_id'];
+                         $_receiver_rcv=$rows['receiver_id'];
+                         $_date_rcv=$rows['send_date'];
+                         $_time_rcv=$rows['send_time'];
                          
-                    }
 
-                    if($_sender_rcv==$sender)
-                    {
-
+                    
+                         if($_sender_rcv==$sender)
+                         {
                     ?>
 
 
 
                             <div class="myconversation">
-                                     <h3><?php echo $_message_rcv;?></h3>
+                                     <h3 onmouseover="showdate($count)"><?php echo $_message_rcv;?></h3>
+                                     <h6><?php echo $_date_rcv.$_time_rcv ?> </h6>
                             </div>
 
-                    <?php
+                          <?php 
+                          
+                              }else{
 
-                    }else{
+                          ?>
+
+
+                            <div class="history">
+                                     <h3 onmouseover="showdate($count)"><?php echo $_message_rcv;?></h3><h6>
+                                        <?php echo $_date_rcv.$_time_rcv ?> </h6>
+                            </div>
+
+
+                    <?php
+                                }
+                   
 
                     
 
-                    ?>
-
-                        <div class="history">
-                        <h3><?php echo $_message_rcv;?></h3>
-
-                         </div>
-
-                    <?php
-                    }
+                    
            
        
        
-            }     
+            }  
+            
+            
+            
     
     
     
@@ -120,3 +133,4 @@ if(isset($_REQUEST['chat_button']))
 
 ?>
 
+<script src="show_date.js"></script>

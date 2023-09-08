@@ -91,6 +91,7 @@ if(!isset($_SESSION['usrName']))
 
 $session_name=$_SESSION['usrName'];
 $profile_photo=$_SESSION['photo_show_entro'];
+
 $_entro_id_logged_in=$_SESSION['id'];
 
 
@@ -182,20 +183,29 @@ while($row = mysqli_fetch_assoc($result))
         <p>Equrty offer: ' . $row['equity-offer'] . ' Tk</p>
         <p>Comapny Goal: ' . $row['goal'] . '</p>
         <p>Request date: ' . $row['date-of-post'] . '</p>
-        <button class="invest-button">' . $row['status-of-post'] . '</button>
+        <button class="invest-button">' . $row['status-of-post'] . '</button>';
 
-        
-        <button onclick="showinfo('.$count,$acceptedPersonId.')" class="Not-inteerested invest-button">' . $row['status-of-request'] . ' -by</button>
+        if($acceptedPersonId !=-1){
+       echo
+
+
+        '<button onclick="showinfo('.$count.')" class="Not-inteerested invest-button">' . $row['status-of-request'] . ' -by</button>';
+             }
+             else{
+
+                echo
+
+                '<button onclick="" class="Not-inteerested invest-button">' . $row['status-of-request'] . '</button>';
+             }
      
-     
-        </div>';
+       echo
+
+        '</div>';
 
 
         //    if($acceptedPersonId !=-1)
-           {
-// 
-
-            
+                {
+//  
             $sql = mysqli_query($connnection, "SELECT * FROM `investor_reg_table1` WHERE id='$acceptedPersonId'");
 
                  if($rows_of_inv= mysqli_fetch_assoc($sql))
@@ -207,7 +217,7 @@ while($row = mysqli_fetch_assoc($result))
                             
                      }
 
-        }  
+         
      
      echo 
       '<div class="profile-card" id="showdrop">
@@ -226,7 +236,6 @@ while($row = mysqli_fetch_assoc($result))
                      <input type="submit" name="chat_button" value="chat" class="chat-button">
                 </form>
 
-                
                 <button onclick="hideinfo('.$count.')" class="contact-button">Show less</button>
 
                
@@ -238,7 +247,7 @@ while($row = mysqli_fetch_assoc($result))
     
 
 
-     
+                    }
 
 
 

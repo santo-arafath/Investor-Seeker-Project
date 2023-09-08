@@ -1,3 +1,5 @@
+
+
 body {
     font-family: Arial, sans-serif;
     background-color: #f2f2f2;
@@ -6,10 +8,13 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-image: url("../photo/chat_back1.jpg");
+    background-image: url("../../Investor/photo/chat_back1.jpg");
     object-fit:unset;
     
 }
+
+
+
 
 .container {
     background-color: #fff;
@@ -28,7 +33,7 @@ body {
     flex-grow: 1;
     padding: 10px;
     background-color: #f7f7f7;
-    background-image: url("../photo/chatbox_back.jpg");
+    background-image: url("../../Investor/photo/chatbox_back.jpg");
 
     border-radius: 4px;
     overflow: auto;
@@ -68,11 +73,40 @@ input[type=submit]:hover {
 .myconversation{
     display: flex;
     justify-content: flex-end;
+    
 }
 
 .history{
     display: flex;
     justify-content: flex-start;
+   
 }
+
+.myconversation h3,
+.history h3{
+
+    margin-left: 1vw;
+}
+
+.myconversation h6,
+
+
+.history h6{
+
+
+
+    font-size: 1.2vw;
+    color: rgb(85, 80, 80);
+    display: none;
+
+}
+
+.time_show h6{
+
+
+
+}
+
+
 
 

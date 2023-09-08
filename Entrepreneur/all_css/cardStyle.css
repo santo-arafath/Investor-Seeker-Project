@@ -26,6 +26,7 @@ body {
 
 .card:hover {
   transform: scale(1.08);
+  /* box-shadow: 0 2px 10px rgba(203, 230, 54, 0.1); */
 }
 
 .card img {

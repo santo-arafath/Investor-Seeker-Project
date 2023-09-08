@@ -27,7 +27,8 @@ if(isset($_REQUEST['sendmessage']))
 
      if($successfull)
      {
-         echo "inserted";
+        
+        header("location:chat_box.php");
 
         
      }else{

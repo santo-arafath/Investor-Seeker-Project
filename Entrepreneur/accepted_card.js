@@ -1,15 +1,13 @@
 
-function showinfo(cardnumber,id) {
+function showinfo(cardnumber) {
 
     cardnumber--;
 
-    console.log(cardnumber);
-    console.log(id);
         const all = document.getElementsByClassName("profile-card");
+
         
-        // Loop through all elements with class "profile-card"
+        
         for (var i = 0; i < all.length; i++) {
-            // Add the "show" class to each element
             
             if(cardnumber == i){
             
