@@ -32,7 +32,7 @@ if(!isset($_SESSION['usrName']))
         }
 
         .show{
-
+              
             display:block;
         }
 
@@ -107,29 +107,18 @@ $count=0;
 
 
 
-while($row = mysqli_fetch_assoc($result)){
-      $count++;
+while($row = mysqli_fetch_assoc($result))
 
-
-
-      $acceptedPersonId = $row['accepted_investor_id'];
-
+  {
+         $count++;
+         $acceptedPersonId = $row['accepted_investor_id'];
+         $card_id=$row['id'];
     //   echo $acceptedPersonId;
-
-     if($acceptedPersonId !=-1)
-     {
-        $_SESSION['receiver']=$acceptedPersonId;
-        
-        $sql = mysqli_query($connnection, "SELECT * FROM `investor_reg_table1` WHERE id='$acceptedPersonId'");
-
-       if($rows_of_inv= mysqli_fetch_assoc($sql))
+    
+     if($acceptedPersonId !=-1 )
          {
-                 $inv_photo=$rows_of_inv['investor_profile'];
-                 $inv_name=$rows_of_inv['name'];
-                 $inv_email=$rows_of_inv['email'];
-                 $inv_phone=$rows_of_inv['phone'];
+            $_SESSION['receiver']=$acceptedPersonId; 
          }
-     }
 
     
 
@@ -196,13 +185,32 @@ while($row = mysqli_fetch_assoc($result)){
         <button class="invest-button">' . $row['status-of-post'] . '</button>
 
         
-        <button onclick="showinfo('.$acceptedPersonId.')" class="Not-inteerested invest-button">' . $row['status-of-request'] . ' -by</button>
+        <button onclick="showinfo('.$count,$acceptedPersonId.')" class="Not-inteerested invest-button">' . $row['status-of-request'] . ' -by</button>
      
      
-        </div>
+        </div>';
+
+
+        //    if($acceptedPersonId !=-1)
+           {
+// 
+
+            
+            $sql = mysqli_query($connnection, "SELECT * FROM `investor_reg_table1` WHERE id='$acceptedPersonId'");
+
+                 if($rows_of_inv= mysqli_fetch_assoc($sql))
+                      {
+                              $inv_photo=$rows_of_inv['investor_profile'];
+                              $inv_name=$rows_of_inv['name'];
+                             $inv_email=$rows_of_inv['email'];
+                            $inv_phone=$rows_of_inv['phone'];
+                            
+                     }
+
+        }  
      
-     
-      <div class="profile-card" id="show">
+     echo 
+      '<div class="profile-card" id="showdrop">
       <img src="../Investor/investor_profile/'.$inv_photo.'" alt="Profile Picture" class="profile-picture">
            <div class="profile-name">'.$inv_name.'</div>
                 <div class="profile-label">Email:</div>
@@ -219,19 +227,27 @@ while($row = mysqli_fetch_assoc($result)){
                 </form>
 
                 
-                <button onclick="hideinfo('.$acceptedPersonId.')" class="contact-button">Show less</button>
+                <button onclick="hideinfo('.$count.')" class="contact-button">Show less</button>
 
                
-               </div>
+               </div>';
 
       
       
       
+    
+
+
+     
+
+
+
+echo
+    
+    '
     </div>
-
-
-
-<br><br>
+    
+    <br><br>
 
 
           
@@ -280,7 +296,7 @@ while($row = mysqli_fetch_assoc($result)){
 
               
                
-                }//last
+                }////////////last
 
                 '</div>'
 ?>
