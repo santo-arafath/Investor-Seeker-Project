@@ -89,21 +89,21 @@ input[type=submit]:hover {
 }
 
 .myconversation h6,
-
-
 .history h6{
+    transition-delay: 2s;
+    margin-top:40px;
 
-
-
-    font-size: 1.2vw;
+    font-size: 11px;
     color: rgb(85, 80, 80);
     display: none;
 
 }
 
-.time_show h6{
+.showdate h6{
 
+    
 
+    display: block;
 
 }
 

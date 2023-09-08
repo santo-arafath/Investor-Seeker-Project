@@ -60,8 +60,9 @@ $connection=mysqli_connect('localhost','root','','project_investor_seeker_db');
 
 
                             <div class="myconversation">
-                                     <h3 onmouseover="showdate($count)"><?php echo $_message_rcv;?></h3>
-                                     <h6><?php echo $_date_rcv.$_time_rcv ?> </h6>
+                            <h6><?php echo $_date_rcv.$_time_rcv ?> </h6>
+                                     <h3 onmouseover="showdate(<?php echo $count; ?>)" onmouseout="hidedate(<?php echo $count; ?>)"><?php echo $_message_rcv;?></h3><br>
+                                     
                             </div>
 
                           <?php 
@@ -72,8 +73,8 @@ $connection=mysqli_connect('localhost','root','','project_investor_seeker_db');
 
 
                             <div class="history">
-                                     <h3 onmouseover="showdate($count)"><?php echo $_message_rcv;?></h3><h6>
-                                        <?php echo $_date_rcv.$_time_rcv ?> </h6>
+                                     <h3 onmouseover="showdateHistory(<?php echo $count; ?>)" onmouseout="hidedateHistory(<?php echo $count; ?>)"><?php echo $_message_rcv;?></h3><br>
+                                     <h6><?php echo $_date_rcv."-".$_time_rcv ?> </h6>
                             </div>
 
 
@@ -133,4 +134,4 @@ if(isset($_REQUEST['chat_button']))
 
 ?>
 
-<script src="show_date.js"></script>
+<script src="entre_all_js/show_date.js"></script>

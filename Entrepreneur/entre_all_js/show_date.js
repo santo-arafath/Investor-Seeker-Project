@@ -1,6 +1,12 @@
+
+// import { setTimeout } from "timers/promises";
+
+
 function showdate(messagenumber) {
 
-    messagenumber;
+    console.log(1);
+
+    // messagenumber;
 
         const all = document.getElementsByClassName("myconversation");
 
@@ -21,22 +27,84 @@ function showdate(messagenumber) {
 
 
 
-// function hideinfo(val)
-// {
 
-//     val--;
-//         const all = document.getElementsByClassName("profile-card");
+
+
+
+
+
+
+
+
+function hidedate(value)
+{
+
+
+    console.log(2);
+
+    // val--;
+        const all = document.getElementsByClassName("myconversation");
         
-//         for (var i = 0; i < all.length; i++) {
+        for (let i = 0; i < all.length; i++) {
             
-//             if(val == i){
-            
-//             all[i].classList.remove('show');
+            if(value == i){
+               
+            all[i].classList.remove('showdate');
 
-//             }
-//         }
-//     // a.classList.remove('show');
+            }
+        }
+    // a.classList.remove('show');
 
      
 
-// }
+}
+
+
+
+
+function showdateHistory(messagenumber) {
+
+    console.log(4);
+
+    // messagenumber;
+
+        const all = document.getElementsByClassName("history");
+
+        
+        
+        for (let i = 0; i < all.length; i++) {
+            
+            if(messagenumber == i){
+            
+            all[i].classList.add('showdate');
+
+            }
+        }
+    
+}
+
+
+
+
+function hidedateHistory(value)
+{
+
+
+    console.log(5);
+
+    // val--;
+        const all = document.getElementsByClassName("history");
+        
+        for (let i = 0; i < all.length; i++) {
+            
+            if(value == i){
+               
+            all[i].classList.remove('showdate');
+
+            }
+        }
+    // a.classList.remove('show');
+
+     
+
+}
