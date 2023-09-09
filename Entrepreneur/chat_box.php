@@ -8,8 +8,22 @@ if(!isset($_SESSION['usrName']))
 }
 
  $sender=$_SESSION['id'];
+ $receiver=$_SESSION['receiver'];
+
+
+ if(isset($_REQUEST['chat_button']))
+ {
+  
+     echo $sender;
+     echo $receiver;
+    
+    }
  
-//  $receiver=$_SESSION['receiver'];'
+ 
+ 
+ 
+  
+  
 $connection=mysqli_connect('localhost','root','','project_investor_seeker_db');
 ?>
 
@@ -25,7 +39,22 @@ $connection=mysqli_connect('localhost','root','','project_investor_seeker_db');
    
 
     <div class="container">
+        <div class="heading">
+        <div class="left_side">
+            <a href=""> < Back </a>
+        </div>
+
+        <div class="image">
+            <h2>Arafath hossen santo</h2>
+            <img src="website.jpg">
+        </div>
+
+        
+            
+        </div>
         <div class="chat-box" id="chatBox">
+
+        
 
         <?php 
 
@@ -34,7 +63,7 @@ $connection=mysqli_connect('localhost','root','','project_investor_seeker_db');
           
    if($connection){
 
-           $sql = "SELECT * FROM `chat_history_and_relational_table` WHERE entrepreneur_id='$sender'";
+           $sql = "SELECT * FROM `chat_history_and_relational_table` WHERE entrepreneur_id='$sender' and  investor_id='$receiver'";
 
           
                
@@ -55,13 +84,16 @@ $connection=mysqli_connect('localhost','root','','project_investor_seeker_db');
                     
                          if($_sender_rcv==$sender)
                          {
-                    ?>
+                                    
+                                    
+                                    ?>
 
 
 
-                            <div class="myconversation">
+                            <div class="myconversation old">
                             <h6><?php echo $_date_rcv.$_time_rcv ?> </h6>
                                      <h3 onmouseover="showdate(<?php echo $count; ?>)" onmouseout="hidedate(<?php echo $count; ?>)"><?php echo $_message_rcv;?></h3><br>
+                                     <img src="#">
                                      
                             </div>
 
@@ -72,9 +104,11 @@ $connection=mysqli_connect('localhost','root','','project_investor_seeker_db');
                           ?>
 
 
-                            <div class="history">
-                                     <h3 onmouseover="showdateHistory(<?php echo $count; ?>)" onmouseout="hidedateHistory(<?php echo $count; ?>)"><?php echo $_message_rcv;?></h3><br>
-                                     <h6><?php echo $_date_rcv."-".$_time_rcv ?> </h6>
+                            <div class="myconversation history">
+                            <img src="#">
+                                     <h3 onmouseover="showdate(<?php echo $count; ?>)" onmouseout="hidedate(<?php echo $count; ?>)"><?php echo $_message_rcv;?></h3><br>
+                                     <h6><?php echo $_date_rcv.$_time_rcv ?> </h6>
+                                    
                             </div>
 
 
@@ -105,7 +139,7 @@ $connection=mysqli_connect('localhost','root','','project_investor_seeker_db');
         </div>
         <div class="input-box">
             <form action="send_message.php" method="get">
-            <input type="text" name="message" id="messageInput" placeholder="Type your message">
+            <input type="text" name="message" id="messageInput" placeholder="Type your message" Required>
             <input type="submit" name="sendmessage" class="send">
             </form>
         </div>
@@ -124,12 +158,6 @@ $connection=mysqli_connect('localhost','root','','project_investor_seeker_db');
 
 
 
-
-
-if(isset($_REQUEST['chat_button']))
-{
- 
-    echo $_SESSION['receiver'];}
 
 
 ?>
