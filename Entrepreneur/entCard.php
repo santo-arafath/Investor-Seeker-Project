@@ -89,6 +89,11 @@ if(!isset($_SESSION['usrName']))
 
 <?php
 
+/////////////////array 
+
+$_card_investor_id_by_position=array();
+
+
 $session_name=$_SESSION['usrName'];
 $profile_photo=$_SESSION['photo_show_entro'];
 
@@ -115,12 +120,11 @@ while($row = mysqli_fetch_assoc($result))
          $acceptedPersonId = $row['accepted_investor_id'];
          $card_id=$row['id'];
     //   echo $acceptedPersonId;
-    
-     if($acceptedPersonId !=-1 )
-         {
-            $_SESSION['receiver']=$acceptedPersonId; 
-         }
 
+        
+    array_push($_card_investor_id_by_position,$acceptedPersonId);
+    
+     
     
 
 
@@ -185,6 +189,8 @@ while($row = mysqli_fetch_assoc($result))
         <p>Request date: ' . $row['date-of-post'] . '</p>
         <button class="invest-button">' . $row['status-of-post'] . '</button>';
 
+
+
         if($acceptedPersonId !=-1){
        echo
 
@@ -229,11 +235,17 @@ while($row = mysqli_fetch_assoc($result))
                 <div class="profile-phone">+880'.$inv_phone.'</div>
 
                 
-                <button class="contact-button">Contact</button>
+                <button class="contact-button">Contact</button>';
+
+               
 
 
-                <form action="chat_box.php" method="post">
+
+                echo '<form action="chat_box_preparation.php?investor_chat='.$_card_investor_id_by_position[$count-1].'" method="post">
                      <input type="submit" name="chat_button" value="chat" class="chat-button">
+
+                    
+
                 </form>
 
                 <button onclick="hideinfo('.$count.')" class="contact-button">Show less</button>

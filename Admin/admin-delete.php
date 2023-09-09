@@ -23,6 +23,7 @@ if(!isset($_SESSION['usrName']))
 
        $rcv=$_REQUEST['id'];
        $rcvv=$_REQUEST['photo'];
+       
        $sqlin= "DELETE FROM `admin-table1` WHERE id = $rcv";
    
 

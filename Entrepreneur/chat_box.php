@@ -7,9 +7,12 @@ if(!isset($_SESSION['usrName']))
   header("location:../Home/loginForm.php");
 }
 
- $sender=$_SESSION['id'];
- $receiver=$_SESSION['receiver'];
 
+
+ $sender=$_SESSION['id'];
+ $receiver=$_SESSION['rcver'];
+
+ 
 
  if(isset($_REQUEST['chat_button']))
  {
@@ -34,19 +37,77 @@ $connection=mysqli_connect('localhost','root','','project_investor_seeker_db');
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chat Page</title>
     <link rel="stylesheet" href="all_css/chatbox_style.css">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
 </head>
+
+
 <body>
-   
+
 
     <div class="container">
         <div class="heading">
-        <div class="left_side">
-            <a href=""> < Back </a>
-        </div>
+        <?php
+
+      if($connection){
+
+
+   
+
+    
+    $sql_sender = "SELECT * FROM `entrepreneur-reg-table1` WHERE id='$sender'";
+
+
+    $sender_result=mysqli_query($connection, $sql_sender);
+    $rows_entro = mysqli_fetch_assoc($sender_result);
+    
+             $sender_name = $rows_entro['name'];
+             $sender_photo=$rows_entro['profile_photo'];
+
+
+
+
+    
+
+
+
+
+
+
+    $sql_rcver = "SELECT * FROM `investor_reg_table1` WHERE id='$receiver'";
+    $reciever_result=mysqli_query($connection, $sql_rcver);
+    $rows_inv= mysqli_fetch_assoc($reciever_result);
+
+
+
+        $reciever_name=$rows_inv['name'];
+        $reciever_photo=$rows_inv['investor_profile'];
+
+
+
+
+
+
+
+
+    
+
+
+
+
+}
+
+
+
+       ?>
 
         <div class="image">
-            <h2>Arafath hossen santo</h2>
-            <img src="website.jpg">
+            <img src="../Investor/investor_profile/<?php echo $reciever_photo; ?>">
+            <h2><?php  echo  $reciever_name;  ?></h2>  
+        </div>
+
+        <div class="left_side">
+            <a href="entCard.php"> < Back </a>
         </div>
 
         
@@ -61,7 +122,7 @@ $connection=mysqli_connect('localhost','root','','project_investor_seeker_db');
           
         
           
-   if($connection){
+if($connection){
 
            $sql = "SELECT * FROM `chat_history_and_relational_table` WHERE entrepreneur_id='$sender' and  investor_id='$receiver'";
 
@@ -93,7 +154,7 @@ $connection=mysqli_connect('localhost','root','','project_investor_seeker_db');
                             <div class="myconversation old">
                             <h6><?php echo $_date_rcv.$_time_rcv ?> </h6>
                                      <h3 onmouseover="showdate(<?php echo $count; ?>)" onmouseout="hidedate(<?php echo $count; ?>)"><?php echo $_message_rcv;?></h3><br>
-                                     <img src="#">
+                                     
                                      
                             </div>
 
@@ -105,7 +166,7 @@ $connection=mysqli_connect('localhost','root','','project_investor_seeker_db');
 
 
                             <div class="myconversation history">
-                            <img src="#">
+                            <img src="../Investor/investor_profile/<?php echo $reciever_photo; ?>">
                                      <h3 onmouseover="showdate(<?php echo $count; ?>)" onmouseout="hidedate(<?php echo $count; ?>)"><?php echo $_message_rcv;?></h3><br>
                                      <h6><?php echo $_date_rcv.$_time_rcv ?> </h6>
                                     

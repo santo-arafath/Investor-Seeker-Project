@@ -148,6 +148,16 @@ input[type=submit]:hover {
     text-decoration: none;
 }
 
+.history img{
+
+
+    height: 30px;
+    width: 30px;
+    border-radius: 50px;
+    margin-top:13px;
+
+}
+
 
 
 
