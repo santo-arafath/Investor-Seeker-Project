@@ -85,8 +85,12 @@
 
         
                 if($row_count){
+
+
                     session_start();
                     echo "Login success";
+
+                    
                     $_SESSION['useRname']=$usname;
                     // $_SESSION['idd']=$id;
                     $_SESSION['current-time']=time();

@@ -16,6 +16,16 @@
 <?php require "include/inv_header.php";
 
 
+
+
+$_card_enrepreneur_id_by_position=array();
+
+$session_name=$_SESSION['useRname'];
+
+// $profile_photo=$_SESSION['photo_show_entro'];
+
+$_investor_id_logged_in=$_SESSION['id'];
+
      
 
      $cardHtml="";
@@ -48,7 +58,36 @@
      
             while($row=mysqli_fetch_assoc($result))
             {
-     $count++;
+
+         
+                         $count++;
+                         $send_dPerson_usname = $row['username'];
+
+                         // echo $send_dPerson_usname;
+
+                         $querynow_to_get_id_of_request_sender = "SELECT * FROM `entrepreneur-reg-table1` WHERE `username` = '$send_dPerson_usname'";
+
+
+                         $result_success=mysqli_query($connnection,$querynow_to_get_id_of_request_sender);
+                         $rows1=mysqli_fetch_assoc($result_success);
+                         $counttt=mysqli_num_rows($result_success);
+
+                          if($counttt>0){
+                         $send_dPerson_id = $rows1['id'];
+                          }
+                         // echo  $send_dPerson_id;
+
+
+
+
+              
+//   echo $acceptedPersonId;
+
+    
+            array_push($_card_enrepreneur_id_by_position,$send_dPerson_id);
+
+
+     // -------------------------------------------------
             $id=$row['id'];
             $card_photoo=$row['card-photo'];
             $company_name=$row['company-name'];
@@ -59,7 +98,7 @@
 
 
 
-$cardHtml .= '<br>
+echo '<br>
 <br>
 <br>
 <br>
@@ -124,11 +163,9 @@ $cardHtml .= '<br>
 <label name="not-intt" class="show-update" >' . $row['status-of-request'] . '</label>
 
 
-<form action="accept_offer_cheak.php?idtorcv='.$id.'" method="post">
+<form action="chat_box_setup_investor.php?with_entre_chat='.$_card_enrepreneur_id_by_position[$count-1].'" method="post">
 
-  <input type ="submit" name="accept-offer" class="Not-inteerested invest-button" value="Accept offer">
-  <input type ="submit" name="Like" class="Not-inteerested invest-button" value="Like the idea">
-  <input type ="submit" name="dislike" class="Not-inteerested invest-button" value="Dislike the idea">
+  <input type ="submit" name="chatting" class="Not-inteerested invest-button" value="Chat With Entrepreneur for Business purpose">
 
 </form>
 
@@ -147,7 +184,7 @@ $cardHtml .= '<br>
 
 
 
-echo $cardHtml;             
+// echo $cardHtml;             
 
 ?>
  <br><br>  <br><br>
