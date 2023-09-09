@@ -85,7 +85,8 @@ if(!isset($_SESSION['useRname']))
          die("not connected".mysqli_error());
     }else{
         $verified="verified";
-        $query = "SELECT * FROM `card_information_all` WHERE `status-of-post` = '$verified'";
+        $request="not-accepted";
+        $query = "SELECT * FROM `card_information_all` WHERE `status-of-post` = '$verified' AND `status-of-request` = '$request'";
 
         $result=mysqli_query($connnection,$query);
 
@@ -152,7 +153,10 @@ if(!isset($_SESSION['useRname']))
                 </div>
                 <!-- Repeat this swiper-slide for each card -->
                 
-                 <?php  } } }?>
+                 <?php  } }else{
+
+                    echo "NO request available at this moment!";
+                 } }?>
                 <!-- Repeat this swiper-slide for each card -->
             </div>
             <div class="swiper-pagination"></div>
@@ -224,7 +228,9 @@ if(!isset($_SESSION['useRname']))
             die("not connected".mysqli_error());
        }else{
            $verified="verified";
-           $query = "SELECT * FROM `card_information_all` WHERE `status-of-post` = '$verified'";
+           $request="not-accepted";
+
+           $query = "SELECT * FROM `card_information_all` WHERE `status-of-post` = '$verified' AND `status-of-request` = '$request'";
    
            $result=mysqli_query($connnection,$query);
    
@@ -267,7 +273,12 @@ if(!isset($_SESSION['useRname']))
                 </div>
             </div>
 
-        <?php  } }} ?>
+        <?php  } }else{
+
+echo "NO request available at this moment!";
+}
+    
+    } ?>
             <!-- Repeat this swiper-slide for each card -->
             
             
