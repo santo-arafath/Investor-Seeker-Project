@@ -12,6 +12,45 @@
 <!-- html part     -->
 <!-- html part     start -->
 
+<?php
+
+    $logged_in_name=$_SESSION['usrName'];
+
+
+require "includes/configure.php";
+    
+    if(!$connnection){
+         die("not connected".mysqli_error());
+    }else{
+
+        $queryyy="SELECT * FROM `admin-table1` WHERE username= '$logged_in_name'";
+
+        $result_rule=mysqli_query($connnection,$queryyy);
+
+
+
+        $counttt=mysqli_num_rows($result_rule);
+
+        if($counttt>0){
+
+            $rows=mysqli_fetch_assoc($result_rule);
+
+            $_role_of_admin=$rows['role'];
+
+
+
+  
+
+        }
+
+
+
+    }
+        
+           ?>
+
+    
+
 
 <!DOCTYPE html>
 <html>
@@ -43,6 +82,12 @@
                         </a>
                     </li>
 
+                    <?php
+
+                    if($_role_of_admin=='admin'){
+
+                    ?>
+
                     <li>
                         <a href="admin-show.php">
                         <span class="icon"><ion-icon name="people-outline"></ion-icon></span>
@@ -63,6 +108,43 @@
                         <span class="tittle">Entrepreneur</span>
                         </a>
                     </li>
+
+
+                    <?php
+
+                           }else{
+
+                             ?>
+
+
+
+                            <li>
+                            <a href="#" onclick="alert('Only admin alowed to access this!');">
+                            <span class="icon"><ion-icon name="people-outline"></ion-icon></span>
+                            <span class="tittle">All Admin</span>
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a href="#" onclick="alert('Only admin alowed to access this!');">
+                            <span class="icon"><ion-icon name="logo-usd"></ion-icon></span>
+                            <span class="tittle">Investor</span>
+                            </a>
+                        </li>
+    
+                        <li>
+                            <a href="#" onclick="alert('Only admin alowed to access this!');">
+                            <span class="icon"><ion-icon name="bulb-outline"></ion-icon></span>
+                            <span class="tittle">Entrepreneur</span>
+                            </a>
+                        </li>
+
+                    <?php
+
+                           }
+
+                    ?>
+
 
                     <li>
                         <a href="All_investment_card.php">

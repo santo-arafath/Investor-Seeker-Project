@@ -62,7 +62,7 @@
 <h3>Saida Binta Alam</h3>
 <p>CTO (Chief Technology Officer)</p>
 <div class="social-links">
-<a href="#"><i class="fab fa-facebook"></i></a>
+<a href="https://www.facebook.com/arafath.santo.9"><i class="fab fa-facebook"></i></a>
 <a href="#"><i class="fab fa-linkedin"></i></a>
 <a href="#"><i class="fab fa-twitter"></i></a>
 </div>
