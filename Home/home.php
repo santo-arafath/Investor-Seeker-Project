@@ -5,247 +5,43 @@
             <link rel="stylesheet" href="styleHome1.css"/>
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<script>
 
 
-            <style>
-
-               /* fotter */
-
-    section#hero{
-    height: calc(60vh - 6px);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-   }
-   #hero h1{
-   font-size: 65px;
-   margin-top: 1rem;
-   }
- 
-footer {
-    background-color: #1C1D1F;
-    color: #fff;
-    padding: 50px 0;
-    
-  }
-
-  footer .row{
-    display: flex;
-    justify-content:space-around;
-    align-items: center;
-    flex-wrap: wrap;
-    
-  }
-
-  footer .footer-box {
-    margin-bottom: 30px;
-    overflow-x:hidden;
-    
-  }
-
-  footer .aboutus{
-    margin-top: 78px;
-    padding-right: 60px;
-    padding-left: 60px;
-  }
-  footer .quicklink{
-
-    margin-top: 30px;
-  }
-  
- 
-
-  footer h4 {
-    font-size: 24px;
-    font-weight: bold;
-    margin-bottom: 20px;
-  }
-  
-  footer p {
-    font-size: 14px;
-    line-height: 1.5;
-  }
-  
-  footer ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-  
-  footer ul li {
-    margin-bottom: 10px;
-  }
-  
-  footer ul li a {
-    font-size: 14px;
-    color: #ccc;
-    text-decoration: none;
-    transition: all 0.3s ease;
-  }
-  
-  footer ul li a:hover {
-    color: #cd3535;
-  }
-  
-  footer .social-icons li {
-    display: inline-block;
-    margin-right: 10px;
-  }
-  
-  footer .container {
-   
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-
-  footer .newsletter{
-    margin-top: -30px;
-  }
-
-  .form-control{
-    
-
-    width: 300px;
-    height: 30px;
-    overflow: hidden;
-    border-radius: 10px;
-    padding: 5px;
-
-  }
-   
- 
-   
- /* fotter */
 
 
- @media (max-width: 991px){
-    
 
-    footer .col-lg-3 {
-        flex-basis: 33.33%;
-        max-width: 33.33%;
-      }
+function isInViewport(element) {
+  const rect = element.getBoundingClientRect();
+  return (
+    rect.top >= 0 &&
+    rect.left >= 0 &&
+    rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+    rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+  );
 }
 
 
-@media (max-width: 786px){
-    
-    /* footer */
+function handleScroll() {
+  const elements = document.querySelectorAll('header, section');
 
-    footer .col-md-6 {
-        flex-basis: 50%;
-        max-width: 50%;
-      }
-
-      footer .contactus{
-        margin-top:26px;
-
+  elements.forEach((element) => {
+    if (isInViewport(element) && element.style.opacity !== '1') {
+      element.style.opacity = '1';
     }
-    footer .aboutus{
-        margin-top:56px;
-        
-      }
-
-      footer .aboutus{
-        margin-top: 0;
-        padding-right: 0;
-      }
-
-      footer .quicklink{
-        margin-top: 0;
-        padding-right: 0;
-      }
-
-      footer .contactus{
-        margin-top: 0;
-        padding-right: 0;
-      }
-    /* footer */
-
-    
+  });
 }
 
-@media (max-width: 570px){
-    
-    
-        /* footer */
+window.addEventListener('scroll', handleScroll);
 
-        footer .row{
-            flex-direction: column;
-            width: unset;
-           
-            text-align: center;
-          }
-
-          footer .aboutus{
-            padding: 0;
-          }
-        /* footer */
-        }
-/* media */
+</script>
 
 
 
+ <style>
 
+              
 
-
-
-
-
-
-.dropdown_menu{
-    display: none;
-    position: fixed;
-    left: 2rem;
-    top: 60px;
-    height: 0px;
-    width: 300px;
-    background: rgba(255,255,255,0.1);
-    backdrop-filter: blur(15px);
-    border-radius: 10px;
-    overflow: hidden;
-    transition: height 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-   }
-
-   .open{
-         
-         height: 290px;
-         
-   }
-
-   .dropdown_menu li{
-           padding: 0.7rem;
-           display: flex;
-           align-items: center;
-           justify-content: center;
-   }
-
-   
-
-   button{
-    background-color: orange;
-    color: #fff;
-    padding: 0.5rem 1rem;
-    border: none;
-    outline: none;
-    border-radius: 20px;
-    font-size: 0.8rem;
-    font-weight: bold;
-    cursor: pointer;
-    transition: scale .2 ease;
-  }
-
-  .sign-out-button:hover{
-    scale: 1.05;
-    color: #fff;
-  }
-
-  button:hover{
-    scale: 1.05;
-    color: #fff;
-  }
 
                </style>
          </head>
