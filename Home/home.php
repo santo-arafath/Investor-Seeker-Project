@@ -1,40 +1,16 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
          <head>
             <meta charset="UTF-8"/>
-            <link rel="stylesheet" href="styleHome1.css"/>
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <!-- <link rel="stylesheet" href="stylehome1.css"/> -->
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+           
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-<script>
+            <link rel="stylesheet" href="css/Home_updated_style_main.css">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
 
-
-
-
-function isInViewport(element) {
-  const rect = element.getBoundingClientRect();
-  return (
-    rect.top >= 0 &&
-    rect.left >= 0 &&
-    rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-    rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-  );
-}
-
-
-function handleScroll() {
-  const elements = document.querySelectorAll('header, section');
-
-  elements.forEach((element) => {
-    if (isInViewport(element) && element.style.opacity !== '1') {
-      element.style.opacity = '1';
-    }
-  });
-}
-
-window.addEventListener('scroll', handleScroll);
-
-</script>
 
 
 
@@ -49,204 +25,149 @@ window.addEventListener('scroll', handleScroll);
          <body>
                 
 
-         <?php require "header_home.php"; ?> 
+         <?php //require "header_home.php"; ?> 
 
-         <section class="fst">
+         <div class="nav">
+        <h2 onclick="location.href='home.php'">Investor<span class="span">Seeker</span></h2>
+        <div class="item">
+            <ul>
+                <li><a href="home.php">Home</a></li>
+                <li><a href="AboutUs.php">About</a></li>
+                <li><a href="ContactUS.php">Contact</a></li>
+                <li><a href="service.php">Services</a></li>
+                <li><a href="team.php">Team</a></li>
+                <input onclick="location.href='loginForm.php'" type="submit" name="sign_in" value="Sign In">
+                <div class="toog_btn">
+                <i class="fa-solid fa-bars"></i>
+                </div>
+            </ul>
+           
+        </div>
+    </div>
 
-                 <div class="imag">
-                
-                      <img src="home_picture/top_cover4.jpg">
-                      
+    <div class="dropdown_menu ">
+       <ul>
+                <li><a href="home.php">Home</a></li>
+                <li><a href="AboutUs.php">About</a></li>
+                <li><a href="ContactUS.php">Contact</a></li>
+                <li><a href="service.php">Services</a></li>
+                <li><a href="team.php">Team</a></li>
+       <li><button onclick="location.href='loginForm.php'" class="sign-up-button button">Sign In</button></li>
+       </ul>
+      </div>
 
-                 
-                            <section id="hero">
-                                <h1>Welcome to The</h1>
-                                <p>The Investor seeker</p>
-                            </section>
+
+        <video autoplay loop muted src="200314 _Work Life_02_ 4k_058.mp4"></video>
+        
+        <div class="main" id="main">
+
+        <div class="content">
+    <h1>Unlock Your Investment Potential</h1>
+    <button onclick="location.href='loginForm.php'" class="Submit-top button">Get Started</button>
+    <h4>Discover Limitless Possibilities</h4>
+    <a>
+        Embark on Your Investment Journey Today
+    </a>
+</div>
+
+
+
+              <!-- page--2 star  -->
+
+         <div class="page2">
+
+             <div class="page2_text_side_left">
+                <div class="primary text">
+                    <h1>Connect with Investors and Grow Your Business.</h1>
+                    <h2>Join our platform to find investors, showcase your business, and get the funding you need.</h2>  
+                        </div> 
+                        
                    
-                      
+                        <div class="butn-of-top-page">
+                           <button onclick="location.href='signUpForm.php'" class="lets-start-top button">Get started</button>
+                        </div> 
+                        
+                        <div class="email-submit">
+                        <div class="email-of-top-page">
+                           <input type="email" name="email" required placeholder="Enter your email...">
+                        </div> 
+                        
+                        <div class="butn-of-top-page-submit">
+                           <button class="Submit-top button">Submit</button>
+                        </div>
+                        
+                      </div> 
+               
+            </div>
+
+            <div class="page2_image_right_side">
+
+            </div>
+
+        </div>
+        <!-- page--2 end  -->
+
+
+
+        <!-- page--3 start  -->
+        <div class="page3">
+            <div class="part1">
+                 <div class="page3_image_leftside">
+                    <img id="image-3rd-top" src="home_picture/secondimg.jgp.jpg" />
                  </div>
-         </section>
-                  <!-- <section class="saction-for-nav-page">
 
-                       <div class="navigartion stick">
-                              
-                              
-                             <div class="logo">
-                        <a href="#">Investor<span class="logo-span">Seeker</span></a>
-                                  </div>
+                 <div class="page3_text_sight_side">
+                    <h2>Easy investor connection.</h2>  
+                    <p>Sign up as an entrepreneur and create a profile that 
+                      showcaseyour business.Connect with investors who are looking 
+                      for project for project like your</p>       
 
-                                 
-                              <ul class="links">
-                                   <li><a href="home.php">Home</a></li>
-                                   <li><a href="About-US/AboutUs.html">About</a></li>
-                                   <li><a href="#">Contact</a></li>
-                                   <li><a href="Responsive Services Section/index.html">Services</a></li>
-                                   <li><a href="Our-team/team.html">Team</a></li>
-                              </ul>
-                           
+                </div>
+        </div>
 
-                              <div class="toog_btn">
-                           <button onclick="location.href='loginForm.php'" class="sign-up-button">Sign In</button>
-                             
+          <div class="part2">
+                <div class="page3_left_text">
 
-                           
-                           
-                              <i class="fa-solid fa-bars"></i>
-                           </div>
-
-
-                         </div>
-                           <div class="dropdown_menu ">
-
-                                   <li><a href="#">Home</a></li>
-                                   <li><a href="#">About</a></li>
-                                   <li><a href="#">Contact</a></li>
-                                   <li><a href="#">Services</a></li>
-                                   <li><a href="#">Team</a></li>
-                            <li><button class="sign-up-button button">Sign In</button></li>
-
-                         </div>
-
-                         
-          
-                        
-                         <main>
-                            <section id="hero">
-                                <h1>Welcome to The</h1>
-                                <p>The Investor seeker</p>
-                            </section>
-                          </main>
-
-                  </section> 
-
-                  
-
-                       <script>
-                        const toggleBtn=document.querySelector('.toog_btn');
-                        const toggleIcn=document.querySelector('.toog_btn i');
-                        const dropdownMenu=document.querySelector('.dropdown_menu');
-
-                        toggleBtn.onclick = function()
-                        {
-                            dropdownMenu.classList.toggle('open')
-                            const isOpen=dropdownMenu.classList.contains('open')
-                            toggleIcn.classList=isOpen
-                            ?'fa-solid fa-xmark'
-                            :'fa-solid fa-bars'
-
-                            
-                        }
-                        
-                       </script>
-
-                       <script>
-
-                        window.addEventListener("scroll",function(){
-                           var navigartionn = document.querySelector("navigartion");
-                           navigartionn.classList.toggle("sticky");
-                        })
-
-                       </script> -->
-
-
-
-
-
-                  <section class="section-seconttop">
-
-                            <div class="section-seconttop-left-flex-box">
-                                      <div class="primary text">
-                                     <h1>Connect with Investors and Grow Your Business.</h1>
-                                     <h2>Join our platform to find investors, showcase your business, and get the funding you need.</h2>  
-                                         </div> 
-                                         
-                                    
-                                         <div class="butn-of-top-page">
-                                            <button onclick="location.href='signUpForm.php'" class="lets-start-top button">Get started</button>
-                                         </div> 
-                                         
-                                         <div class="email-submit">
-                                         <div class="email-of-top-page">
-                                            <input type="email" name="email" required placeholder="Enter your email...">
-                                         </div> 
-                                         
-                                         <div class="butn-of-top-page-submit">
-                                            <button class="Submit-top button">Submit</button>
-                                         </div>
-                                         
-                                       </div>
-                            </div>
-
-                            <div class="section-seconttop-right-flex-box">
-                                
-                            </div>
-
-
-
-                  </section>
-
-
-
-
-
-                  <section class="third-seconttop">
-
-
-                              <div class="top-sec">
-
-                                    <div class="top-thirdImg">
-                                         <img id="image-3rd-top" src="home_picture/secondimg.jgp.jpg" />         
-                                    </div>
-                                    
-                                    <div class="top-text">
-                                           <h2>Easy investor connection.</h2>  
-                                           <p>Sign up as an entrepreneur and create a profile that 
-                                             showcaseyour business.Connect with investors who are looking 
-                                             for project for project like your</p>        
-                                    </div>
-
-                              </div>
-
-
-                              <div class="bott-sec">
-                                 
-                                 <div class="bott-text">
                                         <h2>Raise capital.</h2>  
                                         <p>Get the funding you need to take your business to the next level.
                                           Use InvestLink to showcase your Business to
                                            wide range of potentisal investors.
-                                        </p>        
-                                 </div>
+                                        </p> 
+
+                </div>
+
+                <div class="page3_right_img">
+
+                    <img id="image-3rd-bot" src="home_picture/thirdimg.jpg.jpg" />         
 
 
-                                 <div class="bott-thirdImg">
-                                    <img id="image-3rd-bot" src="home_picture/thirdimg.jpg.jpg" />         
-                               </div>
-
-                           </div>
+                </div>
+          </div>
 
 
+          <div class="part3">
+                     <div class="part3_left_img">
+                        <img id="image-3rd-bott-last" src="home_picture/fourthimg.jpg.jpg" /> 
+                     </div>
 
-                           <div class="bott-last-sec">
+                     <div class="part3_right_text">
 
-                              <div class="bott-last-thirdImg">
-                                   <img id="image-3rd-bott-last" src="home_picture/fourthimg.jpg.jpg" />         
-                              </div>
-                              
-                              <div class="bott-last-text">
-                                     <h2>Access valuable resources.</h2>  
-                                     <p>Our platform includes a range of resources to help 
-                                       entrepreneurs grow and succed,including
-                                        webinars,article and netword events</p>        
-                              </div>
-
-                        </div>
-
-
+                        <h2>Access valuable resources.</h2>  
+                        <p>Our platform includes a range of resources to help 
+                          entrepreneurs grow and succed,including
+                           webinars,article and netword events</p>  
                         
-                                   
-                  </section>
+                     </div>
+          </div>
+
+         </div>
+        <!-- page--3 end  -->
+
+
+
+
+           
+        </div>  <!--//main div end -->
 
 
                   <section class="fourth-section">
@@ -270,7 +191,7 @@ window.addEventListener('scroll', handleScroll);
                                  
                               <h1>Questions ?</h1>
                             <div class="que">
-                              <h3>How much does it cose ?</h3>
+                              <h3>How much does it cost ?</h3>
                               <p>provide your potential customers with an overview of how much they would be paying.</p>
                               
                               <h3>Who is this for ?</h3>
@@ -299,5 +220,14 @@ window.addEventListener('scroll', handleScroll);
                      
                   </section>
                   <?php require "../Entrepreneur/footer.php";?>
+
+
+
+
+
+
+                  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" integrity="sha512-16esztaSRplJROstbIIdwX3N97V1+pZvV33ABoG1H2OyTttBxEGkTsoIVsiP1iaTtM8b3+hu2kB6pQ4Clr5yug==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+                 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" integrity="sha512-Ic9xkERjyZ1xgJ5svx3y0u3xrvfT/uPkV99LBwe68xjy/mGtO+4eURHZBW2xW4SZbFrF1Tf090XqB+EVgXnVjw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+                 <script src="js/practice_script.js"></script>   
          </body>
 </html>

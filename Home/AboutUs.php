@@ -1,5 +1,5 @@
 
-<?php require "header_home.php"; ?>
+
 
                  
 <!DOCTYPE html>
@@ -7,7 +7,7 @@
          <head>
             <meta charset="UTF-8"/>
             <link rel="stylesheet" href="..css/styleHome.css"/>
-            <link rel="stylesheet" href="header_css.css"/>
+            <!-- <link rel="stylesheet" href="header_css.css"/> -->
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
            
@@ -15,13 +15,13 @@
 	<link rel="stylesheet" type="text/css" href="style.css">
 	<title>ABOUT US</title>
 	<style>
-        .navigartion{
-          left:0px;
+        .nav{
+          top:0px;
         }
 
          *{
     font-family: 'ui-sans-sarif' ,system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  
+           padding:0;
         }
       </style>
 
@@ -32,7 +32,7 @@
 
 
 
-	
+<?php require "header_home.php"; ?>	
 
 <div class="heading">
 	<h1>About Us</h1>
