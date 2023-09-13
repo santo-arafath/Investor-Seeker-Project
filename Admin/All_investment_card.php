@@ -147,11 +147,10 @@ $cardHtml .= '<br>
 <label name="not-intt" class="show-update" >' . $row['status-of-request'] . '</label>
 
 
-<form action="accept_offer_cheak.php?idtorcv='.$id.'" method="post">
 
-  <input type ="submit" name="accept-offer" class="Not-inteerested invest-button" value="Accept offer">
-  <input type ="submit" name="Like" class="Not-inteerested invest-button" value="Like the idea">
-  <input type ="submit" name="dislike" class="Not-inteerested invest-button" value="Dislike the idea">
+
+
+<form action="accept_offer_cheak.php?idtorcv='.$id.'" method="post">
 
 </form>
 
