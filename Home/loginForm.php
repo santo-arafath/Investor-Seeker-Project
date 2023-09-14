@@ -34,12 +34,18 @@ $errors = array();
 
 <?php 
 
-if($_REQUEST){
+
+$msg="";
+
+
+if(isset($_REQUEST['error']))
+{
 
  $msg = $_REQUEST['error'];
 
 array_push($errors, "Username or password incorrect");
 //    echo $msg;
+
 }
 
 ?>
@@ -64,7 +70,7 @@ array_push($errors, "Username or password incorrect");
                                            <?php endforeach ?>
                                 </div>
                <?php  endif ?>
-
+                    
                      
            		    <div class="input-div one">
                         <div class="i">
@@ -97,7 +103,7 @@ array_push($errors, "Username or password incorrect");
 
             	<a href="#">Forgot Password?</a><br>
               <a href="signupForm.php">Sign Up?</a>
-            	  <input type="submit" name="submit" class="btn" value="Login">
+            	  <input type="submit" name="submittt" class="btn" value="Login">
             </form>
             
         </div>

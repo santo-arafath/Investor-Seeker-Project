@@ -9,7 +9,7 @@
         die("not connected".mysqli_error($connnection));
      }else{
 
-    if(isset($_REQUEST['submit'])){
+    if(isset($_REQUEST['submittt'])){
 
         $usname=$_REQUEST['username'];
         $password=$_REQUEST['password'];
