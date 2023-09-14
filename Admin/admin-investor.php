@@ -174,7 +174,7 @@ require "includes/top-bar.php";?>
                    <tr>
                         <!-- <td><?php //echo "$serial"; ?></td> -->
                         <!-- <td><?php //echo "$id"; ?></td> -->
-                        <td><img width="50px"; src="../Home/entroProfile/<?php echo $profile_pic;?>"></td>
+                        <td><img width="50px"; src="../Investor/investor_profile/<?php echo $profile_pic;?>"></td>
                         <td><?php echo "$name"; ?></td>
                         <td><?php echo "$nid"; ?></td>
                         <td><?php echo "$email"; ?></td>
