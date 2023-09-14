@@ -18,6 +18,8 @@
 
 body{
     min-height: 100vh;
+    
+
     overflow-x: hidden;
 }
 
@@ -471,6 +473,7 @@ margin-top: 10px;
     background-color: var(--primary-color);
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
     width: 100%;
+    height: 100%;
     background-image: url(../photo/inv2.png);
     background-repeat: no-repeat;
     background-size: 100% 100%;
@@ -481,6 +484,7 @@ margin-top: 10px;
     justify-content: center;
     text-align: center;
     animation: backgroundSlideshow 1s 100s;
+    z-index: 0;
 
    }
 
@@ -1470,6 +1474,7 @@ footer {
     display: flex;
     flex-direction: column;
     padding: 100px;
+    
 }
 .anotherSecondpage .boxes{
   margin-top: 20px;

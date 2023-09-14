@@ -101,8 +101,9 @@ array_push($errors, "Username or password incorrect");
                 </div>
 
 
-            	<a href="#">Forgot Password?</a><br>
-              <a href="signupForm.php">Sign Up?</a>
+            	<!-- <a href="#">Forgot Password?</a><br> -->
+            	<a href="home.php">Back to home ?</a><br>
+              <a href="signupForm.php">Don't have account ? Sign Up</a>
             	  <input type="submit" name="submittt" class="btn" value="Login">
             </form>
             

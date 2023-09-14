@@ -31,10 +31,10 @@ if(!isset($_SESSION['useRname']))
 
     <!-- main body start --------------------------------------------------------------------------- -->
                
-
+               
                    <div class="main_body_f">
                     <div class="container1">
-    
+                          
                      
                           
                             <div class="get-starts">
@@ -44,6 +44,9 @@ if(!isset($_SESSION['useRname']))
                             </div>
                        </div>
                   </div>
+
+
+
 
                 <div class="secondpage1">
                        <div class="pagelayoutBox">
@@ -172,6 +175,8 @@ if(!isset($_SESSION['useRname']))
 
     <!-- 2nd page start  -->
 
+
+
 <div class="anotherSecondpage">
 
 <h2>How Investors Like You are Achieving Their Goals</h2>
@@ -208,6 +213,8 @@ if(!isset($_SESSION['useRname']))
 </div>
 
     </div>
+
+
 <!-- 2nd page  end -->
     <!-- --------------------------------------------------------------------------------------- -->
    
