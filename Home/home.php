@@ -2,6 +2,7 @@
 <html lang="en">
          <head>
             <meta charset="UTF-8"/>
+            <title>Home</title>
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <!-- <link rel="stylesheet" href="stylehome1.css"/> -->
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -10,7 +11,7 @@
             <link rel="stylesheet" href="css/Home_updated_style_main.css">
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-
+             
 
 
 
@@ -57,7 +58,7 @@
       </div>
 
 
-        <video autoplay loop muted src="200314 _Work Life_02_ 4k_058.mp4"></video>
+        <video autoplay loop muted src="video/200314 _Work Life_02_ 4k_058.mp4"></video>
         
         <div class="main" id="main">
 
@@ -167,12 +168,12 @@
 
 
            
-        </div>  <!--//main div end -->
+       
 
 
                   <section class="fourth-section">
                         <div class="top-var">
-                           <img id="grid" src="home_picture/grid.png">
+                           <!-- <img id="grid" src="home_picture/grid.png"> -->
                                   
                            <div class="top-var-h1">
                                  <h1>"Thanks to InvestorSeeker's resources, I 
@@ -221,7 +222,7 @@
                   </section>
                   <?php require "../Entrepreneur/footer.php";?>
 
-
+                  </div>  <!--//main div end -->
 
 
 

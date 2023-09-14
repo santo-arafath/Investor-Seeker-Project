@@ -11,7 +11,7 @@
   <head>
     
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Responsive Services Section</title>
+    <title> Services </title>
 
 
     
@@ -25,7 +25,7 @@
       rel="stylesheet"
     />
     
-    <link rel="stylesheet" href="style-for-service.css" />
+    <link rel="stylesheet" href="css/style-for-service.css" />
 
 
   </head>
