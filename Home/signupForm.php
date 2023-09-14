@@ -241,16 +241,21 @@ const profile = document.getElementById('profile');
  {
    let formCount= document.getElementsByClassName('form_control');
    let count =0;
-   let countTotalForm = formCount.length-1;
+   let countTotalForm = formCount.length;
 
  
 
    for(let i=0; i<formCount.length ;i++)
    {
       if(formCount[i].className === "input-div form_control success"){
+        
          count++;   
       }
    }
+
+
+
+//    alert(count+" "+countTotalForm);
 
    
    
@@ -259,7 +264,7 @@ const profile = document.getElementById('profile');
    if(count === countTotalForm){
       return true ;
    }else{
-      return false
+      return false;
    }
 
  }
@@ -360,7 +365,7 @@ function validate()
 
      // event.preventDefault();
 
-     
+     console.log("hello");
  
     const firstNameValue = firstName.value.trim();
     const lastNameValue = lastName.value.trim();
@@ -510,8 +515,10 @@ if(profileValue === ""){
 
 // //  check
    if(successMessage()){
+
+
          
-         swal("Account Created Successfully!", "Now press ok to Login!", "success");
+         alert("successsfully done");
 
          return true;
    }else{
