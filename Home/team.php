@@ -12,7 +12,7 @@
     <title>Team</title>
 
 
-    <link rel="stylesheet" href="style-for-team.css">
+    <link rel="stylesheet" href="css/style-for-team.css">
    <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
@@ -42,7 +42,7 @@
 
 <div class="profile-card">
 <div class="img">
-<img src="man.png">
+<img src="photo_for_homeDesign/man.png">
 </div>
 <div class="caption">
 <h3>Arafath Shanto</h3>
@@ -56,7 +56,7 @@
 </div>
 <div class="profile-card">
 <div class="img">
-<img src="saidaa.png">
+<img src="photo_for_homeDesign/saidaa.png">
 </div>
 <div class="caption">
 <h3>Saida Binta Alam</h3>
@@ -70,7 +70,7 @@
 </div>
 <div class="profile-card">
 <div class="img">
-<img src="man3.png">
+<img src="photo_for_homeDesign/man3.png">
 </div>
 <div class="caption">
 <h3>MD. Sayeem Hossen</h3>
@@ -84,7 +84,7 @@
 </div>
 <div class="profile-card">
 <div class="img">
-<img src="man4.png">
+<img src="photo_for_homeDesign/man4.png">
 </div>
 <div class="caption">
 <h3>Sadman Sanid Tanim</h3>

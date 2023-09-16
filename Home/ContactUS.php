@@ -12,6 +12,9 @@
 <body>
 <?php require "header_home.php"; ?>
 
+<br>
+<br>
+
     <section class="contact">
         <div class="contact-container">
             <h2>Contact Us</h2>
