@@ -267,6 +267,8 @@ scale: 1.05;
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
     
   }
+
+
   
   .page2 .page2_text_side_left .Submit-top,
   .Submit-top{
@@ -281,11 +283,14 @@ scale: 1.05;
     cursor: pointer;
     float: right;
   }
+
+
   .button:hover{
     background: var(--secondery-color_hover);
     scale: 1.2;
 
   }
+
   
   .page2 .page2_text_side_left .email-submit{
     margin-top: 20px;
@@ -294,11 +299,11 @@ scale: 1.05;
     flex-direction: row;
   }
 
+
   .page2_image_right_side{
     width: 45%;
     height: 90vh;
-    
-     display: flex;
+    display: flex;
     text-align: center;
     border-top-left-radius: 20px;
     border-bottom-left-radius: 20px;
@@ -339,20 +344,22 @@ scale: 1.05;
 
   height: 70vh;
   width: 45%;
-  /* background-color: black; */
+/* background-color: black; */
   border-top-right-radius: 25px;
   border-bottom-right-radius: 25px;
+ 
 
 }
+
+
 
 .page3 .part1 .page3_text_sight_side{
 
   height: 70vh;
   width: 45%;
-  /* background-color: aquamarine; */
   background-color: var(--primary-color);
   padding: 100px;
-  /* margin: 30px; */
+  
 }
 
 #image-3rd-top{
@@ -383,7 +390,7 @@ scale: 1.05;
 
 
 .page3 .part2{
-  /* background-color: rgb(80, 213, 89); */
+
   height:80vh;
   width: 100%;
   display: flex;
@@ -396,10 +403,9 @@ scale: 1.05;
 
   height: 70vh;
   width: 45%;
-  /* background-color: black; */
   background-color: var(--primary-color);
   padding: 100px;
-   margin: 30px;
+  margin: 30px;
   
 }
 
@@ -424,6 +430,7 @@ scale: 1.05;
   background-color: aquamarine;
   border-top-left-radius: 25px;
   border-bottom-left-radius: 25px;
+  
 }
 
 #image-3rd-bot{
@@ -441,7 +448,6 @@ scale: 1.05;
 .page3 .part3{
   height:80vh;
   width: 100%;
-  /* background-color: red; */
   display: flex;
   align-items: center;
   justify-content: space-evenly;
@@ -453,7 +459,6 @@ scale: 1.05;
 
   height: 70vh;
   width: 45%;
-  /* background-color: black; */
   background-color: var(--primary-color);
   padding: 100px;
   margin: 30px;
@@ -481,6 +486,7 @@ scale: 1.05;
   background-color: aquamarine;
   border-top-right-radius: 25px;
   border-bottom-right-radius: 25px;
+   
 }
 
 #image-3rd-bott-last{
@@ -503,17 +509,12 @@ scale: 1.05;
 @media(max-width: 992px)
 {
   
-  
-  
   .navigartion .toog_btn{
     display: block;
   }
   .dropdown_menu{
     display: block;
   }
-
-
-
 
 
     .nav h2{
@@ -529,16 +530,17 @@ scale: 1.05;
     .nav i{
       display: block;
     }
+
     .dropdown_menu{
       display: block;
     }
+
     .page2 .page2_text_side_left .email-submit{
       flex-direction: column;
     }
 
     .page2 .page2_text_side_left .Submit-top,
   .Submit-top{
-
     float: none;
     margin-top: 15px;
   }
