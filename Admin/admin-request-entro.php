@@ -147,7 +147,12 @@ if(!isset($_SESSION['usrName']))
         while($row=mysqli_fetch_assoc($result)){
         
         if($row['status-of-post']=="pending"){
-             $username=$row['username'];
+
+               $username=$row['username'];
+
+              //  $query="SELECT * FROM `card_information_all` WHERE username LIKE '$username'";
+
+             
              $id=$row['id'];
              $profile_pic=$row['card-photo'];
              $Business_type=$row['business-type'];
@@ -160,15 +165,14 @@ if(!isset($_SESSION['usrName']))
           // echo "{$row['id']}";
         //    echo "$id"." "."$name"." "."$email"." "."$password"." ";
         //    echo "<br>";
-        
-           
+          
            ?>
 
 
                    <tr>
                         <td><?php echo "$serial"; ?></td>
                         <td><?php echo "$username"; ?></td>
-                        <td><img width="50px"; src="admin-photo/<?php echo $profile_pic;?>"></td>
+                        <td><img width="50px"; src="../Entrepreneur/all_pictures/card-photo/<?php echo $profile_pic;?>"></td>
                         <td><?php echo "$Business_type"; ?></td>
                         <td><?php echo "$Comapany_name"; ?></td>
                         <td><?php echo "$date"; ?></td>

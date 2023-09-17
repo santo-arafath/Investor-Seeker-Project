@@ -209,7 +209,7 @@ while($row = mysqli_fetch_assoc($result))
         '</div>';
 
 
-        //    if($acceptedPersonId !=-1)
+           if($acceptedPersonId !=-1)
                 {
 //  
             $sql = mysqli_query($connnection, "SELECT * FROM `investor_reg_table1` WHERE id='$acceptedPersonId'");
@@ -226,6 +226,8 @@ while($row = mysqli_fetch_assoc($result))
          
      
      echo 
+
+
       '<div class="profile-card" id="showdrop">
       <img src="../Investor/investor_profile/'.$inv_photo.'" alt="Profile Picture" class="profile-picture">
            <div class="profile-name">'.$inv_name.'</div>

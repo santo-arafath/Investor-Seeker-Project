@@ -256,7 +256,7 @@ if(isset($_REQUEST['submit'])){
      $cnt=mysqli_num_rows($res);
 
      if($cnt>0){
-      echo "This Email already used";
+      // echo "This Email already used";
      }else{
 
      
@@ -310,9 +310,10 @@ if(isset($_REQUEST['submit'])){
     $result=mysqli_query($connnection,$sqlin);
 
    
-    if($result){
-        header("location:entCard.php?inserted");
-    }else{
+    if($result){?>
+        <!-- header("location:entCard.php?inserted"); -->
+        <script> window.location.href = "location:entCard.php";</script>
+    <?php }else{
         echo "not inserted";
     }
     
