@@ -70,30 +70,14 @@ require "../Admin/includes/configure.php";
             </div>
 
                         <div class="logo">
-                             <h2><a style="list-style:none;
-                      text-decoration:none;
-                      color:black;
-                      " href="investor_home.php">Investor<span>Seeker</span></a><h2>
+                             <h2><a href="investor_home.php">Investor<span>Seeker</span></a><h2>
                          </div>
 
 
 
 
          <!-- search -->
-              <form name="test" action="" method="get">
-                   <div class="search" >
-                         <label>
-    
-                                    <input type="text" placeholder="Search here" name="searchitem">
-                                    <a href="#" name="search-button">
-                                   <ion-icon name="search-outline"></ion-icon>
-   
-    
-                          </label>
-                   </div>
-
-
-              </form>
+              
 
 
 
@@ -106,10 +90,16 @@ require "../Admin/includes/configure.php";
 
 <ul class="list">
 
-<li><a href="#"><ion-icon class="ic" name="notifications-outline"></ion-icon>Notification</a></li>
-<li><a href="All_post_business_details.php"><ion-icon class="ic" name="logo-bitbucket"></ion-icon>All Post</a></li>
-<li><a href="my_investment_history.php"><ion-icon class="ic" name="server-outline"> </ion-icon>My Invest History</a></li>
+<li><a href="#"><ion-icon class="ic" name="notifications-outline"></ion-icon>Notifications</a></li>
+<li><a href="All_post_business_details.php"><ion-icon class="ic" name="logo-bitbucket"></ion-icon>All Posts</a></li>
+<li><a href="my_investment_history.php"><ion-icon class="ic" name="server-outline"> </ion-icon>My Investment History</a></li>
+<li><a href="#"><ion-icon class="ic" name="cash-outline"> </ion-icon>My Wallet</a></li>
+<li><a href="#"><ion-icon class="ic" name="business-outline"> </ion-icon>Investor Resources</a></li>
 
+<!-- <div class="user">
+<img width="50px"; src="investor_profile/<?php //echo $profile_picture;?>">
+
+</div> -->
 
 </ul>
 
@@ -120,14 +110,14 @@ require "../Admin/includes/configure.php";
 
  
  
-<div class="user">
+<div class="user"> 
      
     <!-- <img  src="all_pictures/santo.jpg"> -->
 
     <img width="50px"; src="investor_profile/<?php echo $profile_picture;?>">
 
 
-</div>
+ </div>
 
 <!-- drop down profile -->
 

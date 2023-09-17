@@ -14,7 +14,8 @@ if(!isset($_SESSION['useRname']))
 <html>
     <html lang="en-us">
     <head>
-       <head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+       <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" href="all_css/investor_home_style.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
         <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
@@ -37,11 +38,14 @@ if(!isset($_SESSION['useRname']))
                           
                      
                           
-                            <div class="get-starts">
-                                <h1>Apply to Get Investment</h1>
-                                <input onclick="location.href='#'" type="submit" class="get-starts-button" value="Get Start">
+                    <div class="get-starts">
+    <h1>Unlock Your Investment Potential</h1>
+    <h3>Discover Opportunities, Secure Your Future</h3>
+    <a href="#" class="button">Get Started</a>
+        <h4>Join Us Today and Prosper!</h4>
 
-                            </div>
+</div>
+
                        </div>
                   </div>
 
@@ -565,6 +569,8 @@ echo "NO request available at this moment!";
 
 
 <script>
+
+
 const toggleBtn_pro=document.querySelector('.user');
 
 const dropdownMenu_pro=document.querySelector('.dropdown_menu-profile');
