@@ -39,6 +39,7 @@ if(!isset($_SESSION['useRname']))
                      
                           
                     <div class="get-starts">
+                        
     <h1>Unlock Your Investment Potential</h1>
     <h3>Discover Opportunities, Secure Your Future</h3>
     <a href="#" class="button">Get Started</a>
