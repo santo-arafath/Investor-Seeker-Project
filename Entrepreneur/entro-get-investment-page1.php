@@ -310,10 +310,10 @@ if(isset($_REQUEST['submit'])){
     $result=mysqli_query($connnection,$sqlin);
 
    
-    if($result){?>
-        <!-- header("location:entCard.php?inserted"); -->
-        <script> window.location.href = "location:entCard.php";</script>
-    <?php }else{
+    if($result){
+        header("location:entCard.php?inserted");
+         //<script> window.location.href = "location:entCard.php";
+     }else{
         echo "not inserted";
     }
     
