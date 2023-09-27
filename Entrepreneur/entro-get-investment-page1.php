@@ -1,12 +1,159 @@
 
-<?php session_start();
+<?php session_start();?>
+
+<?php
+$connnection = mysqli_connect('localhost','root','','project_investor_seeker_db');
 
 
+if (!$connnection) {
+die("Connection failed: " . mysqli_connect_error());
+}
+
+
+if(isset($_REQUEST['submit'])){
+
+$entrepreneurName = mysqli_real_escape_string($connnection,$_REQUEST["name"]);
+$entrepreneurPost = mysqli_real_escape_string($connnection,$_REQUEST["Entrepreneur-post"]);
+$entrepreneurEducation = mysqli_real_escape_string($connnection,$_REQUEST["education"]);
+$idea_email = mysqli_real_escape_string($connnection,$_REQUEST["email"]);
+$idea_phone = mysqli_real_escape_string($connnection,$_REQUEST["phone"]);
+$idea_Business_type = mysqli_real_escape_string($connnection,$_REQUEST["Business-type"]);
+$idea_companyName = mysqli_real_escape_string($connnection,$_REQUEST["company-name"]);
+$idea_location = mysqli_real_escape_string($connnection,$_REQUEST["location"]);
+$idea_descrioption = mysqli_real_escape_string($connnection,$_REQUEST["product-description"]);
+$idea_Product_usecase_1 = mysqli_real_escape_string($connnection,$_REQUEST["product-usecase-1"]);
+$idea_Product_usecase_2 = mysqli_real_escape_string($connnection,$_REQUEST["product-usecase-2"]);
+$idea_Product_usecase_3 = mysqli_real_escape_string($connnection,$_REQUEST["product-usecase-3"]);
+$idea_Product_usecase_4 = mysqli_real_escape_string($connnection,$_REQUEST["product-usecase-4"]);
+$idea_revenue = mysqli_real_escape_string($connnection,$_REQUEST["revenue"]);
+$idea_lastMSell = mysqli_real_escape_string($connnection,$_REQUEST["lmonthsell"]);
+$idea_lastYSell = mysqli_real_escape_string($connnection,$_REQUEST["lyearsell"]);
+$idea_totalSell = mysqli_real_escape_string($connnection,$_REQUEST["totalsell"]);
+$idea_amountofInvestmentRequired = mysqli_real_escape_string($connnection,$_REQUEST["investment-amount"]);
+$idea_Equity_offer = mysqli_real_escape_string($connnection,$_REQUEST["Eoffer"]);
+$idea_Investment_purpose = mysqli_real_escape_string($connnection,$_REQUEST["investment-purpose"]);
+$idea_Goal = mysqli_real_escape_string($connnection,$_REQUEST["goal"]);
+
+
+
+// $company_logo = mysqli_real_escape_string($connnection,$_REQUEST["company_logo"]);
+$logo_picture=$_FILES['company_logo'];
+$logo_pic_name=$logo_picture['name'];
+$logo_pic_tmp_name=$logo_picture['tmp_name'];
+
+$name_changerrr=uniqid().".png";
+
+
+
+// -------------------------------------------------------------------------
+
+$arr = $arr_history = array('cover1.jpeg', 'cover2.jpg', 'cover3.jpg', 'cover4.jpg','cover5.jpg','cover6.jpg','cover7.jpg');
+$arr_history = $arr;
+$key = array_rand($arr_history, 1);
+$selected = $arr_history[$key];
+$selected_cover = $selected . PHP_EOL;
+
+// -------------------------------------------------------------------------
+// -------------------------------------------------------------------------
+// -------------------------------------------------------------------------
+
+$currentDate = date('Y-m-d'); 
+
+$picture=$_FILES['picture-card'];
+$pname=$picture['name'];
+$tmp_name=$picture['tmp_name'];
+$name_changer=uniqid().".png";
+
+
+$queryy="SELECT email FROM `card_information_all` WHERE email='$idea_email'";
+$res=mysqli_query($connnection,$queryy) or die("Query failed.");
+
+$cnt=mysqli_num_rows($res);
+
+if($cnt>0){
+// echo "This Email already used";
+}else{
+
+
+// --------------------------------------------------------
+if(!empty($logo_pic_name)){
+
+$location='all_pictures/company_logo/';
+
+if(move_uploaded_file($logo_pic_tmp_name,$location.$name_changerrr)){
+
+
+}else{
+  echo 'upload failed';
+  die("wait");
+}
+
+}else{
+echo 'file not found';
+}
+// ----------------------------------------------------------
+
+if(!empty($pname)){
+
+$locat='all_pictures/card-photo/';
+
+if(move_uploaded_file($tmp_name,$locat.$name_changer)){
+
+
+}else{
+ echo 'upload failed';
+ die("wait");
+}
+
+}else{
+echo 'file not found';
+}
+
+
+
+
+require "../Admin/includes/configure.php";
+  if(!$connnection){
+
+die("not connected".mysqli_error());
+}else{
+
+$entro_profile_for_card=$_SESSION['photo_show_entro'];
+
+$sqlin= "INSERT INTO `card_information_all` (`username`, `entro-photo`, `card-photo`, `cover-photo`, `company-logo`, `name`, `entrepreneur-post`, `education`, `email`, `phone`, `business-type`, `company-name`, `location`, `product-description`, `product-usecase-1`, `product-usecase-2`, `product-usecase-3`, `product-usecase-4`, `revenue`, `last-month-sell`, `last-year-sell`, `total-sell`, `investment-amount`, `equity-offer`, `investment-purpose`, `goal`, `status-of-post`, `status-of-request`, `date-of-post`) VALUES ('$userName', '$entro_profile_for_card', '$name_changer', '$selected_cover', '$name_changerrr', '$entrepreneurName', '$entrepreneurPost', '$entrepreneurEducation', '$idea_email', '$idea_phone', '$idea_Business_type', '$idea_companyName', '$idea_location', '$idea_descrioption', '$idea_Product_usecase_1', '$idea_Product_usecase_2', '$idea_Product_usecase_3', '$idea_Product_usecase_4', '$idea_revenue', '$idea_lastMSell', '$idea_lastYSell', '$idea_totalSell', '$idea_amountofInvestmentRequired', '$idea_Equity_offer', '$idea_Investment_purpose', '$idea_Goal', 'pending', 'not-accepted', '$currentDate')";
+
+$result=mysqli_query($connnection,$sqlin);
+
+
+if($result){
+
+header("location:entCard.php?inserted");
+//<script> window.location.href = "location:entCard.php";
+}else{
+echo "not inserted";
+}
+
+}
+
+}
+
+}
+
+
+mysqli_close($connnection);
+?>
+
+
+<?php
 
 if(!isset($_SESSION['usrName']))
 {
   header("location:../Home/loginForm.php");
 }
+
+
+
+
 
 $userName=$_SESSION['usrName'];
 ?>
@@ -186,146 +333,12 @@ function move(a) {
 // ?> -->
 
 
-          <?php
-          $connnection = mysqli_connect('localhost','root','','project_investor_seeker_db');
-
-
-if (!$connnection) {
-    die("Connection failed: " . mysqli_connect_error());
-}
-
-
-if(isset($_REQUEST['submit'])){
-
-    $entrepreneurName = mysqli_real_escape_string($connnection,$_REQUEST["name"]);
-    $entrepreneurPost = mysqli_real_escape_string($connnection,$_REQUEST["Entrepreneur-post"]);
-    $entrepreneurEducation = mysqli_real_escape_string($connnection,$_REQUEST["education"]);
-    $idea_email = mysqli_real_escape_string($connnection,$_REQUEST["email"]);
-    $idea_phone = mysqli_real_escape_string($connnection,$_REQUEST["phone"]);
-    $idea_Business_type = mysqli_real_escape_string($connnection,$_REQUEST["Business-type"]);
-    $idea_companyName = mysqli_real_escape_string($connnection,$_REQUEST["company-name"]);
-    $idea_location = mysqli_real_escape_string($connnection,$_REQUEST["location"]);
-    $idea_descrioption = mysqli_real_escape_string($connnection,$_REQUEST["product-description"]);
-    $idea_Product_usecase_1 = mysqli_real_escape_string($connnection,$_REQUEST["product-usecase-1"]);
-    $idea_Product_usecase_2 = mysqli_real_escape_string($connnection,$_REQUEST["product-usecase-2"]);
-    $idea_Product_usecase_3 = mysqli_real_escape_string($connnection,$_REQUEST["product-usecase-3"]);
-    $idea_Product_usecase_4 = mysqli_real_escape_string($connnection,$_REQUEST["product-usecase-4"]);
-    $idea_revenue = mysqli_real_escape_string($connnection,$_REQUEST["revenue"]);
-    $idea_lastMSell = mysqli_real_escape_string($connnection,$_REQUEST["lmonthsell"]);
-    $idea_lastYSell = mysqli_real_escape_string($connnection,$_REQUEST["lyearsell"]);
-    $idea_totalSell = mysqli_real_escape_string($connnection,$_REQUEST["totalsell"]);
-    $idea_amountofInvestmentRequired = mysqli_real_escape_string($connnection,$_REQUEST["investment-amount"]);
-    $idea_Equity_offer = mysqli_real_escape_string($connnection,$_REQUEST["Eoffer"]);
-    $idea_Investment_purpose = mysqli_real_escape_string($connnection,$_REQUEST["investment-purpose"]);
-    $idea_Goal = mysqli_real_escape_string($connnection,$_REQUEST["goal"]);
+         
 
 
 
-    // $company_logo = mysqli_real_escape_string($connnection,$_REQUEST["company_logo"]);
-     $logo_picture=$_FILES['company_logo'];
-     $logo_pic_name=$logo_picture['name'];
-     $logo_pic_tmp_name=$logo_picture['tmp_name'];
-
-     $name_changerrr=uniqid().".png";
 
 
-
-    // -------------------------------------------------------------------------
-
-    $arr = $arr_history = array('cover1.jpeg', 'cover2.jpg', 'cover3.jpg', 'cover4.jpg','cover5.jpg','cover6.jpg','cover7.jpg');
-    $arr_history = $arr;
-    $key = array_rand($arr_history, 1);
-    $selected = $arr_history[$key];
-    $selected_cover = $selected . PHP_EOL;
-  
-    // -------------------------------------------------------------------------
-    // -------------------------------------------------------------------------
-    // -------------------------------------------------------------------------
-
-     $currentDate = date('Y-m-d'); 
-
-     $picture=$_FILES['picture-card'];
-     $pname=$picture['name'];
-     $tmp_name=$picture['tmp_name'];
-     $name_changer=uniqid().".png";
-
-
-     $queryy="SELECT email FROM `card_information_all` WHERE email='$idea_email'";
-     $res=mysqli_query($connnection,$queryy) or die("Query failed.");
-
-     $cnt=mysqli_num_rows($res);
-
-     if($cnt>0){
-      // echo "This Email already used";
-     }else{
-
-     
-      // --------------------------------------------------------
-      if(!empty($logo_pic_name)){
-   
-        $location='all_pictures/company_logo/';
-    
-        if(move_uploaded_file($logo_pic_tmp_name,$location.$name_changerrr)){
-    
-    
-        }else{
-            echo 'upload failed';
-            die("wait");
-        }
-        
-      }else{
-        echo 'file not found';
-         }
-      // ----------------------------------------------------------
-   
-   if(!empty($pname)){
-   
-       $locat='all_pictures/card-photo/';
-   
-       if(move_uploaded_file($tmp_name,$locat.$name_changer)){
-   
-   
-       }else{
-           echo 'upload failed';
-           die("wait");
-       }
-       
-     }else{
-       echo 'file not found';
-        }
-
-
-     
-
-        require "../Admin/includes/configure.php";
-            if(!$connnection){
-        
-         die("not connected".mysqli_error());
-    }else{
-
-      $entro_profile_for_card=$_SESSION['photo_show_entro'];
-      
-    $sqlin= "INSERT INTO `card_information_all` (`username`, `entro-photo`, `card-photo`, `cover-photo`, `company-logo`, `name`, `entrepreneur-post`, `education`, `email`, `phone`, `business-type`, `company-name`, `location`, `product-description`, `product-usecase-1`, `product-usecase-2`, `product-usecase-3`, `product-usecase-4`, `revenue`, `last-month-sell`, `last-year-sell`, `total-sell`, `investment-amount`, `equity-offer`, `investment-purpose`, `goal`, `status-of-post`, `status-of-request`, `date-of-post`) VALUES ('$userName', '$entro_profile_for_card', '$name_changer', '$selected_cover', '$name_changerrr', '$entrepreneurName', '$entrepreneurPost', '$entrepreneurEducation', '$idea_email', '$idea_phone', '$idea_Business_type', '$idea_companyName', '$idea_location', '$idea_descrioption', '$idea_Product_usecase_1', '$idea_Product_usecase_2', '$idea_Product_usecase_3', '$idea_Product_usecase_4', '$idea_revenue', '$idea_lastMSell', '$idea_lastYSell', '$idea_totalSell', '$idea_amountofInvestmentRequired', '$idea_Equity_offer', '$idea_Investment_purpose', '$idea_Goal', 'pending', 'not-accepted', '$currentDate')";
-    
-    $result=mysqli_query($connnection,$sqlin);
-
-   
-    if($result){
-        header("location:entCard.php?inserted");
-         //<script> window.location.href = "location:entCard.php";
-     }else{
-        echo "not inserted";
-    }
-    
-   }
-
-     }
-
-    }
-
-
-mysqli_close($connnection);
-?>
 
           <script>
             const form = document.querySelector('#investment-form');

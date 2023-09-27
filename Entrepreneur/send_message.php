@@ -8,7 +8,7 @@ if(!isset($_SESSION['usrName']))
 }
 
  $sender=$_SESSION['id'];
- $receiver=$_SESSION['receiver'];
+ $receiver=$_SESSION['rcver'];
 
 if(isset($_REQUEST['sendmessage']))
 {
