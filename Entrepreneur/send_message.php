@@ -35,8 +35,6 @@ if(isset($_REQUEST['sendmessage']))
 
 
 
-      
-
 
         echo "not inserted";
 
