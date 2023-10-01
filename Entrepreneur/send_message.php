@@ -32,7 +32,15 @@ if(isset($_REQUEST['sendmessage']))
 
         
      }else{
+
+
+
+      
+
+
         echo "not inserted";
+
+
      }
 
     }else{
