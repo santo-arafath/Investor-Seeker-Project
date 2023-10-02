@@ -64,12 +64,13 @@ body{
  .topbar{
    position: fixed;
     width: 100%;
-    height: 60px;
+    height: 80px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 5px 20px;
     background: #287bff;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
     z-index: 1000;
     
 }
@@ -487,7 +488,7 @@ margin-top: 10px;
 
 .container1{
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     margin: auto;
     padding: auto;
 
@@ -497,11 +498,13 @@ margin-top: 10px;
        
     background-color: var(--primary-color);
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
-    width: 100%;
-    background-image: url(../all_pictures/cover2.webp);
+    width: 95%;
+     background-image: url(../all_pictures/pexels-andrea-piacquadio-3758105.jpg);
+     
+     /* background-color: red; */
     background-repeat: no-repeat;
     background-size: 100% 100%;
-    height: calc(100vh - 5px);
+    height: calc(100vh - 10vh);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -532,9 +535,14 @@ margin-top: 10px;
    
    
    .get-starts h1{
-   font-size: 50px;
+   font-size: 60px;
    margin-top: 1rem;
    margin-left: 20px;
+   text-shadow: 1px 1px 2px var(--blue);
+   }
+
+   .get-starts h1:hover{
+    scale: 1.1;
    }
 
   .get-starts-button{
@@ -542,19 +550,20 @@ margin-top: 10px;
     margin-top: 10px;
     margin-left: 5px;
     font-size: 20px;
-    padding: 12px 15px;
+    padding: 15px 18px;
     background: var(--secondery-color);
     /* border: 3px solid rgb(17, 15, 15); */
-    color: #0e0d0d;
+    color: #e4dddd;
     font-weight: bold;
-    background-color: var(--blue);
+    background-color: var(--black1);
     border-radius:5%;
     cursor: pointer;
     float: right;
   }
   .get-starts-button:hover{
-    background: var(--secondery-color_hover);
-    color: white;
+    background: transparent;
+    /* color: rgb(22, 21, 21); */
+    border:2px solid black;
     scale: 1.1;
 
   }

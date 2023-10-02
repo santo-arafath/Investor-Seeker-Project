@@ -1,10 +1,10 @@
 <?php
 session_start();
 
-if(!isset($_SESSION['usrName']))
-{
-  header("location:../Home/loginForm.php");
-}
+// if(!isset($_SESSION['usrName']))
+// {
+//   header("location:../Home/loginForm.php");
+// }
 
 
  if(isset($_REQUEST['chat_button'])){
