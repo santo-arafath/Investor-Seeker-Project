@@ -38,6 +38,8 @@ $connection=mysqli_connect('localhost','root','','project_investor_seeker_db');
     <title>Chat Page</title>
     <link rel="stylesheet" href="all_css/chatbox_style.css">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"> -->
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
     
 </head>
 
@@ -107,7 +109,7 @@ $connection=mysqli_connect('localhost','root','','project_investor_seeker_db');
         </div>
 
         <div class="left_side">
-            <a href="entCard.php"> < Back </a>
+            <a href="entCard.php" class="btn btn-link"> < Back </a>
         </div>
 
         
