@@ -6,7 +6,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us - Investor Seeker</title>
+    <title>Contact Us</title>
     <!-- <link rel="stylesheet" href="css/style.css"> -->
 </head>
 <body>
@@ -46,7 +46,7 @@
                     <label for="message">Message:</label>
                     <textarea id="message" name="message" rows="4" required placeholder="Write about your interest "></textarea>
                 </div>
-                <button type="submit">Send Message</button>
+                <button type="submit" class="btn">Send Message</button>
             </form>
         </div>
     </section>

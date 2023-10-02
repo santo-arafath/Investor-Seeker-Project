@@ -39,6 +39,7 @@ border: none;
 height: 40px;
 width: 80px;
 border-radius: 10px;
+color: white;
 }
 input[type=submit]:hover{
 scale: 1.08;
@@ -47,8 +48,9 @@ background-color: rgb(202, 135, 10);
 }
 
 .nav h2{
-font-size: 2vmax;
+  font-size: 2.5vmax;
 }
+
 
 .nav .item a{
 list-style: none;

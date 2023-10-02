@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Animated Signup Form</title>
+    <title>Signup</title>
     <link rel="stylesheet" type="text/css" href="css/style1signup.css">
 
     

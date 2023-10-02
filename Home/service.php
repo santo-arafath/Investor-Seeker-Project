@@ -31,12 +31,10 @@
   </head>
 
       <style>
-        .navigartion{
-          left:0px;
-        }
+        
 
          *{
-    font-family: 'ui-sans-sarif' ,system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    /* font-family: 'ui-sans-sarif' ,system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; */
   
         }
       </style>
