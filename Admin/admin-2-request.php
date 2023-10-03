@@ -73,7 +73,7 @@ $cardHtml = '';
 while($row = mysqli_fetch_assoc($result)){
 
 
-       $cardHtml .= 
+       echo
 
        '<h1>Busines details</h1>
        <div class="container-main">
@@ -83,7 +83,7 @@ while($row = mysqli_fetch_assoc($result)){
                                     <div class="ideaimg">
 
 
-                                           <img src="../Entrepreneur/all_pictures/card-photo/' . $row['card-photo'] . '">
+                                           <img src="../Entrepreneur/all_pictures/card-cover-photo/' . $row['cover-photo'] . '">
                                    </div>
       
                               <div class="entrepreneur-section">
@@ -99,7 +99,7 @@ while($row = mysqli_fetch_assoc($result)){
                  <p>' . $row['entrepreneur-post'] . '.</p>
            </div>
         <div class="company-logo">
-            <img src="logo.jpg" alt="Company Logo">
+            <img src="../Entrepreneur/all_pictures/company_logo/'.$row['company-logo'].'" alt="Company Logo">
           </div>
       </div>
 
@@ -127,9 +127,28 @@ while($row = mysqli_fetch_assoc($result)){
         <p>Equrty offer: ' . $row['equity-offer'] . ' Tk</p>
         <p>Comapny Goal: ' . $row['goal'] . '</p>
         <p>Request date: ' . $row['date-of-post'] . '</p>
-        <form method="post">
-        <input type="submit" class="invest-button" name="submit" value='. $row['status-of-post'] .'>
-        <input type="submit" class="Not-inteerested invest-button" name="accept" value=' . $row['status-of-request'] . '>
+        <form action="" method="post">
+        <input type="submit" class="invest-button" name="submit" value='; 
+        
+        
+        
+        if($row['status-of-post']=="pending"){
+          echo "Accept";
+        }else{
+          echo "Verified";
+        } 
+        
+        
+        echo '>
+        <input type="submit" class="Not-inteerested invest-button" name="accept" value=';
+        
+        if($row['status-of-request']=="not-accepted"){
+          echo "Reject";
+        }else{
+          echo "Already Rejected";
+        } 
+        
+        echo'>
       </form></div>
     </div>
 
@@ -143,7 +162,7 @@ while($row = mysqli_fetch_assoc($result)){
                 '</div>'
 ?>
  
-    <?php echo $cardHtml; ?>
+    <?php //echo $cardHtml; ?>
 
    
 

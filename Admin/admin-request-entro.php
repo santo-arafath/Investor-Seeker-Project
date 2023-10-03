@@ -128,7 +128,7 @@ if(!isset($_SESSION['usrName']))
                     <tr>
                         <th>Serial No</th>
                         <th>Username</th>
-                        <th>Profile</th>
+                        <th>Company Logo</th>
                         <th>Business Type</th>
                         <th>Phone</th>
                         
